@@ -12,6 +12,7 @@ function codigo() {
     $('#toggle').on('change', eventoToogle);
     $('#formCuentaPasword').on('submit', e=>eventoComparaCont(e));
     $('#atras').attr('href', '../../accesPrinc.php?id='+idUser);
+    $('#formComPassword').on('submit',  e=>eventoComparaContCom(e))
     
     for (const value of document.getElementsByClassName('idUser')) {
         value.value = idUser;
@@ -115,6 +116,27 @@ function codigo() {
             }
             
             document.getElementById('formCuentaPasword').submit();
+        }
+
+    }
+
+    function eventoComparaContCom(e) {
+
+        e.preventDefault();
+
+        let contrasena01 = $('#passwordComCambCom').val();
+        let contrasena02 = $('#passwordComRepCambCom').val();
+
+        if (contrasena01 !== contrasena02) {
+            for (const value of document.getElementsByClassName('errorPasswordCambia')) {
+                value.innerHTML = 'Error, las contraseñas no coinciden, asegúrate de que ambas coincidan.';
+            }
+        }else{
+            for (const value of document.getElementsByClassName('errorPasswordCambia')) {
+                value.innerHTML = '';
+            }
+            
+            document.getElementById('formComPassword').submit();
         }
 
     }

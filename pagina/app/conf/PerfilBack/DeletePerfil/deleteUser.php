@@ -21,7 +21,11 @@ $keyssSQL = $rows[1];
 // Verificar la contraseña
 if (password_verify($password, $passwordSQL)) {
     if (crypt($keyss, '7766GGGttwfef#@') == $keyssSQL) {
-        bbdd()->query("DELETE FROM usuarios WHERE idUser = $idUser");
+                bbdd()->query("DELETE FROM favoritos WHERE idUser = $idUser");
+                bbdd()->query("DELETE FROM comentarios WHERE idUser = $idUser");
+                bbdd()->query("DELETE FROM tarians WHERE idUser = $idUser");
+                bbdd()->query("DELETE FROM bloqueados WHERE idUser = $idUser");
+                bbdd()->query("DELETE FROM usuarios WHERE idUser = $idUser");
 
         for ($i=0; $i < $rowR2; $i++) { 
             $rowsR2 = $resultado2->fetch_array(MYSQLI_NUM)[0];
