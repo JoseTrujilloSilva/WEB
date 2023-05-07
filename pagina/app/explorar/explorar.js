@@ -82,7 +82,7 @@ function codigo() {
                 
                 for (const valor of data) {
                     if (valor[0].indexOf(this.value) !== -1) { 
-                        $('#usuarios').append('<div class="bg-light m-3 text-center" style="border-radius: 8px; width: 200px;"><div class="mt-3"><img id="fotoPerfil" class="rounded-circle" src="../../'+valor[1]+'" alt="" style="width: 170px; height: 150px;"></div><div class="col-12 my-4"><span>Perfil de:'+valor[0]+'</span><br><span id="nombrePerfil"></span><a class="btn btn-warning" href="./muestraTarians2.html?idUser='+valor[2]+',rutaFotoUser='+valor[1]+',nameUser='+valor[0]+',idUser2='+idUser+'">Seleccionar</a></div></div>');
+                        $('#usuarios').append('<div class="bg-light m-3 text-center" style="border-radius: 8px; width: 200px;"><div class="mt-3"><img id="fotoPerfil" class="rounded-circle" src="../../'+valor[1]+'" alt="" style="width: 170px; height: 150px;"></div><div class="col-12 my-4"><span>Perfil de:'+valor[0]+'</span><br><span id="nombrePerfil"></span><a class="btn btn-warning" href="./bloqueadorUsers.php?idUser='+valor[2]+'?rutaFotoUser='+valor[1]+'?nameUser='+valor[0]+'?idUserBloq='+idUser+'">Seleccionar</a></div></div>');
                     }
                    
                 }
@@ -131,7 +131,7 @@ function codigo() {
                     for (const valor of arrayHastags) {
                     
                         if (valor[0].indexOf(this.value) !== -1) { 
-                            $('#usuarios').append('<div class="bg-light m-3 text-center" style="border-radius: 8px; width: 200px;"><div class="mt-3"><img id="fotoPerfil" class="rounded-circle" src="../../'+valor[2]+'" alt="" style="width: 170px; height: 150px;"></div><div class="col-12 my-4"><span>Perfil de:'+valor[1]+'</span><br><span id="nombrePerfil"></span><a href="../hastags/hastags.html?idCom='+idCom+',hastags='+valor[0].split('#')[1]+',iduser='+idUser+'">'+valor[0]+'</a></div></div>');
+                            $('#usuarios').append('<div class="bg-light m-3 text-center" style="border-radius: 8px; width: 200px;"><div class="mt-3"><img id="fotoPerfil" class="rounded-circle" src="../../'+valor[2]+'" alt="" style="width: 170px; height: 150px;"></div><div class="col-12 my-4"><span>Perfil de:'+valor[1]+'</span><br><span id="nombrePerfil"></span><a href="../hastags/hastags.html?idCom='+idCom+',hastags='+valor[0].split('#')[1]+',idUser='+idUser+'">'+valor[0]+'</a></div></div>');
                         }
                       
                     }

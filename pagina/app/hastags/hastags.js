@@ -18,6 +18,7 @@ function codigo() {
     let dataRecoge = new FormData();
     dataRecoge.append('idCom', idCom);
     dataRecoge.append('hastags', hastags);
+    dataRecoge.append('idUser', idUser);
 
     $('#nextMovil').on('click', eventoCarouselNext);
     $('#lastMovil').on('click', eventoCarouselAtras);
@@ -131,7 +132,15 @@ function codigo() {
             })
         .then(function(data){
 
+            console.log(contCarousel);
 
+            if (data[contCarousel] === 0) {
+                $('#textBloqueado').css('display', 'block');
+                $('#textBloqueado').html('No puedes ver el contenido, porque este usuario te ha bloqueado');
+                $('#textBloqueado').css('color', 'red');
+            }else{
+                $('#textBloqueado').css('display', 'none');
+            }
         console.log(data);
     
         for (const value of data) {
@@ -277,7 +286,6 @@ function codigo() {
 
                     console.log('Es un texto');
             }
-
     })
         }
 

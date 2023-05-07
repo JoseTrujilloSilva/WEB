@@ -11,6 +11,7 @@ function codigo() {
     $('#menuSesion').on('click', eventoSesion);
     $('#toggle').on('change', eventoToogle);
     $('#formCuentaPasword').on('submit', e=>eventoComparaCont(e));
+    $('#atras').attr('href', '../../accesPrinc.php?id='+idUser);
     
     for (const value of document.getElementsByClassName('idUser')) {
         value.value = idUser;
