@@ -19,12 +19,16 @@ $fechaHoy = date('d/m/Y');
 $textHastags = $_POST['hastags'];
 $retarian = 0;
 
+$resultado01 = bbdd()->query("SELECT idCom FROM usuarios WHERE idUser = $idUser");
+
+$idCom = $resultado01->fetch_array(MYSQLI_NUM)[0];
+
 
 if ($_FILES['file1']['tmp_name'] == null) {
 
-    $sql = $bbdd->prepare("INSERT INTO tarians (idUser, idTarian, txt, fecha, hastags, retarian) VALUES(?,?,?,?,?,?)");
+    $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, fecha, hastags, retarian) VALUES(?,?,?,?,?,?,?)");
 
-    $sql->bind_param('iisssi', $idUser,  $idTarian, $text, $fechaHoy, $textHastags,$retarian);
+    $sql->bind_param('iiisssi', $idCom, $idUser,  $idTarian, $text, $fechaHoy, $textHastags,$retarian);
 
     $sql->execute();
 
@@ -61,9 +65,9 @@ if (move_uploaded_file($rutaImg, $rutaCompleta)) {
     echo 'Ha ocurrido un error al cargar el archivo.';
 }
 
-$sql = $bbdd->prepare("INSERT INTO tarians (idUser, idTarian, txt, img01, fecha, hastags,retarian) VALUES(?,?,?,?,?,?,?)");
+$sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, img01, fecha, hastags,retarian) VALUES(?,?,?,?,?,?,?,?)");
 
-$sql->bind_param('iissssi', $idUser, $idTarian, $text, $rutaCompleta, $fechaHoy, $textHastags,$retarian);
+$sql->bind_param('iiissssi', $idCom, $idUser, $idTarian, $text, $rutaCompleta, $fechaHoy, $textHastags,$retarian);
 
 $sql->execute();
 
@@ -84,9 +88,9 @@ if (move_uploaded_file($rutaVideo, $rutaCompleta)) {
     echo 'Ha ocurrido un error al cargar el archivo.';
 }
 
-$sql = $bbdd->prepare("INSERT INTO tarians (idUser, idTarian, txt, video, fecha, hastags,retarian) VALUES(?,?,?,?,?,?,?)");
+$sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, video, fecha, hastags,retarian) VALUES(?,?,?,?,?,?,?,?)");
 
-$sql->bind_param('iissssi', $idUser, $idTarian, $text, $rutaCompleta, $fechaHoy, $textHastags,$retarian);
+$sql->bind_param('iiissssi', $idCom, $idUser, $idTarian, $text, $rutaCompleta, $fechaHoy, $textHastags,$retarian);
 
 $sql->execute();
 
@@ -108,9 +112,9 @@ if ($terminacion == 'pdf') {
         echo 'Ha ocurrido un error al cargar el archivo.';
     }
     
-    $sql = $bbdd->prepare("INSERT INTO tarians (idUser, idTarian, txt, pdf, fecha, hastags,retarian) VALUES(?,?,?,?,?,?,?)");
+    $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, pdf, fecha, hastags,retarian) VALUES(?,?,?,?,?,?,?,?)");
     
-    $sql->bind_param('iissssi', $idUser, $idTarian, $text, $rutaCompleta, $fechaHoy, $textHastags,$retarian);
+    $sql->bind_param('iiissssi', $idCom, $idUser, $idTarian, $text, $rutaCompleta, $fechaHoy, $textHastags,$retarian);
     
     $sql->execute();
     

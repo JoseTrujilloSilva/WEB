@@ -24,6 +24,7 @@ $bbdd = bbdd();
 
 $resultado = $bbdd->query("SELECT idTarian FROM favoritos");
 
+
 $row = $resultado->num_rows;
 
 if ($row==0) {
@@ -61,30 +62,34 @@ function inserta($bbdd, $fechaTarian, $idFav, $idTarian, $idUser, $img, $video, 
     echo 'entra en inserta';
     echo $idUser.'<br>';
 
+    $resultado01 = bbdd()->query("SELECT idCom FROM usuarios WHERE idUser = $idUser");
+
+    $idCom = $resultado01->fetch_array(MYSQLI_NUM)[0];
+
 
 switch (true) {
     case $img!=null:
-        $sql = $bbdd->prepare("INSERT INTO favoritos (idUser, idTarian, idFav, text, img01, fecha, autor) VALUES(?,?,?,?,?,?,?)");
+        $sql = $bbdd->prepare("INSERT INTO favoritos (idCom, idUser, idTarian, idFav, text, img01, fecha, autor) VALUES(?,?,?,?,?,?,?,?)");
 
-        $sql->bind_param('iiissss', $idUser, $idTarian, $idFav, $text, $img, $fechaTarian, $autor);
+        $sql->bind_param('iiiissss', $idCom, $idUser, $idTarian, $idFav, $text, $img, $fechaTarian, $autor);
         
         $sql->execute();
         
         $sql->close();
         break;
     case $video!=null:
-        $sql = $bbdd->prepare("INSERT INTO favoritos (idUser, idTarian, idFav, text, video, fecha, autor) VALUES(?,?,?,?,?,?,?)");
+        $sql = $bbdd->prepare("INSERT INTO favoritos (idCom, idUser, idTarian, idFav, text, video, fecha, autor) VALUES(?,?,?,?,?,?,?,?)");
 
-        $sql->bind_param('iiissss', $idUser, $idTarian, $idFav, $text, $video, $fechaTarian, $autor);
+        $sql->bind_param('iiiissss', $idCom, $idUser, $idTarian, $idFav, $text, $video, $fechaTarian, $autor);
         
         $sql->execute();
         
         $sql->close();
         break;
     case $pdf!=null:
-        $sql = $bbdd->prepare("INSERT INTO favoritos (idUser, idTarian, idFav, text, pdf, fecha, autor) VALUES(?,?,?,?,?,?,?)");
+        $sql = $bbdd->prepare("INSERT INTO favoritos (idCom, idUser, idTarian, idFav, text, pdf, fecha, autor) VALUES(?,?,?,?,?,?,?,?)");
     
-    $sql->bind_param('iisssss', $idUser, $idTarian, $idFav, $text, $pdf, $fechaTarian, $autor);
+    $sql->bind_param('iiisssss', $idCom, $idUser, $idTarian, $idFav, $text, $pdf, $fechaTarian, $autor);
     
     $sql->execute();
     
@@ -92,9 +97,9 @@ switch (true) {
         break;
     default:
         
-    $sql = $bbdd->prepare("INSERT INTO favoritos (idUser, idTarian, idFav, text, fecha, autor) VALUES(?,?,?,?,?,?)");
+    $sql = $bbdd->prepare("INSERT INTO favoritos (idCom, idUser, idTarian, idFav, text, fecha, autor) VALUES(?,?,?,?,?,?,?)");
 
-    $sql->bind_param('iiisss', $idUser,  $idTarian, $idFav, $text, $fechaTarian, $autor);
+    $sql->bind_param('iiiisss', $idCom, $idUser,  $idTarian, $idFav, $text, $fechaTarian, $autor);
 
     $sql->execute();
 

@@ -36,6 +36,10 @@ $resultadoNameImg = bbdd()->query("SELECT nombre, img FROM usuarios WHERE idUser
 
 $arrayImgName = $resultadoNameImg->fetch_array(MYSQLI_NUM);
 
+$resultado01 = bbdd()->query("SELECT idCom FROM usuarios WHERE idUser = $idUser");
+
+$idCom = $resultado01->fetch_array(MYSQLI_NUM)[0];
+
 
 $nameUser = $arrayImgName[0];
 $fotoUser = '.'.$arrayImgName[1];
@@ -48,27 +52,27 @@ echo $textRetarians;
 
 switch (true) {
     case $img!=null:
-        $sql = $bbdd->prepare("INSERT INTO tarians (idUser, idTarian, txt, img01, fecha, autor, textRetarian, retarian) VALUES(?,?,?,?,?,?,?,?)");
+        $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, img01, fecha, autor, textRetarian, retarian) VALUES(?,?,?,?,?,?,?,?,?)");
 
-        $sql->bind_param('iisssssi', $idUser, $idTarian, $text, $img, $fechaTarian, $autor, $textRetarians, $numRetarian);
+        $sql->bind_param('iiisssssi', $idCom, $idUser, $idTarian, $text, $img, $fechaTarian, $autor, $textRetarians, $numRetarian);
         
         $sql->execute();
         
         $sql->close();
         break;
     case $video!=null:
-        $sql = $bbdd->prepare("INSERT INTO tarians (idUser, idTarian, txt, video, fecha, autor, textRetarian, retarian) VALUES(?,?,?,?,?,?,?,?)");
+        $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, video, fecha, autor, textRetarian, retarian) VALUES(?,?,?,?,?,?,?,?,?)");
 
-        $sql->bind_param('iisssssi', $idUser, $idTarian, $text, $video, $fechaTarian, $autor, $textRetarians, $numRetarian);
+        $sql->bind_param('iiisssssi', $idCom, $idUser, $idTarian, $text, $video, $fechaTarian, $autor, $textRetarians, $numRetarian);
         
         $sql->execute();
         
         $sql->close();
         break;
     case $pdf!=null:
-        $sql = $bbdd->prepare("INSERT INTO tarians (idUser, idTarian, txt, pdf, fecha, autor, textRetarian, retarian) VALUES(?,?,?,?,?,?,?,?)");
+        $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, pdf, fecha, autor, textRetarian, retarian) VALUES(?,?,?,?,?,?,?,?,?)");
     
-    $sql->bind_param('iisssssi', $idUser, $idTarian, $text, $pdf, $fechaTarian, $autor, $textRetarians, $numRetarian);
+    $sql->bind_param('iiisssssi', $idCom, $idUser, $idTarian, $text, $pdf, $fechaTarian, $autor, $textRetarians, $numRetarian);
     
     $sql->execute();
     
@@ -76,9 +80,9 @@ switch (true) {
         break;
     default:
         
-    $sql = $bbdd->prepare("INSERT INTO tarians (idUser, idTarian, txt, fecha, autor, textRetarian, retarian) VALUES(?,?,?,?,?,?,?)");
+    $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, fecha, autor, textRetarian, retarian) VALUES(?,?,?,?,?,?,?,?)");
 
-    $sql->bind_param('iissssi', $idUser, $idTarian, $text, $fechaTarian, $autor, $textRetarians,$numRetarian);
+    $sql->bind_param('iiissssi', $idCom, $idUser, $idTarian, $text, $fechaTarian, $autor, $textRetarians,$numRetarian);
 
     $sql->execute();
 

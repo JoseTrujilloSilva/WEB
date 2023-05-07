@@ -18,10 +18,14 @@ bbddConexion();
 
 $bbdd = bbdd();
 
+$resultado01 = $bbdd->query("SELECT idCom FROM usuarios WHERE idUser = $idUser");
 
-$sql = $bbdd->prepare("INSERT INTO comentarios VALUES(?,?,?,?,?)");
+$idCom = $resultado01->fetch_array(MYSQLI_NUM)[0];
 
-mysqli_stmt_bind_param($sql, 'iiiss', $idUser, $idTarian, $idComment, $comentario, $fechaHoy);
+
+$sql = $bbdd->prepare("INSERT INTO comentarios VALUES(?,?,?,?,?,?)");
+
+mysqli_stmt_bind_param($sql, 'iiiiss', $idCom, $idUser, $idTarian, $idComment, $comentario, $fechaHoy);
 
 
 mysqli_stmt_execute($sql);

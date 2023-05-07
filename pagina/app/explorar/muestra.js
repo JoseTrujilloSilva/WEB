@@ -154,13 +154,6 @@ function codigo() {
         })
         .then(function(data){
 
-            console.log(data);
-    
-            console.log(data[contCarousel]);
-        
-           
-
-
             for (const value of data) {
                 value[0]!==null? texto = 1 : texto = 0;
                 value[1]!==null? foto = 1 : foto = 0; 
@@ -171,11 +164,13 @@ function codigo() {
             }
             
             let idTarian = carousel[contCarousel][0][5];
+            let fecha = carousel[contCarousel][0][4];
             
 
             $('#fechaTarian').html(data[0][4]);
             $('#idTarianComment').val(idTarian);
             $('#idTarianRetarians').val(idTarian);
+            recogeFavoritos(idTarian);
 
             if (contCarousel===data.length-1) {
                 $('#next').css('visibility', 'hidden');
@@ -205,6 +200,7 @@ function codigo() {
 
 
             muestraComments(idTarian);
+            favoritos(idTarian, fecha);
     
     
             switch (true) {
@@ -231,6 +227,8 @@ function codigo() {
                         $('#contenido').html(carousel[contCarousel][0][0]);
                         $('#contenido').css('color', 'red');
                         $('#nameUserCont').html('Retarians de: '+nameUser);
+                        $('#textFav').val(carousel[contCarousel][0][0]);
+                        $('#imgFav').val(data[contCarousel][1]);
                         $('#retarianContenido').html(data[contCarousel][7]);
                         $('#nombrePerfil2').html(data[contCarousel][6]);
                         console.log('Es una imagen prueba');
@@ -246,6 +244,8 @@ function codigo() {
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#contenedorPrinc').css('background-image', 'url('+'../mostrar/'+carousel[contCarousel][0][1]+')');
+                        $('#textFav').val(carousel[contCarousel][0][0]);
+                        $('#imgFav').val(carousel[contCarousel][0][1]);
                         $('#contenedorPrinc').css('background-size', 'cover');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }
@@ -262,6 +262,8 @@ function codigo() {
                         $('#contenedorPrinc').css('display', 'none');
                         $('#videoContent2').attr('loop', true);
                         $('#videoContent2').attr('controls', true);
+                        $('#textFav').val(carousel[contCarousel][0][0]);
+                        $('#videoFav').val(carousel[contCarousel][0][2]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#descripcion').css('color', 'red');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
@@ -275,6 +277,8 @@ function codigo() {
                         $('#videoContent').attr('src', '../mostrar/'+carousel[contCarousel][0][2]);
                         $('#videoContent').attr('loop', true);
                         $('#videoContent').attr('controls', true);
+                        $('#textFav').val(carousel[contCarousel][0][0]);
+                        $('#videoFav').val(carousel[contCarousel][0][2]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }
@@ -294,6 +298,8 @@ function codigo() {
                         $('#pdf').attr('href', '../mostrar/'+carousel[contCarousel][0][3]);
                         $('#pdf').css('display', 'inline');
                         $('#pdf').html(carousel[contCarousel][0][3]);
+                        $('#pdfFav').val(carousel[contCarousel][0][3]);
+                        $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#contenedorPrinc').css('background', 'white');
                         $('#contenedorPrinc').css('padding', '0');
@@ -302,6 +308,8 @@ function codigo() {
                     }else{
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#pdf').attr('href', '../mostrar/'+carousel[contCarousel][0][3]);
+                        $('#pdfFav').val(carousel[contCarousel][0][3]);
+                        $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#pdf').css('display', 'inline');
                         $('#pdf').html(carousel[contCarousel][0][3]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
@@ -323,6 +331,7 @@ function codigo() {
                         $('#nombrePerfil2').html(data[contCarousel][6]);
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#contenido').html(carousel[contCarousel][0][0]);
+                        $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#contenido').css('display', 'block');
                         $('#contenido').css('color', 'red');
                         $('#retarianContenido').html(data[contCarousel][7]);
@@ -356,8 +365,6 @@ function codigo() {
 
     dataRecogeComment.append('idTarian', idTarian);
 
-    console.log(dataRecogeComment);
-
     fetch('./comentarios/recogeComentario.php', {
         url: './comentarios/recogeComentario.php',
         method: 'POST',
@@ -367,8 +374,6 @@ function codigo() {
         return res.json();
     })
     .then(function(data){
-
-        console.log(data);
       
             for (const value of data) {
                
@@ -382,28 +387,67 @@ function codigo() {
 
    }
    
-   function formularioFavoritos(e) {
-        
-        e.preventDefault();
+   
+   function favoritos(idTarian, fecha) {
+    $('#idTarianFav').val(idTarian);
+    $('#fechaFav').val(fecha);
+}
 
-        var data = new FormData();
+function formularioFavoritos(e) {
+e.preventDefault();
+var data = new FormData();
 
-        data.append('fechaFav', $('#fechaFav').val());
-        data.append('fav', $('#fav').val());
-        data.append('idUserFav', $('#idUserFav').val());
-        data.append('idTarianFav', $('#idTarianFav').val());
-        data.append('textFav', $('#textFav').val());
-        data.append('imgFav', $('#imgFav').val());
-        data.append('videoFav', $('#videoFav').val());
-        data.append('pdfFav', $('#pdfFav').val());
-        data.append('autor', $('#autor').val());
-    
-        fetch('./favoritos/favoritos.php', {
-            url: './favoritos/favoritos.php',
+data.append('fechaFav', $('#fechaFav').val());
+data.append('fav', $('#fav').val());
+data.append('idUserFav', $('#idUserFav').val());
+data.append('idTarianFav', $('#idTarianFav').val());
+data.append('textFav', $('#textFav').val());
+data.append('imgFav', $('#imgFav').val());
+data.append('videoFav', $('#videoFav').val());
+data.append('pdfFav', $('#pdfFav').val());
+data.append('autor', $('#autor').val());
+
+fetch('../explorar/favoritos/favoritos.php', {
+    url: '../explorar/favoritos/favoritos.php',
+    method: 'POST',
+    body: data
+})
+.catch(function(error){
+    console.log(error);
+})
+}
+
+            function recogeFavoritos(idTarian) {
+
+            let dataRecoge = new FormData();
+
+            dataRecoge.append('idTarianRec', idTarian);
+            dataRecoge.append('idUserRec', idUser);
+
+            fetch('../explorar/favoritos/recogeFavoritos.php', {
+            url: '../explorar/favoritos/recogeFavoritos.php',
             method: 'POST',
-            body: data
-        })
-        
-   }
+            body: dataRecoge
+            })
+            .then(function(response) {
+            if(response.ok) {
+                return response.json()
+            } else {
+                throw "Error en la llamada Ajax";
+            }
+
+            })
+            .then(function(data) {
+            console.log(data);
+            if (data.length!==0) {
+                $('#estrella').css('fill', 'blue');
+                palancaEstrella = true;
+            }else{
+                $('#estrella').css('fill', 'white');
+                palancaEstrella = false;
+            }
+            
+            })
+            }
 
 }
