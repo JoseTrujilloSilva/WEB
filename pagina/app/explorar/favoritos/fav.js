@@ -21,6 +21,7 @@ function codigo() {
     $('#home').on('click', eventoHome);
     $('#atras').on('click', eventoAtras);
     $('#text').val('');
+    $('#idUserFav').val(idUser);
     
     $('#idUser').val(idUser);
     $('#nameUser').val(nameUser);
@@ -96,6 +97,7 @@ function codigo() {
             
             let fecha = data[0][8];
             let nameUser2 = data[contCarousel][9];
+            let idFav = data[contCarousel][3];
 
             if (contCarousel===data.length-1) {
                 $('#next').css('visibility', 'hidden');
@@ -125,6 +127,7 @@ function codigo() {
 
             $('#fechaTarian').html(fecha);
             $('#nombrePerfil2').html(nameUser2);
+            $('#idTarianFavDelete').val(idFav);
 
             switch (true) {
                 case contCarousel>0&&contCarousel<carousel.length-1:

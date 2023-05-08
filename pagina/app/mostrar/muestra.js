@@ -30,6 +30,7 @@ function codigo() {
     $('#fotoUser').val(fotoUser);
     $('#explorar').attr('href', '../explorar/explorar.html?idUser='+idUser);
     $('#favoritos').attr('href', '../explorar/favoritos/favoritos.html?idUser='+idUser+',fotoUser='+fotoUser+',nameUser='+nameUser);
+    $('#idUserTarian').val(idUser);
 
     $('#idUserComment').val(idUser);
    
@@ -135,6 +136,7 @@ function codigo() {
 
             $('#fechaTarian').html(data[0][4]);
             $('#idTarianComment').val(idTarian);
+            $('#idTarianDelete').val(idTarian);
 
             if (contCarousel===data.length-1) {
                 $('#next').css('visibility', 'hidden');
