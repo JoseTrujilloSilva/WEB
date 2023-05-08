@@ -218,8 +218,10 @@ function codigo() {
                     $('#videoContent').css('display', 'none');
                     $('#pdf').css('display', 'none');
                     $('#descripcion').html(carousel[contCarousel][0][2]);
-                    $('#contenedorPrinc').css('background-image', 'url(../mostrar/'+carousel[contCarousel][0][3]+')');
-                    $('#contenedorPrinc').css('background-size', 'cover');
+                    $('#contenedorPrinc').css('background-image', 'url('+'../mostrar/'+carousel[contCarousel][0][3]+')');
+                        $('#contenedorPrinc').css('background-size', 'contain');
+                        $('#contenedorPrinc').css('background-repeat', 'no-repeat');
+                        $('#contenedorPrinc').css('background-position', 'center');
                     $('#textFav').val(carousel[contCarousel][0][2]);
                     $('#imgFav').val(carousel[contCarousel][0][3]);
                   

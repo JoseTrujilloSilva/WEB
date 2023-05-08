@@ -185,7 +185,10 @@ function codigo() {
                     case carousel[contCarousel][2]===1:
                         if (data[contCarousel][8]==='1') {
                             $('#svgRetarians').css('display', 'block');
-                        $('#imagen').css('display', 'block');
+                            $('#contenedorPrinc').css('background-image', 'url('+'../mostrar/'+carousel[contCarousel][0][1]+')');
+                            $('#contenedorPrinc').css('background-size', 'contain');
+                            $('#contenedorPrinc').css('background-repeat', 'no-repeat');
+                            $('#contenedorPrinc').css('background-position', 'center');
                         $('#contenido').css('display', 'block');
                         $('#contenido').html(carousel[contCarousel][0][0]);
                         $('#contenido').css('color', 'red');
@@ -195,7 +198,6 @@ function codigo() {
                         console.log('Es una imagen prueba');
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#descripcion').html('');
-                        $('#imagen').attr('src', '../mostrar/'+data[contCarousel][1]);
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }else{
                         $('#nameUserCont').html('');
@@ -205,7 +207,9 @@ function codigo() {
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#contenedorPrinc').css('background-image', 'url('+'../mostrar/'+carousel[contCarousel][0][1]+')');
-                        $('#contenedorPrinc').css('background-size', 'cover');
+                        $('#contenedorPrinc').css('background-size', 'contain');
+                        $('#contenedorPrinc').css('background-repeat', 'no-repeat');
+                        $('#contenedorPrinc').css('background-position', 'center');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }
                         break;
