@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../../database.php';
+require_once '../../database.php';
 
 $idtarian = $_GET['idTarian'];
 $idUser = $_GET['idUserTarian'];
