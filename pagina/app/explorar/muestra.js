@@ -420,10 +420,10 @@ fetch('../explorar/favoritos/favoritos.php', {
             function recogeFavoritos(idTarian) {
 
             let dataRecoge = new FormData();
-
             dataRecoge.append('idTarianRec', idTarian);
-            dataRecoge.append('idUserRec', idUser);
-
+            dataRecoge.append('idUserRec', idUser2);
+                console.log(idTarian);
+                console.log(idUser2);
             fetch('../explorar/favoritos/recogeFavoritos.php', {
             url: '../explorar/favoritos/recogeFavoritos.php',
             method: 'POST',

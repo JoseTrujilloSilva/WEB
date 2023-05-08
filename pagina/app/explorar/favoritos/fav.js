@@ -86,16 +86,16 @@ function codigo() {
             console.log(data);
 
             for (const value of data) {
-                value[3]!==null? texto = 1 : texto = 0;
-                value[4]!==null? foto = 1 : foto = 0; 
-                value[5]!==null? video = 1 : video = 0; 
-                value[6]!==null? pdf = 1 : pdf = 0;           
+                value[4]!==null? texto = 1 : texto = 0;
+                value[5]!==null? foto = 1 : foto = 0; 
+                value[6]!==null? video = 1 : video = 0; 
+                value[7]!==null? pdf = 1 : pdf = 0;           
     
                 carousel.push([value, texto, foto, video, pdf]);
             }
             
-            let fecha = data[0][7];
-            let nameUser2 = data[contCarousel][8];
+            let fecha = data[0][8];
+            let nameUser2 = data[contCarousel][9];
 
             if (contCarousel===data.length-1) {
                 $('#next').css('visibility', 'hidden');
@@ -123,7 +123,6 @@ function codigo() {
                 document.getElementById('lastMovil').style.opacity = '100%';
             }
 
-
             $('#fechaTarian').html(fecha);
             $('#nombrePerfil2').html(nameUser2);
 
@@ -145,32 +144,32 @@ function codigo() {
                 switch (true) {
                     case carousel[contCarousel][2]===1:
                         console.log('Es una imagen');
-                        $('#fechaTarian').html(carousel[contCarousel][0][7]);
+                        $('#fechaTarian').html(carousel[contCarousel][0][8]);
                         $('#contenido').css('display', 'none');
                         $('#videoContent').css('display', 'none');
                         $('#pdf').css('display', 'none');
-                        $('#descripcion').html(carousel[contCarousel][0][3]);
-                        $('#contenedorPrinc').css('background-image', 'url('+'../mostrar/'+carousel[contCarousel][0][1]+')');
-                        $('#imgFav').val(carousel[contCarousel][0][1]);
+                        $('#descripcion').html(carousel[contCarousel][0][4]);
+                        $('#contenedorPrinc').css('background-image', 'url('+'../mostrar/'+carousel[contCarousel][0][5]+')');
+                        $('#imgFav').val(carousel[contCarousel][0][5]);
                         $('#contenedorPrinc').css('background-size', 'cover');
-                        $('#textFav').val(carousel[contCarousel][0][0]);
+                        $('#textFav').val(carousel[contCarousel][0][4]);
                        
     
                         break;
                     case carousel[contCarousel][3]===1:
     
-                    $('#fechaTarian').html(carousel[contCarousel][0][7]);
+                    $('#fechaTarian').html(carousel[contCarousel][0][8]);
                         $('#imagen').css('display', 'none');
                         $('#contenido').css('display', 'none');
                         $('#videoContent').css('display', 'block');
                         $('#contenido').css('display', 'none');
                         $('#pdf').css('display', 'none');
                         console.log('Es un video');
-                        $('#videoContent').attr('src', '../mostrar/'+carousel[contCarousel][0][2]);
+                        $('#videoContent').attr('src', '../mostrar/'+carousel[contCarousel][0][6]);
                         $('#videoContent').attr('loop', true);
                         $('#videoContent').attr('controls', true);
-                        $('#descripcion').html(carousel[contCarousel][0][3]);
-                        $('#textFav').val(carousel[contCarousel][0][0]);
+                        $('#descripcion').html(carousel[contCarousel][0][4]);
+                        $('#textFav').val(carousel[contCarousel][0][4]);
                        
     
                         break;
@@ -180,15 +179,14 @@ function codigo() {
     
                     case carousel[contCarousel][4]===1:
     
-                    $('#fechaTarian').html(carousel[contCarousel][0][7]);
-                    $('#pdf').attr('href', '../mostrar/'+carousel[contCarousel][0][3]);
-                    $('#pdfFav').val(carousel[contCarousel][0][3]);
+                    $('#fechaTarian').html(carousel[contCarousel][0][8]);
+                    $('#pdf').attr('href', '../mostrar/'+carousel[contCarousel][0][7]);
                     $('#pdf').css('display', 'inline');
-                    $('#pdf').html(carousel[contCarousel][0][3]);
+                    $('#pdf').html(carousel[contCarousel][0][7]);
                     $('#videoContent').css('display', 'none');
                     $('#imagen').css('display', 'none');
                     $('#contenido').css('display', 'none');
-                    $('#descripcion').html(carousel[contCarousel][0][3]);
+                    $('#descripcion').html(carousel[contCarousel][0][4]);
                     $('#textFav').val(carousel[contCarousel][0][0]);
                     $('#contenedorPrinc').css('background', 'white');
                     $('#contenedorPrinc').css('padding', '0');
@@ -203,9 +201,9 @@ function codigo() {
     
                     default:
     
-                    $('#fechaTarian').html(carousel[contCarousel][0][7]);
-                        $('#contenido').html(carousel[contCarousel][0][3]);
-                        $('#textFav').val(carousel[contCarousel][0][0]);
+                    $('#fechaTarian').html(carousel[contCarousel][0][8]);
+                        $('#contenido').html(carousel[contCarousel][0][4]);
+                        $('#textFav').val(carousel[contCarousel][0][1]);
                         $('#contenido').css('display', 'block');
                         $('#videoContent').css('display', 'none');
                         $('#imagen').css('display', 'none');

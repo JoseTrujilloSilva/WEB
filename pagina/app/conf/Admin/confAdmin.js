@@ -12,8 +12,19 @@ function codigo() {
     $('#toggle').on('change', eventoToogle);
     $('#formCuentaPasword').on('submit', e=>eventoComparaCont(e));
     $('#atras').attr('href', '../../accesPrinc.php?id='+idUser);
-    $('#formComPassword').on('submit',  e=>eventoComparaContCom(e))
+    $('#formComPassword').on('submit',  e=>eventoComparaContCom(e));
+
+    for (const value of document.getElementsByClassName('ojoPassword')) {
+        value.addEventListener('click', muestraCont);
+        value.style.cursor = "pointer";
+    }
     
+    for (const value of document.getElementsByClassName('ojoPassword2')) {
+        value.addEventListener('click', muestraCont2);
+        value.style.cursor = "pointer";
+    }
+
+
     for (const value of document.getElementsByClassName('idUser')) {
         value.value = idUser;
     }
@@ -176,19 +187,51 @@ function codigo() {
             return res.json();
         })
         .then(function(data){
-            for (const value of document.getElementsByName('bloq[]')) {
-                for (const value2 of data) {
-                    if (value2 == value.value) {
-                        document.getElementById('bloq1').checked = true;
-                        document.getElementById('span'+value.value+'').innerHTML = 'Si';
-                    }else{
-                        document.getElementById('span'+value.value+'').innerHTML = 'No';
+            console.log(data)
+            if (data !== null) {
+                for (const value of document.getElementsByName('bloq[]')) {
+                    for (const value2 of data) {
+                        if (value2 == value.value) {
+                            document.getElementById('bloq1').checked = true;
+                            document.getElementById('span'+value.value+'').innerHTML = 'Si';
+                        }else{
+                            document.getElementById('span'+value.value+'').innerHTML = 'No';
+                        }
                     }
                 }
             }
+            
         })
 
     })
+
+
+    function muestraCont() {
+        console.log(this);
+        let input = this.nextElementSibling;
+        
+        if (input.type === 'password') {
+            input.type = 'text';
+        }else{
+            input.type = 'password';
+        }
+
+        
+    }
+
+
+    function muestraCont2() {
+        
+        let input = this.nextElementSibling;
+        
+        if (input.type === 'password') {
+            input.type = 'text';
+        }else{
+            input.type = 'password';
+        }
+
+        
+    }
 
     
 
