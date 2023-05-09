@@ -34,7 +34,7 @@ function codigo() {
     $('#misTarians').attr('href', '../misTarians.php?id='+idUser2);
     $('#estrella').on('click', eventoEstrella);
     $('#formFav').on('submit', e=> formularioFavoritos(e));
-    $('#favoritos').attr('href', './favoritos/favoritos.html?idUser='+idUser+',fotoUser='+fotoUser+',nameUser='+nameUser);
+    $('#favoritos').attr('href', './favoritos/favUrl.php?idUser='+idUser2);
     $('#comentarios').on('click', eventoComentarios);
     $('#closeComment').on('click', eventoComentarios);
     $('#retarians').on('click', eventoRetarians);

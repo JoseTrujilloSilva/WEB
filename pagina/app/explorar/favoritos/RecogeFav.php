@@ -6,7 +6,6 @@ bbddConexion();
 
 $arrayJson = array();
 
-$idTarian = $_POST['idTarianRec'];
 $idUser = $_POST['idUserRec'];
 
 $resultado = bbdd()->query("SELECT * FROM favoritos WHERE idUser = $idUser");
