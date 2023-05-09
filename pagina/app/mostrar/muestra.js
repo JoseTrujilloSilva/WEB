@@ -29,7 +29,7 @@ function codigo() {
     $('#nameUser').val(nameUser);
     $('#fotoUser').val(fotoUser);
     $('#explorar').attr('href', '../explorar/explorar.html?idUser='+idUser);
-    $('#favoritos').attr('href', '../explorar/favoritos/favoritos.html?idUser='+idUser+',fotoUser='+fotoUser+',nameUser='+nameUser);
+    $('#favoritos').attr('href', '../explorar/favoritos/favURL.php?idUser='+idUser);
     $('#idUserTarian').val(idUser);
 
     $('#idUserComment').val(idUser);

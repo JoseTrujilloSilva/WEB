@@ -21,8 +21,12 @@ for ($i=0; $i < $row; $i++) {
     $rowsBloq = $resultBloq->fetch_array(MYSQLI_NUM);
     $rows = $resultado->fetch_array(MYSQLI_NUM);
 
-    if ($rowsBloq[0] == $rows[8]) {
-        array_push($arrayResultadoJson, 0);
+    if (!empty($rowsBloq[0])) {
+        if ($rowsBloq[0] == $rows[8]) {
+            array_push($arrayResultadoJson, 0);
+        }else{
+            array_push($arrayResultadoJson, $rows);
+        }
     }else{
         array_push($arrayResultadoJson, $rows);
     }

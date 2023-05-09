@@ -19,7 +19,7 @@ function codigo() {
     $('#fotoUser').val(fotoUser);
     $('#explorar').attr('href','./explorar/explorar.html?idUser='+idUser+'?rutaFotoUser='+fotoUser+'?nameUser='+nameUser);
     $('#misTarians').attr('href', './mostrar/muestraTarians.html?idUser='+idUser+', rutaFotoUser='+fotoUser+', nameUser='+nameUser);
-    $('#favoritos').attr('href', './explorar/favoritos/favoritos.html?idUser='+idUser+',fotoUser='+fotoUser+',nameUser='+nameUser);
+    $('#favoritos').attr('href', './explorar/favoritos/favURL.php?idUser='+idUser);
 
     $('#confi').attr('href', 'confi.php?idUser='+idUser);
 

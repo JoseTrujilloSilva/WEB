@@ -10,9 +10,9 @@ function codigo() {
     var palancaEstrella = false;
     
     
-    let nameUser = window.location.href.split('?')[1].split(',')[2].split('=')[1];
+    let nameUser = window.location.href.split('?')[1].split(',')[0].split('=')[1];
     let fotoUser = '../'+window.location.href.split('?')[1].split(',')[1].split('=')[1];
-    var idUser = window.location.href.split('?')[1].split(',')[0].split('=')[1];
+    var idUser = window.location.href.split('?')[1].split(',')[2].split('=')[1];
 
     $('#nextMovil').on('click', eventoCarouselNext);
     $('#lastMovil').on('click', eventoCarouselAtras);

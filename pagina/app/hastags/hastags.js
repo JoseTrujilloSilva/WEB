@@ -34,7 +34,7 @@ function codigo() {
     $('#closeComment').on('click', eventoComentarios);
     $('#retarians').on('click', eventoRetarians);
     $('#closeRetarians').on('click', eventoRetarians);
-    $('#favoritos').attr('href', '../explorar/favoritos/mueveFavoritos.php?idUser='+idUser);
+    $('#favoritos').attr('href', '../explorar/favoritos/favURL.php?idUser='+idUser);
     $('#url').val(window.location.href);
     $('#idUserRetarians').val(idUser);
 
