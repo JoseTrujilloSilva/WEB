@@ -293,6 +293,8 @@ function codigo() {
 
         function muestraComments(idTarian) {
 
+            $('#muestraComentarios').html('');
+
             fetch('../explorar/comentarios/'+idTarian+'Comment.json')
             .then(function(res){
                 return res.json();

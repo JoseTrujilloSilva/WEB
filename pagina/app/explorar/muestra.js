@@ -30,7 +30,7 @@ function codigo() {
     $('#idUser').val(idUser);
     $('#nameUser').val(nameUser);
     $('#fotoUser').val(fotoUser);
-    $('#explorar').attr('href', '../explorar/explorar.html?idUser='+idUser);
+    $('#explorar').attr('href', '../explorar/explorar.html?idUser='+idUser2);
     $('#misTarians').attr('href', '../misTarians.php?id='+idUser2);
     $('#estrella').on('click', eventoEstrella);
     $('#formFav').on('submit', e=> formularioFavoritos(e));
@@ -366,6 +366,8 @@ function codigo() {
     }
 
    function muestraComments(idTarian) {
+
+    $('#muestraComentarios').html('');
 
     $('#idTarian').val(idTarian);
 
