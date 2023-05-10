@@ -172,6 +172,8 @@ function codigo() {
             $('#idTarianRetarians').val(idTarian);
             recogeFavoritos(idTarian);
 
+            console.log(idTarian);
+
             if (contCarousel===data.length-1) {
                 $('#next').css('visibility', 'hidden');
                 document.getElementById('nextMovil').disabled = true;
