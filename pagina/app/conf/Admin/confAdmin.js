@@ -168,12 +168,10 @@ function codigo() {
         let contCHeck = 0;
 
         for (const value of data) {
-            document.getElementById('formDesbUsuarios').innerHTML += '<div class="row p-4 align-items-center"><div class="col-auto"><input type="hidden" name="idUser" id="idUser" value="'+idUser+'"><input type="checkbox" value="'+value[2]+'" name="bloq[]" id="bloq'+contCHeck+++'"></div><div class="col-10 col-sm-auto my-3 my-sm-0"><img class="rounded-circle" width="50" height="50" src="../../../'+value[1]+'" alt=""></div><div class="col-3 col-lg-7"><span>'+value[0]+'</span></div><div class="col text-end mx-5"><span>Bloqueado: </span><span id="span'+value[2]+'"></span></div></div>';
-            document.getElementById('span'+value[2]+'').innerHTML = 'No';
-        }
+            document.getElementById('formDesbUsuarios').innerHTML += '<div class="row p-4 align-items-center"><div class="col-auto"><input type="hidden" name="idUser" id="idUser" value="'+idUser+'"><input type="checkbox" value="'+value[2]+'" name="bloq[]" id="bloq'+contCHeck+++'"></div><div class="col-3 col-sm-auto my-3 my-sm-0"><img class="rounded-circle" width="50" height="50" src="../../../'+value[1]+'" alt=""></div><div class="col-5 col-sm-7"><span>'+value[0]+'</span></div><div class="col-12 col-sm-auto text-center text-sm-end mx-0 mx-lg-5 my-2 my-sm-0"><span>Bloqueado: </span><span id="span'+value[2]+'"></span></div></div>';
 
-        for (const value of document.getElementsByName('bloq')) {
-            value.addEventListener('click', eventoChecked);
+
+            document.getElementById('span'+value[2]+'').innerHTML = 'No';
         }
         
         document.getElementById('formDesbUsuarios').innerHTML += '<button class="btn btn-danger my-3 w-100" type="submit">Bloquear/Desbloquear</button>';
@@ -204,6 +202,54 @@ function codigo() {
         })
 
     })
+
+
+
+
+    let dataAdmin = new FormData();
+
+    dataAdmin.append('idUser', idUser);
+
+    fetch('./AdminBack/Usuarios/users.php', {
+        url: './AdminBack/Usuarios/users.php',
+        method: 'POST',
+        body: dataAdmin
+    })
+    .then(function(res){
+        return res.json();
+    })
+    .then(function(data){
+        let contCHeck = 0;
+
+        for (const value of data) {
+            document.getElementById('adminUsers').innerHTML += '<div class="row p-4 align-items-center"><div class="col-auto"><input type="hidden" name="idUser" id="idUser" value="'+idUser+'"><input type="checkbox" value="'+value[2]+'" name="userDelete[]" id="userDelete'+contCHeck+++'"></div><div class="col-3 col-sm-auto my-3 my-sm-0"><img class="rounded-circle" width="50" height="50" src="../../../'+value[1]+'" alt=""></div><div class="col-5 col-sm-7"><span>'+value[0]+'</span></div></div>';
+        }
+        
+        document.getElementById('adminUsers').innerHTML += '<div clas="row"><div class="col px-3"><button class="btn btn-danger my-3 w-100" type="submit">Eliminar Usuarios</button><div></div>';
+    })
+
+
+
+    fetch('./AdminBack/Comments/comments.php', {
+        url: './AdminBack/Comments/comments.php',
+        method: 'POST',
+        body: dataAdmin
+    })
+    .then(function(res){
+        return res.json();
+    })
+    .then(function(data){
+        let contCHeck = 0;
+
+        for (const value of data) {
+            console.log(value);
+            document.getElementById('adminComments').innerHTML += '<div class="row p-4 align-items-center"><div class="col-auto"><input type="hidden" name="idUser" id="idUser" value="'+idUser+'"></div><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[3]+'" name="comments[]" id="comentarioDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[2]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[1]+'</span></div></div>';
+        }
+        
+        document.getElementById('adminComments').innerHTML += '<div clas="row"><div class="col px-3"><button class="btn btn-danger my-3 w-100" type="submit">Eliminar Comentarios</button><div></div>';
+    })
+
+
 
 
     function muestraCont() {
