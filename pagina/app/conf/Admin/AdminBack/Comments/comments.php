@@ -26,6 +26,7 @@ for ($i=0; $i < $row; $i++) {
     
 }
 
-echo json_encode($arrayResultados);
+var_dump($arrayResultados);
+
 
 ?>
