@@ -22,11 +22,9 @@ for ($i=0; $i < $row; $i++) {
     $arraynew = array();
     array_push($arraynew, $rows[0], $rows[1], $rows[2], $rows[3]);
     array_push($arrayResultados, $arraynew);
-
-    
 }
 
-var_dump($arrayResultados);
+echo json_encode($arrayResultados);
 
 
 ?>

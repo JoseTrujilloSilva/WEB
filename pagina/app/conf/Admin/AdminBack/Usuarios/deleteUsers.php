@@ -7,6 +7,7 @@ $bbdd = bbdd();
 
 $idUser = $_POST['idUser'];
 $array_idUserDelete = $_POST['userDelete'];
+$arrayDevuelve = array();
 
 echo $idUser;
 
@@ -16,8 +17,12 @@ $idCom = $resultCom->fetch_array(MYSQLI_NUM)[0];
 
 $resultadoDevuelve = $bbdd->query("SELECT idUser FROM usuarios WHERE idCom = $idCom");
 
-$arrayDevuelve = $resultadoDevuelve->fetch_array(MYSQLI_NUM);
+$row = $resultadoDevuelve->num_rows;
 
+for ($i=0; $i < $row; $i++) { 
+    $rows = $resultadoDevuelve->fetch_array(MYSQLI_NUM);
+    array_push($arrayDevuelve, $rows[0]);
+}
 
 if ($array_idUserDelete != null) {
             foreach ($arrayDevuelve as $value) {
