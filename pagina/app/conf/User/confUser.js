@@ -218,7 +218,7 @@ function codigo() {
         let contCHeck = 0;
 
         for (const value of data) {
-            document.getElementById('deleteUserTariansForm').innerHTML += '<div class="row p-4 align-items-center"><div class="col-auto"><input type="hidden" name="idUserTarians" id="idUserTarians" value="'+idUser+'"></div><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[6]+'" name="tarians[]" id="tariansDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[5]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[4]+'</span></div></div>';
+            document.getElementById('deleteUserTariansForm').innerHTML += '<div class="row p-4 align-items-center"><div class="col-auto"><input type="hidden" name="idUserTariansUser" id="idUserTariansUser" value="'+idUser+'"></div><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[6]+'" name="tariansUser[]" id="tariansDelete2'+contCHeck+++'"><span style="padding-left: 10px;">'+value[5]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[4]+'</span></div></div>';
         }
         
         document.getElementById('deleteUserTariansForm').innerHTML += '<div clas="row"><div class="col px-3"><button class="btn btn-danger my-3 w-100" type="submit">Eliminar Tarians</button><div></div>';

@@ -9,9 +9,10 @@ ini_set('error_reporting', E_ALL);
 bbddConexion();
 $bbdd = bbdd();
 
-$idUser = $_POST['idUserTarians'];
-$array_idTariansDelete = $_GET['tarians'];
-var_dump($array_idTarianDelete);
+$array_idTarians = array();
+$idUser = $_GET['idUserTariansUser'];
+$array_idTarians = $_GET['tariansUser'];
+var_dump($array_idTarians);
 $arrayDevuelve = array();
 
 $resultadoDevuelve = $bbdd->query("SELECT idTarian FROM tarians WHERE idUser = $idUser");
@@ -25,16 +26,13 @@ for ($i=0; $i < $row; $i++) {
 
 var_dump($arrayDevuelve);
 
-if ($array_idTarianDelete != null) {
+if ($array_idTarians != null) {
     echo 'Entra en no nulo';
             foreach ($arrayDevuelve as $value) {
-                echo $value;
-                foreach ($array_idTariansDelete as $value2) {
+                foreach ($array_idTarians as $value2) {
                     if($value === $value2){
                         $bbdd->query("DELETE FROM tarians WHERE idTarian = $value2");
-                        /*
                        header('Location: ./tariansResult.html?id='.$idUser);
-                       */
                     }
             }
             }
