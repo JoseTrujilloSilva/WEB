@@ -29,7 +29,7 @@ if ($array_idUserDelete != null) {
                 foreach ($array_idUserDelete as $value2) {
                     if($value === $value2){
                         $bbdd->query("DELETE FROM usuarios WHERE idUser = $value2");
-                        echo 'Eliminado con éxito';
+                        header('Location: ./UsuariosResult.html?id='.$idUser);
                     }
             }
             }

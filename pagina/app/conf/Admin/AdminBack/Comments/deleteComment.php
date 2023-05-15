@@ -35,7 +35,7 @@ if ($array_idCommentsDelete != null) {
                 foreach ($array_idCommentsDelete as $value2) {
                     if($value === $value2){
                         $bbdd->query("DELETE FROM comentarios WHERE idComentario = $value2");
-                        echo 'Eliminado con éxito';
+                        header('Location: ./comentariosResult.html?id='.$idUser);
                     }
             }
             }
