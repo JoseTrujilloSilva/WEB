@@ -202,82 +202,14 @@ function codigo() {
 
     })
 
+    let dataUser = new FormData();
 
-
-
-    let dataAdmin = new FormData();
-
-    dataAdmin.append('idUser', idUser);
-
-    fetch('./AdminBack/Usuarios/users.php', {
-        url: './AdminBack/Usuarios/users.php',
-        method: 'POST',
-        body: dataAdmin
-    })
-    .then(function(res){
-        return res.json();
-    })
-    .then(function(data){
-        let contCHeck = 0;
-
-        for (const value of data) {
-            document.getElementById('adminUsers').innerHTML += '<div class="row p-4 align-items-center"><div class="col-auto"><input type="hidden" name="idUser" id="idUser" value="'+idUser+'"><input type="checkbox" value="'+value[2]+'" name="userDelete[]" id="userDelete'+contCHeck+++'"></div><div class="col-3 col-sm-auto my-3 my-sm-0"><img class="rounded-circle" width="50" height="50" src="../../../'+value[1]+'" alt=""></div><div class="col-5 col-sm-7"><span>'+value[0]+'</span></div></div>';
-        }
-        
-        document.getElementById('adminUsers').innerHTML += '<div clas="row"><div class="col px-3"><button class="btn btn-danger my-3 w-100" type="submit">Eliminar Usuarios</button><div></div>';
-    })
-
-
-
-    fetch('./AdminBack/Comments/comments.php', {
-        url: './AdminBack/Comments/comments.php',
-        method: 'POST',
-        body: dataAdmin
-    })
-    .then(function(res){
-        return res.json();
-    })
-    .then(function(data){
-        let contCHeck = 0;
-
-
-        for (const value of data) {
-
-            document.getElementById('adminComments').innerHTML += '<div class="row p-4 align-items-center"><div class="col-auto"><input type="hidden" name="idUserComments" id="idUserComments" value="'+idUser+'"></div><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[3]+'" name="comments[]" id="comentarioDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[2]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[1]+'</span></div></div>';
-        }
-        
-        document.getElementById('adminComments').innerHTML += '<div clas="row"><div class="col px-3"><button class="btn btn-danger my-3 w-100" type="submit">Eliminar Comentarios</button><div></div>';
-    })
-
-
-
-    fetch('./AdminBack/Tarians/tarians.php', {
-        url: './AdminBack/Tarians/tarians.php',
-        method: 'POST',
-        body: dataAdmin
-    })
-    .then(function(res){
-        return res.json();
-    })
-    .then(function(data){
-        let contCHeck = 0;
-
-
-        for (const value of data) {
-            document.getElementById('adminTarians').innerHTML += '<div class="row p-4 align-items-center"><div class="col-auto"><input type="hidden" name="idUserTarians" id="idUserTarians" value="'+idUser+'"></div><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[6]+'" name="tarians[]" id="tariansDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[5]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[4]+'</span></div></div>';
-        }
-        
-        document.getElementById('adminTarians').innerHTML += '<div clas="row"><div class="col px-3"><button class="btn btn-danger my-3 w-100" type="submit">Eliminar Tarians</button><div></div>';
-    })
-
-
-
-
+    dataUser.append('idUser', idUser);
 
     fetch('../ConfigPerfil/tarians/tarians.php', {
         url: '../ConfigPerfil/tarians/tarians.php',
         method: 'POST',
-        body: dataAdmin
+        body: dataUser
     })
     .then(function(res){
         return res.json();
@@ -297,7 +229,7 @@ function codigo() {
     fetch('../ConfigPerfil/comentarios/comments.php', {
         url: '../ConfigPerfil/comentarios/comments.php',
         method: 'POST',
-        body: dataAdmin
+        body: dataUser
     })
     .then(function(res){
         return res.json();
