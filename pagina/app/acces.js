@@ -20,6 +20,7 @@ function codigo() {
     $('#explorar').attr('href','./explorar/explorar.html?idUser='+idUser+'?rutaFotoUser='+fotoUser+'?nameUser='+nameUser);
     $('#misTarians').attr('href', './mostrar/muestraTarians.html?idUser='+idUser+', rutaFotoUser='+fotoUser+', nameUser='+nameUser);
     $('#favoritos').attr('href', './explorar/favoritos/favURL.php?idUser='+idUser);
+    $('#botonVideo').on('click', eventoVideos);
 
     $('#confi').attr('href', 'confi.php?idUser='+idUser);
 
@@ -54,22 +55,6 @@ function codigo() {
                 $('#text').val('Descripción: ');
         }
 
-
-        if (extension === 'mp4') {
-                let urlArch = URL.createObjectURL(archivo);
-                $('.card')[0].style.display = 'none';
-                $('#colFiles').css('visibility', 'visible');
-                $('.card')[1].style.display = 'flex';
-                $('#video1').removeAttr('width');
-                $('#video1').removeAttr('height');
-                $('#footer').css('height', '900px');
-                $('#video1').attr('class', 'img-fluid');
-                $('#video1').attr('src', urlArch);
-                $('#imgs01').attr('src', '');
-                $('#pdf1').attr('src', '');
-                $('#text').val('Descripción: ');
-        }
-
         if (extension === 'pdf') {
                 let urlArch = URL.createObjectURL(archivo);
                 $('#colFiles').css('visibility', 'visible');
@@ -85,6 +70,63 @@ function codigo() {
         }
 
     }
+
+    function eventoVideos() {
+        console.log($('#tipoVideo').val());
+        $('#colFiles').css('visibility', 'visible');
+        $('#contenedorWarning').css('margin-bottom', '20vh');
+        if ($('#tipoVideo').val() ==='notype') {
+            $('#card02').css('display', 'flex');
+            $('#card02').css('width', '100%');
+            $('#video').css('display', 'none');
+            $('#video').css('width', '0px');
+            $('#twitch-embed').css('display', 'block');
+            $('#twitch-embed').css('width', '100%');
+            $('#twitch-embed').css('height', '315px');
+            $('#twitch-embed').html($('#url').val());
+            $('iframe').css('width', '100%');
+        }
+
+        if ($('#tipoVideo').val() ==='youtube') {
+            $('#card01').css('display', 'flex');
+            $('#card01').css('width', '100%');
+            $('#video').css('display', 'block');
+            $('#video').attr('width', '100%');
+            $('#video').attr('height', '315px');
+            let dataUrl = $('#url').val().split('?')[1].split('=')[1];
+            console.log(dataUrl);
+            $('#video').attr('src', 'https://www.youtube.com/embed/'+dataUrl);
+        }
+
+        if ($('#tipoVideo').val() == 'odysee') {
+            $('#card01').css('display', 'flex');
+            $('#card01').css('width', '100%');
+            $('#video').css('display', 'block');
+            $('#video').attr('width', '100%');
+            $('#video').attr('height', '315px');
+            console.log($('#url').val());
+            let dataUrl = $('#url').val().split('@')[1];
+            console.log(dataUrl);
+            $('#video').attr('src', 'https://odysee.com/$/embed/@'+dataUrl+'?r=HXTsPBNm28GzHyfHBiSZFjZdP7fVRhXp');
+        }
+
+        if ($('#tipoVideo').val() == 'twitch') {
+            let dataTwitch = $('#url').val().split('.tv/')[1].split('/')[1];
+            $('#card02').css('display', 'flex');
+            $('#card02').css('width', '100%');
+            $('#video').css('display', 'none');
+            $('#video').css('width', '0px');
+            $('#twitch-embed').css('display', 'block');
+            $('#twitch-embed').css('width', '100%');
+                new Twitch.Player("twitch-embed", {
+                video: dataTwitch
+                })
+            $('iframe').css('width', '100%');
+            $('iframe').css('height', '315px');
+        }
+    }
+
+
 
 
     function eventoHome() {

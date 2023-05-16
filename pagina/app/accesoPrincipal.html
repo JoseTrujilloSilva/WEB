@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../boostrap_arch/bootstrap.min.css">
     <script src="../../boostrap_arch/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./css/accesPrinc.css">
+    <script defer src="https://player.twitch.tv/js/embed/v1.js"></script>
     <script src="./acces.js"></script>
     <title>Acceso Principal De Usuario</title>
 </head>
@@ -48,7 +49,7 @@
                 </div>
             </div>
         </header>
-        <main>
+        <main style="padding-bottom: 20vh;">
             <div class="row text-center justify-content-center align-items-center mx-lg-5 mx-0">
                 <div class="bg-light" style="border-radius: 8px; width: 200px;">
                     <div class="mt-3">
@@ -60,7 +61,7 @@
                     <span id="nombrePerfil"></span>
                     </div>
                 </div>
-                <div class="mt-5 mt-lg-0 mx-0 mx-lg-4 bg-warning mb-5 mb-lg-0" style="border-radius: 8px; margin-left: 20px; width: 600px;">
+                <div id="contenedorWarning" class="mt-5 mt-lg-0 mx-0 mx-lg-4 bg-warning mb-5 mb-lg-0" style="border-radius: 8px; margin-left: 20px; width: 600px;">
                     <div class="row">
                         <form id="form" action="./mostrar/insertaTarians.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="hastags" id="hastags">
@@ -76,11 +77,10 @@
                             <textarea id="textArea" class="col-12" name="text" maxlength="500" id="text" rows="10" placeholder="Estoy escribiendo mi primer post....(puedes escribir un máximo de 500 palabras.)" required></textarea>
                             <div class="row">
                                 <div class="col">
-                                    
                                 </div>
                             </div>
                             <div class="row">
-                                <div id="colFiles" class="col d-flex justify-content-center align-items-center p-2" style="visibility: hidden;">
+                                <div id="colFiles" class="col p-2 text-center" style="visibility: hidden;">
                                     <div class="card w-auto" style="display: none;">
                                         <img id="imgs01" width="0px" height="0px" src="" alt="" style="opacity: 100%;">
                                         <div class="card-img-overlay d-flex justify-content-end align-items-start">
@@ -88,19 +88,13 @@
                                         </div>
                                       </div>
                                     
-                                      <div class="card" style="display: none;">    
+                                      <div id="card01" style="display: none;">    
                                         <iframe id="video" src="" width="0px" height="0px" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                        <div class="card-img-overlay d-flex justify-content-end align-items-start">
-                                            <a href="#" class="btn btn-warning cerrar" title="Pulsa para eliminar el video" ><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 96 960 960" width="30"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a>
-                                          </div>
                                       </div>
-                                      <div class="card" style="display: none;">    
+                                      <div id="card02" style="display: none;">    
                                         <div  width="0" height="0" id="twitch-embed"></div>
-                                        <div class="card-img-overlay d-flex justify-content-end align-items-start">
-                                            <a href="#" class="btn btn-warning cerrar" title="Pulsa para eliminar el video" ><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 96 960 960" width="30"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a>
-                                          </div>
                                       </div>
-                                    <iframe id="pdf1" style="opacity: 100%;" width="0px" height="0px" src=""   frameborder="0"></iframe>
+                                    <iframe id="pdf1" style="opacity: 100%; display: none;" width="0px" height="0px" src=""   frameborder="0"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +110,7 @@
                                 <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
                               </svg></a>
                                                             <!-- Button to Open the Modal -->
-                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myvideos" style="background: none; border: none;">
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myvideos" style="background: none; border: none; box-shadow: none;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#212529" class="bi bi-camera-video-fill" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/>
                                       </svg>
@@ -151,7 +145,7 @@
                                 
                                         <!-- Modal footer -->
                                         <div class="modal-footer">
-                                        <button type="button" class="btn bg-primary text-light w-100" data-bs-dismiss="modal">Enviar</button>
+                                        <button id="botonVideo" type="button" class="btn bg-primary text-light w-100" data-bs-dismiss="modal">Enviar</button>
                                         </div>
                                 
                                     </div>
@@ -185,7 +179,7 @@
                                     <br>
                                     - FOTOS: PNG, JPG Y JPEG
                                     <br>
-                                    - VIDEO: MP4
+                                    - VIDEO: A TRAVÉS DE LA URL DEL VIDEO, NO ADMITE MP4
                                     <br>
                                     - ARCHIVOS: PDF
                                     <br>
