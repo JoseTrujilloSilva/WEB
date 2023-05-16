@@ -8,7 +8,7 @@ bbddConexion();
 
 $arrayResultado = array();
 
-$resultado = bbdd()->query("SELECT txt, img01, video, pdf, fecha, idTarian, autor, textRetarian, retarian FROM tarians WHERE idUser = $idUser ORDER BY fecha DESC");
+$resultado = bbdd()->query("SELECT txt, img01, video, pdf, fecha, idTarian, autor, textRetarian, retarian, tipoVideo FROM tarians WHERE idUser = $idUser ORDER BY fecha DESC");
 
 $row = $resultado->num_rows;
 

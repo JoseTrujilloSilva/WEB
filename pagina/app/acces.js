@@ -85,6 +85,8 @@ function codigo() {
             $('#twitch-embed').css('height', '315px');
             $('#twitch-embed').html($('#url').val());
             $('iframe').css('width', '100%');
+            $('#videoURL').val($('#url').val());
+            $('#videoTipo').val($('#tipoVideo').val());
         }
 
         if ($('#tipoVideo').val() ==='youtube') {
@@ -93,8 +95,10 @@ function codigo() {
             $('#video').css('display', 'block');
             $('#video').attr('width', '100%');
             $('#video').attr('height', '315px');
-            let dataUrl = $('#url').val().split('?')[1].split('=')[1];
-            console.log(dataUrl);
+            let dataUrl = $('#url').val().split('?')[1].split('v=')[1];
+            console.log('https://www.youtube.com/embed/'+dataUrl);
+            $('#videoURL').val(dataUrl);
+            $('#videoTipo').val($('#tipoVideo').val());
             $('#video').attr('src', 'https://www.youtube.com/embed/'+dataUrl);
         }
 
@@ -107,6 +111,8 @@ function codigo() {
             console.log($('#url').val());
             let dataUrl = $('#url').val().split('@')[1];
             console.log(dataUrl);
+            $('#videoURL').val(dataUrl);
+            $('#videoTipo').val($('#tipoVideo').val());
             $('#video').attr('src', 'https://odysee.com/$/embed/@'+dataUrl+'?r=HXTsPBNm28GzHyfHBiSZFjZdP7fVRhXp');
         }
 
@@ -123,6 +129,8 @@ function codigo() {
                 })
             $('iframe').css('width', '100%');
             $('iframe').css('height', '315px');
+            $('#videoURL').val(dataTwitch);
+            $('#videoTipo').val($('#tipoVideo').val());
         }
     }
 

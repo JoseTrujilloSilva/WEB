@@ -20,8 +20,6 @@ function codigo() {
     $('#lastMovil').on('click', eventoCarouselAtras);
     $('#next').on('click', eventoCarouselNext);
     $('#last').on('click', eventoCarouselAtras);
-    $('#comentar').on('click', eventoComentario);
-    $('#retarian').on('click', eventoRetarian)
     $('#home').on('click', eventoHome);
     $('#atras').on('click', eventoAtras);
     $('#text').val('');
@@ -29,10 +27,7 @@ function codigo() {
     $('#nameUser').val(nameUser);
     $('#fotoUser').val(fotoUser);
     $('#explorar').attr('href', '../explorar/explorar.html?idUser='+idUser);
-    $('#favoritos').attr('href', '../explorar/favoritos/favURL.php?idUser='+idUser);
     $('#idUserTarian').val(idUser);
-
-    $('#idUserComment').val(idUser);
    
     $('#url').val(window.location.href);
 
@@ -48,28 +43,6 @@ function codigo() {
 
     function eventoAtras() {
         window.location.href = '../indice.html';
-    }
-
-    function eventoComentario() {
-        if (document.getElementById('comentar').style.fill==='blue') {
-            $('#comentar').css('fill', '#ffc107');
-            $('#inputComentar').val('0');
-        }else{
-            $('#comentar').css('fill', 'blue');
-            $('#inputComentar').val('1');
-        }
-        
-    }
-
-    function eventoRetarian() {
-        if (document.getElementById('retarian').style.fill==='green') {
-            $('#retarian').css('fill', '#ffc107');
-            $('#inputRetarian').val('0');
-        }else{
-            $('#retarian').css('fill', 'green');
-            $('#inputRetarian').val('1');
-        }
-        
     }
 
    
@@ -137,6 +110,7 @@ function codigo() {
             $('#fechaTarian').html(data[0][4]);
             $('#idTarianComment').val(idTarian);
             $('#idTarianDelete').val(idTarian);
+            
 
             if (contCarousel===data.length-1) {
                 $('#next').css('visibility', 'hidden');
@@ -163,11 +137,12 @@ function codigo() {
                 document.getElementById('lastMovil').disabled = true;
                 document.getElementById('lastMovil').style.opacity = '100%';
             }
-
-
-            muestraComments(idTarian);
     
-    
+            $('#card01').css('display', 'none');
+            $('#video').css('display', 'none');
+            $('#card02').css('display', 'none');
+            $('#twitch-embed').css('display', 'none');
+            $('iframe').css('display', 'none');
             switch (true) {
                 case contCarousel>0&&contCarousel<carousel.length-1:
                     $('#last').css('visibility', 'visible');
@@ -217,29 +192,96 @@ function codigo() {
                         break;
                     case carousel[contCarousel][3]===1:
                         if (data[contCarousel][8]==='1') {
+                            if (data[contCarousel][9] ==='youtube') {
+                                $('#card01').css('display', 'flex');
+                                $('#card01').css('width', '100%');
+                                $('#video').css('display', 'block');
+                                $('#video').attr('width', '100%');
+                                $('#video').attr('height', '315px');
+                                $('#video').attr('src', 'https://www.youtube.com/embed/'+carousel[contCarousel][0][2]);
+                            }
+                            if (data[contCarousel][9] === 'odysee') {
+                                $('#card01').css('display', 'flex');
+                                $('#card01').css('width', '100%');
+                                $('#video').css('display', 'block');
+                                $('#video').attr('width', '100%');
+                                $('#video').attr('height', '315px');
+                                $('#video').attr('src', 'https://odysee.com/$/embed/@'+carousel[contCarousel][0][2]+'?r=HXTsPBNm28GzHyfHBiSZFjZdP7fVRhXp');
+                            }
+                            if (data[contCarousel][9] === 'twitch') {
+                                $('#card02').css('display', 'flex');
+                                $('#card02').css('width', '100%');
+                                $('#video').css('display', 'none');
+                                $('#video').css('width', '0px');
+                                $('#twitch-embed').css('display', 'block');
+                                $('#twitch-embed').css('width', '100%');
+                                    new Twitch.Player("twitch-embed", {
+                                    video:carousel[contCarousel][0][2]
+                                    })
+                                $('iframe').css('width', '100%');
+                                $('iframe').css('height', '315px');
+                            }
+                            if (data[contCarousel][9] === 'notype') {
+                                $('#card02').css('display', 'flex');
+                                $('#card02').css('width', '100%');
+                                $('#twitch-embed').css('display', 'block');
+                                $('#twitch-embed').css('width', '100%');
+                                $('#twitch-embed').css('height', '315px');
+                                $('#twitch-embed').html(carousel[contCarousel][0][2]);
+                                $('iframe').css('width', '100%');
+                            }
                             $('#svgRetarians').css('display', 'block');
                         $('#nameUserCont').html('Retarians de: '+nameUser);
                         $('#retarianContenido').html(data[contCarousel][7]);
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
-                        $('#videoContent2').css('display', 'block');
-                        console.log('Es un video');
-                        $('#videoContent2').attr('src', '../mostrar/'+carousel[contCarousel][0][2]);
                         $('#contenedorPrinc').css('display', 'none');
-                        $('#videoContent2').attr('loop', true);
-                        $('#videoContent2').attr('controls', true);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#descripcion').css('color', 'red');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }else{
+                            if (data[contCarousel][9]==='youtube') {
+                                $('#card01').css('display', 'flex');
+                                $('#card01').css('width', '100%');
+                                $('#video').css('display', 'block');
+                                $('#video').attr('width', '100%');
+                                $('#video').attr('height', '315px');
+                                $('#video').attr('src', 'https://www.youtube.com/embed/'+carousel[contCarousel][0][2]);
+                            }
+                            if (data[contCarousel][9] === 'odysee') {
+                                $('#card01').css('display', 'flex');
+                                $('#card01').css('width', '100%');
+                                $('#video').css('display', 'block');
+                                $('#video').attr('width', '100%');
+                                $('#video').attr('height', '315px');
+                                $('#video').attr('src', 'https://odysee.com/$/embed/@'+carousel[contCarousel][0][2]+'?r=HXTsPBNm28GzHyfHBiSZFjZdP7fVRhXp');
+                            }
+                            if (data[contCarousel][9] === 'twitch') {
+                                $('#card02').css('display', 'flex');
+                                $('#card02').css('width', '100%');
+                                $('#video').css('display', 'none');
+                                $('#video').css('width', '0px');
+                                $('#twitch-embed').css('display', 'block');
+                                $('#twitch-embed').css('width', '100%');
+                                    new Twitch.Player("twitch-embed", {
+                                    video:carousel[contCarousel][0][2]
+                                    })
+                                $('iframe').css('width', '100%');
+                                $('iframe').css('height', '315px');
+                            }
+                            if (data[contCarousel][9] === 'notype') {
+                                $('#card02').css('display', 'flex');
+                                $('#card02').css('width', '100%');
+                                $('#twitch-embed').css('display', 'block');
+                                $('#twitch-embed').css('width', '100%');
+                                $('#twitch-embed').css('height', '315px');
+                                $('#twitch-embed').html(carousel[contCarousel][0][2]);
+                                $('iframe').css('width', '100%');
+                            }
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#contenedorPrinc').css('display', 'none');
                         $('#contenedorPrinc').css('background', 'none');
-                        $('#videoContent').css('display', 'block');
                         $('#pdf').css('display', 'none');
                         console.log('Es un video');
-                        $('#videoContent').attr('src', '../mostrar/'+carousel[contCarousel][0][2]);
-                        $('#videoContent').attr('loop', true);
-                        $('#videoContent').attr('controls', true);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }
@@ -315,26 +357,4 @@ function codigo() {
         })
     }
     
-
-    function muestraComments(idTarian) {
-
-        fetch('../explorar/comentarios/'+idTarian+'Comment.json')
-        .then(function(res){
-            return res.json();
-        })
-        .then(function(data){
-            console.log(data);
-                for (const value of data) {
-                    console.log(value);
-                    $('#muestraComentarios').append('<div class="row"><div class="col border-bottom"><div class="row"><div class="col"><p>'+value[2]+'</p></div></div><div class="row text-secondary"><div class="col-6">Comenta: '+value[0]+'</div><div class="col-6 text-end"><p>Fecha: '+value[3]+'</p></div></div></div></div>')
-                }
-            
-        })
-        .catch(function(error){
-            console.log('');
-        })
-    
-       }
-
-
 }

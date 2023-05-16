@@ -17,14 +17,21 @@ $text = $_POST['text'];
 $bbdd = bbdd();
 $fechaHoy = date('d/m/Y');
 $textHastags = $_POST['hastags'];
+$video = $_POST['videoURL'];
+$videoTipo = $_POST['videoTipo'];
 $retarian = 0;
+
+echo $video;
+echo $videoTipo;
 
 $resultado01 = bbdd()->query("SELECT idCom FROM usuarios WHERE idUser = $idUser");
 
 $idCom = $resultado01->fetch_array(MYSQLI_NUM)[0];
 
+echo 'asdasd';
 
-if ($_FILES['file1']['tmp_name'] == null) {
+
+if (empty($_FILES['file1']['tmp_name']) && empty($video) && empty($videoTipo)) {
 
     $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, fecha, hastags, retarian) VALUES(?,?,?,?,?,?,?)");
 
@@ -75,28 +82,18 @@ $sql->close();
 
 }
 
-
-if ($terminacion == 'mp4') {
-
-$rutaVideo = $_FILES['file1']['tmp_name'];
-$carpeta = './Videos/';
-$rutaCompleta = $carpeta.$nombreArch;
-
-if (move_uploaded_file($rutaVideo, $rutaCompleta)) {
-    echo 'El archivo '. $nombreArch . ' ha sido cargado con éxito';
-} else {
-    echo 'Ha ocurrido un error al cargar el archivo.';
-}
-
-$sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, video, fecha, hastags,retarian) VALUES(?,?,?,?,?,?,?,?)");
-
-$sql->bind_param('iiissssi', $idCom, $idUser, $idTarian, $text, $rutaCompleta, $fechaHoy, $textHastags,$retarian);
-
-$sql->execute();
-
-$sql->close();
+echo 'kjabsasa';
 
 
+if (!empty($video) && !empty($videoTipo)) {
+    echo 'se mete dentro';
+    $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, video, fecha, hastags, retarian, tipoVideo) VALUES(?,?,?,?,?,?,?,?,?)");
+
+    $sql->bind_param('iiissssis', $idCom, $idUser, $idTarian, $text, $video, $fechaHoy, $textHastags,$retarian, $videoTipo);
+
+    $sql->execute();
+
+    $sql->close();
 }
 
 
@@ -121,16 +118,7 @@ if ($terminacion == 'pdf') {
     $sql->close();
     
     }
-
-
-    
-    
 }
 
-
 header('Location: ./muestraTarians.html?idUser='.$idUser.', rutaFotoUser='.$fotoUser.', nameUser='.$nameUser);
-
-
 ?>
-
-

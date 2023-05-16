@@ -9,6 +9,7 @@
     <script src="../../../boostrap_arch/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../css/accesPrinc.css">
     <link rel="stylesheet" href="./css/muestra.css">
+    <script defer src="https://player.twitch.tv/js/embed/v1.js"></script>
     <script src="./muestra.js"></script>
     <title>Sala de Tarians</title>
 </head>
@@ -101,7 +102,12 @@
                                             <video class="rounded-2 img-fluid" id="videoContent2" style="display: none; object-fit: cover;" src="" ></video>
                                         </div>
                                     </div>
-                                    <video ratio class="rounded-2" id="videoContent" style="display: none; object-fit: cover; width: 100%; height: 100%;" src="" ></video>
+                                    <div id="card01" style="display: none;">    
+                                        <iframe id="video" src="" width="0px" height="0px" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                      </div>
+                                      <div id="card02" style="display: none;">    
+                                        <div  width="0" height="0" id="twitch-embed"></div>
+                                      </div>
                                         <a id="pdf" style="display: none;" href=""></a>
                                         <div class="row">
                                             <div class="col-12">
