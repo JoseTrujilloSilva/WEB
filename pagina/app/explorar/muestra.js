@@ -425,37 +425,39 @@ fetch('../explorar/favoritos/favoritos.php', {
 })
 }
 
-            function recogeFavoritos(idTarian) {
+function recogeFavoritos(idTarian) {
 
-            let dataRecoge = new FormData();
-            dataRecoge.append('idTarianRec', idTarian);
-            dataRecoge.append('idUserRec', idUser2);
-                console.log(idTarian);
-                console.log(idUser2);
-            fetch('../explorar/favoritos/recogeFavoritos.php', {
-            url: '../explorar/favoritos/recogeFavoritos.php',
-            method: 'POST',
-            body: dataRecoge
-            })
-            .then(function(response) {
-            if(response.ok) {
-                return response.json()
-            } else {
-                throw "Error en la llamada Ajax";
-            }
+    let dataRecoge = new FormData();
 
-            })
-            .then(function(data) {
-            console.log(data);
-            if (data.length!==0) {
-                $('#estrella').css('fill', 'blue');
-                palancaEstrella = true;
-            }else{
-                $('#estrella').css('fill', 'white');
-                palancaEstrella = false;
-            }
-            
-            })
-            }
+    dataRecoge.append('idTarianRec', idTarian);
+    dataRecoge.append('idUserRec', idUser2);
+
+    fetch('../explorar/favoritos/recogeFavoritos.php', {
+        url: '../explorar/favoritos/recogeFavoritos.php',
+        method: 'POST',
+        body: dataRecoge
+    })
+    .then(function(response) {
+        if(response.ok) {
+            return response.json()
+        } else {
+            throw "Error en la llamada Ajax";
+        }
+      
+      })
+      .then(function(data) {
+        console.log('Esto es de favoritos');
+        console.log(data);
+        if (data.length!==0) {
+            $('#estrella').css('fill', 'blue');
+            palancaEstrella = true;
+        }else{
+            $('#estrella').css('fill', 'white');
+            palancaEstrella = false;
+        }
+          
+      })
+}
+
 
 }

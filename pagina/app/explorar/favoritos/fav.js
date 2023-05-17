@@ -71,6 +71,7 @@ function codigo() {
     function llamaCarousel() {
 
         let dataRecoge = new FormData();
+        $('#contenedorPrinc').css('background-image', 'url("")');
 
         dataRecoge.append('idUserRec', idUser);
 
@@ -152,7 +153,10 @@ function codigo() {
                         $('#videoContent').css('display', 'none');
                         $('#pdf').css('display', 'none');
                         $('#descripcion').html(carousel[contCarousel][0][4]);
-                        $('#contenedorPrinc').css('background-image', 'url('+'../mostrar/'+carousel[contCarousel][0][5]+')');
+                        $('#contenedorPrinc').css('background-image', 'url('+'../../mostrar'+carousel[contCarousel][0][5]+')');
+                        $('#contenedorPrinc').css('background-size', 'contain');
+                        $('#contenedorPrinc').css('background-repeat', 'no-repeat');
+                        $('#contenedorPrinc').css('background-position', 'center');
                         $('#imgFav').val(carousel[contCarousel][0][5]);
                         $('#contenedorPrinc').css('background-size', 'cover');
                         $('#textFav').val(carousel[contCarousel][0][4]);

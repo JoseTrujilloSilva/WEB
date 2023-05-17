@@ -294,8 +294,14 @@ function codigo() {
         function muestraComments(idTarian) {
 
             $('#muestraComentarios').html('');
+            let dataComments = new FormData();
+            dataComments.append('idTarian', idTarian);
 
-            fetch('../explorar/comentarios/'+idTarian+'Comment.json')
+            fetch('../explorar/comentarios/recogeComentario.php', {
+                url: '../explorar/comentarios/recogeComentario.php',
+                method: 'POST',
+                body: dataComments
+            })
             .then(function(res){
                 return res.json();
             })
