@@ -38,12 +38,16 @@ function codigo() {
     function eventoImages() {
         let archivo = this.files[0];
         let extension = archivo.name.split('.')[1];
+        $('#card02').css('display', 'none');
+        $('#video').css('display', 'none');
+        $('#card01').css('display', 'none');
+        $('#twitch-embed').css('display', 'none');
+        $('#cardImg').css('display', 'none');
 
         if (extension === 'jpg' || extension === 'jpeg' || extension === 'png') {
                 let urlArch = URL.createObjectURL(archivo);
-                $('.card')[1].style.display = 'none';
                 $('#colFiles').css('visibility', 'visible');
-                $('.card')[0].style.display = 'flex';
+                $('#cardImg').css('display', 'flex');
                 $('#imgs01').removeAttr('width');
                 $('#imgs01').removeAttr('height');
                 $('#imgs01').attr('class', 'img-fluid');
@@ -58,14 +62,12 @@ function codigo() {
         if (extension === 'pdf') {
                 let urlArch = URL.createObjectURL(archivo);
                 $('#colFiles').css('visibility', 'visible');
-                $('.card')[0].style.display = 'none';
-                $('.card')[1].style.display = 'none';
                 $('#pdf1').attr('width', '100%');
                 $('#pdf1').attr('height', '700px');
                 $('#footer').css('height', '900px');
                 $('#pdf1').attr('src', urlArch);
                 $('#imgs01').attr('src', '');
-                $('#video1').attr('src', '');
+                $('#video').attr('src', '');
                 $('#text').val('Descripción: ');
         }
 
