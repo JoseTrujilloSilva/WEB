@@ -106,6 +106,8 @@ function codigo() {
     })
     .then(function(data){
 
+        console.log(data)
+
         $('#search').on('input',eventoHastags);
 
         function eventoHastags() {
@@ -123,7 +125,7 @@ function codigo() {
 
                 for (const value of data) {
                     if (value[2]!==null) {
-                        arrayRows = [value[2], value[6], value[5]];
+                        arrayRows = [value[2], value[5], value[4]];
                         arrayHastags.push(arrayRows);
                     }
                     }

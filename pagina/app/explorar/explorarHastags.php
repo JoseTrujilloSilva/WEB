@@ -12,11 +12,7 @@ $idCom = $_POST['idCom'];
 
 bbddConexion();
 
-$resultado3 = bbdd()->query("SELECT tarians.txt, tarians.fecha, tarians.hastags, tarians.likes, usuarios.idUser, usuarios.img, usuarios.nombre
-
-FROM tarians, usuarios
-
-WHERE tarians.idUser = usuarios.idUser AND usuarios.idCom = '$idCom'");
+$resultado3 = bbdd()->query("SELECT tarians.txt, tarians.fecha, tarians.hastags, usuarios.idUser, usuarios.img, usuarios.nombre FROM tarians, usuarios WHERE tarians.idUser = usuarios.idUser AND usuarios.idCom = '$idCom'");
 
 $row2 = $resultado3->num_rows;
 
