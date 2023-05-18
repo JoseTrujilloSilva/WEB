@@ -153,6 +153,7 @@ function codigo() {
             return res.json();
         })
         .then(function(data){
+            console.log(data);
 
             for (const value of data) {
                 value[0]!==null? texto = 1 : texto = 0;
