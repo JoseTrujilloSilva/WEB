@@ -34,7 +34,7 @@ function codigo() {
     $('#misTarians').attr('href', '../misTarians.php?id='+idUser2);
     $('#estrella').on('click', eventoEstrella);
     $('#formFav').on('submit', e=> formularioFavoritos(e));
-    $('#favoritos').attr('href', './favoritos/favUrl.php?idUser='+idUser2);
+    $('#favoritos').attr('href', './favoritos/favURL.php?idUser='+idUser2);
     $('#comentarios').on('click', eventoComentarios);
     $('#closeComment').on('click', eventoComentarios);
     $('#retarians').on('click', eventoRetarians);
@@ -219,7 +219,11 @@ function codigo() {
                 $('#last').css('visibility', 'hidden');
                 $('#next').css('visibility', 'visible');
             }
-    
+            $('#card01').css('display', 'none');
+            $('#video').css('display', 'none');
+            $('#card02').css('display', 'none');
+            $('#twitch-embed').css('display', 'none');
+            $('iframe').css('display', 'none');
                 switch (true) {
                     case carousel[contCarousel][2]===1:
                         if (data[contCarousel][8]==='1') {
@@ -258,31 +262,96 @@ function codigo() {
                         break;
                     case carousel[contCarousel][3]===1:
                         if (data[contCarousel][8]==='1') {
+                            if (data[contCarousel][9] ==='youtube') {
+                                $('#card01').css('display', 'flex');
+                                $('#card01').css('width', '100%');
+                                $('#video').css('display', 'block');
+                                $('#video').attr('width', '100%');
+                                $('#video').attr('height', '315px');
+                                $('#video').attr('src', 'https://www.youtube.com/embed/'+carousel[contCarousel][0][2]);
+                            }
+                            if (data[contCarousel][9] === 'odysee') {
+                                $('#card01').css('display', 'flex');
+                                $('#card01').css('width', '100%');
+                                $('#video').css('display', 'block');
+                                $('#video').attr('width', '100%');
+                                $('#video').attr('height', '315px');
+                                $('#video').attr('src', 'https://odysee.com/$/embed/@'+carousel[contCarousel][0][2]+'?r=HXTsPBNm28GzHyfHBiSZFjZdP7fVRhXp');
+                            }
+                            if (data[contCarousel][9] === 'twitch') {
+                                $('#card02').css('display', 'flex');
+                                $('#card02').css('width', '100%');
+                                $('#video').css('display', 'none');
+                                $('#video').css('width', '0px');
+                                $('#twitch-embed').css('display', 'block');
+                                $('#twitch-embed').css('width', '100%');
+                                    new Twitch.Player("twitch-embed", {
+                                    video:carousel[contCarousel][0][2]
+                                    })
+                                $('iframe').css('width', '100%');
+                                $('iframe').css('height', '315px');
+                            }
+                            if (data[contCarousel][9] === 'notype') {
+                                $('#card02').css('display', 'flex');
+                                $('#card02').css('width', '100%');
+                                $('#twitch-embed').css('display', 'block');
+                                $('#twitch-embed').css('width', '100%');
+                                $('#twitch-embed').css('height', '315px');
+                                $('#twitch-embed').html(carousel[contCarousel][0][2]);
+                                $('iframe').css('width', '100%');
+                            }
                             $('#svgRetarians2').css('display', 'block');
                         $('#nameUserCont').html('Retarians de: '+nameUser);
                         $('#retarianContenido').html(data[contCarousel][7]);
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
-                        $('#videoContent2').css('display', 'block');
-                        console.log('Es un video');
-                        $('#videoContent2').attr('src', '../mostrar/'+carousel[contCarousel][0][2]);
-                        $('#contenedorPrinc').css('display', 'none');
-                        $('#videoContent2').attr('loop', true);
-                        $('#videoContent2').attr('controls', true);
                         $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#videoFav').val(carousel[contCarousel][0][2]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#descripcion').css('color', 'red');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }else{
+                            if (data[contCarousel][9] ==='youtube') {
+                                $('#card01').css('display', 'flex');
+                                $('#card01').css('width', '100%');
+                                $('#video').css('display', 'block');
+                                $('#video').attr('width', '100%');
+                                $('#video').attr('height', '315px');
+                                $('#video').attr('src', 'https://www.youtube.com/embed/'+carousel[contCarousel][0][2]);
+                            }
+                            if (data[contCarousel][9] === 'odysee') {
+                                $('#card01').css('display', 'flex');
+                                $('#card01').css('width', '100%');
+                                $('#video').css('display', 'block');
+                                $('#video').attr('width', '100%');
+                                $('#video').attr('height', '315px');
+                                $('#video').attr('src', 'https://odysee.com/$/embed/@'+carousel[contCarousel][0][2]+'?r=HXTsPBNm28GzHyfHBiSZFjZdP7fVRhXp');
+                            }
+                            if (data[contCarousel][9] === 'twitch') {
+                                $('#card02').css('display', 'flex');
+                                $('#card02').css('width', '100%');
+                                $('#video').css('display', 'none');
+                                $('#video').css('width', '0px');
+                                $('#twitch-embed').css('display', 'block');
+                                $('#twitch-embed').css('width', '100%');
+                                    new Twitch.Player("twitch-embed", {
+                                    video:carousel[contCarousel][0][2]
+                                    })
+                                $('iframe').css('width', '100%');
+                                $('iframe').css('height', '315px');
+                            }
+                            if (data[contCarousel][9] === 'notype') {
+                                $('#card02').css('display', 'flex');
+                                $('#card02').css('width', '100%');
+                                $('#twitch-embed').css('display', 'block');
+                                $('#twitch-embed').css('width', '100%');
+                                $('#twitch-embed').css('height', '315px');
+                                $('#twitch-embed').html(carousel[contCarousel][0][2]);
+                                $('iframe').css('width', '100%');
+                            }
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
-                        $('#contenedorPrinc').css('display', 'none');
                         $('#contenedorPrinc').css('background', 'none');
-                        $('#videoContent').css('display', 'block');
                         $('#pdf').css('display', 'none');
                         console.log('Es un video');
-                        $('#videoContent').attr('src', '../mostrar/'+carousel[contCarousel][0][2]);
-                        $('#videoContent').attr('loop', true);
-                        $('#videoContent').attr('controls', true);
                         $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#videoFav').val(carousel[contCarousel][0][2]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);

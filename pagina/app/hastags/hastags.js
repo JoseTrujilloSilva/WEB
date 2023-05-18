@@ -194,6 +194,7 @@ function codigo() {
         $('#nombrePerfil2').html(data[contCarousel][0]);
         $('#autor').val(data[contCarousel][0]);
         $('#fotoPerfil').attr('src', '../../'+data[contCarousel][1]);
+        
 
         switch (true) {
             case contCarousel>0&&contCarousel<carousel.length-1:
@@ -209,7 +210,11 @@ function codigo() {
             $('#last').css('visibility', 'hidden');
             $('#next').css('visibility', 'visible');
         }
-
+        $('#card01').css('display', 'none');
+        $('#video').css('display', 'none');
+        $('#card02').css('display', 'none');
+        $('#twitch-embed').css('display', 'none');
+        $('iframe').css('display', 'none');
             switch (true) {
                 case carousel[contCarousel][2]===1:
                     console.log('Es una imagen');
@@ -230,15 +235,50 @@ function codigo() {
                 case carousel[contCarousel][3]===1:
 
                 $('#fechaTarian').html(carousel[contCarousel][0][6]);
-
+                if (data[contCarousel][9] ==='youtube') {
+                    console.log('entra en youtube');
+                    $('#card01').css('display', 'flex');
+                    $('#card01').css('width', '100%');
+                    $('#video').css('display', 'block');
+                    $('#video').attr('width', '100%');
+                    $('#video').attr('height', '300px');
+                    $('#video').attr('src', 'https://www.youtube.com/embed/'+carousel[contCarousel][0][4]);
+                }
+                if (data[contCarousel][9] === 'odysee') {
+                    $('#card01').css('display', 'flex');
+                    $('#card01').css('width', '100%');
+                    $('#video').css('display', 'block');
+                    $('#video').attr('width', '100%');
+                    $('#video').attr('height', '315px');
+                    $('#video').attr('src', 'https://odysee.com/$/embed/@'+carousel[contCarousel][0][4]+'?r=HXTsPBNm28GzHyfHBiSZFjZdP7fVRhXp');
+                }
+                if (data[contCarousel][9] === 'twitch') {
+                    $('#card02').css('display', 'flex');
+                    $('#card02').css('width', '100%');
+                    $('#video').css('display', 'none');
+                    $('#video').css('width', '0px');
+                    $('#twitch-embed').css('display', 'block');
+                    $('#twitch-embed').css('width', '100%');
+                        new Twitch.Player("twitch-embed", {
+                        video:carousel[contCarousel][0][4]
+                        })
+                    $('iframe').css('width', '100%');
+                    $('iframe').css('height', '315px');
+                }
+                if (data[contCarousel][9] === 'notype') {
+                    $('#card02').css('display', 'flex');
+                    $('#card02').css('width', '100%');
+                    $('#twitch-embed').css('display', 'block');
+                    $('#twitch-embed').css('width', '100%');
+                    $('#twitch-embed').css('height', '315px');
+                    $('#twitch-embed').html(carousel[contCarousel][0][4]);
+                    $('iframe').css('width', '100%');
+                }
                     $('#contenido').css('display', 'none');
                     $('#videoContent').css('display', 'block');
                     $('#contenido').css('display', 'none');
                     $('#pdf').css('display', 'none');
                     console.log('Es un video');
-                    $('#videoContent').attr('src', '../mostrar/'+carousel[contCarousel][0][4]);
-                    $('#videoContent').attr('loop', true);
-                    $('#videoContent').attr('controls', true);
                     $('#descripcion').html(carousel[contCarousel][0][2]);
                     $('#textFav').val(carousel[contCarousel][0][2]);
                     $('#videoFav').val(carousel[contCarousel][0][4]);

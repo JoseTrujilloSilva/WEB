@@ -26,7 +26,7 @@ function codigo() {
 
     $('#inicio').attr('href', '../accesPrinc.php?id='+idUser);
     $('#misTarians').attr('href', '../misTarians.php?id='+idUser);
-    $('#favoritos').attr('href', '../explorar/favoritos/favoritos.html?idUser='+idUser+',fotoUser=.'+fotoUser+',nameUser='+nameUser);
+    $('#favoritos').attr('href', '../explorar/favoritos/favURL.php?idUser='+idUser);
     $('#idCom').val(idCom);
 
 

@@ -13,7 +13,7 @@ $idUserBloq = $_POST['idUser'];
 $resultBloq = bbdd()->query("SELECT idUser FROM bloqueados WHERE idUserBloq = $idUserBloq");
 
 
-$resultado = bbdd()->query("SELECT usuarios.nombre, usuarios.img, tarians.txt, tarians.img01, tarians.video, tarians.pdf, tarians.fecha, tarians.idTarian, usuarios.idUser FROM usuarios, tarians WHERE usuarios.idUser = tarians.idUser AND usuarios.idCom = '$idCom' AND tarians.hastags = '$hastags';");
+$resultado = bbdd()->query("SELECT usuarios.nombre, usuarios.img, tarians.txt, tarians.img01, tarians.video, tarians.pdf, tarians.fecha, tarians.idTarian, usuarios.idUser, tarians.tipoVideo FROM usuarios, tarians WHERE usuarios.idUser = tarians.idUser AND usuarios.idCom = '$idCom' AND tarians.hastags = '$hastags';");
 
 $row = $resultado->num_rows;
 

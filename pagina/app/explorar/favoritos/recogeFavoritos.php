@@ -9,7 +9,7 @@ $arrayJson = array();
 $idUser = $_POST['idUserRec'];
 $idTarian = $_POST['idTarianRec'];
 
-$resultado = bbdd()->query("SELECT * FROM favoritos WHERE idUser = $idUser AND idTarian = $idTarian");
+$resultado = bbdd()->query("SELECT * FROM favoritos WHERE idUser = $idUser AND idTarian = $idTarian ORDER BY fecha");
 
 
 $row = $resultado->num_rows;

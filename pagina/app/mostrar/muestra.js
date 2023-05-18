@@ -28,6 +28,7 @@ function codigo() {
     $('#fotoUser').val(fotoUser);
     $('#explorar').attr('href', '../explorar/explorar.html?idUser='+idUser);
     $('#idUserTarian').val(idUser);
+    $('#favoritos').attr('href', '../explorar/favoritos/favURL.php?idUser='+idUser);
    
     $('#url').val(window.location.href);
 
@@ -197,7 +198,7 @@ function codigo() {
                                 $('#card01').css('width', '100%');
                                 $('#video').css('display', 'block');
                                 $('#video').attr('width', '100%');
-                                $('#video').attr('height', '315px');
+                                $('#video').attr('height', '300px');
                                 $('#video').attr('src', 'https://www.youtube.com/embed/'+carousel[contCarousel][0][2]);
                             }
                             if (data[contCarousel][9] === 'odysee') {
@@ -205,7 +206,7 @@ function codigo() {
                                 $('#card01').css('width', '100%');
                                 $('#video').css('display', 'block');
                                 $('#video').attr('width', '100%');
-                                $('#video').attr('height', '315px');
+                                $('#video').attr('height', '300px');
                                 $('#video').attr('src', 'https://odysee.com/$/embed/@'+carousel[contCarousel][0][2]+'?r=HXTsPBNm28GzHyfHBiSZFjZdP7fVRhXp');
                             }
                             if (data[contCarousel][9] === 'twitch') {
@@ -219,14 +220,14 @@ function codigo() {
                                     video:carousel[contCarousel][0][2]
                                     })
                                 $('iframe').css('width', '100%');
-                                $('iframe').css('height', '315px');
+                                $('iframe').css('height', '300px');
                             }
                             if (data[contCarousel][9] === 'notype') {
                                 $('#card02').css('display', 'flex');
                                 $('#card02').css('width', '100%');
                                 $('#twitch-embed').css('display', 'block');
                                 $('#twitch-embed').css('width', '100%');
-                                $('#twitch-embed').css('height', '315px');
+                                $('#twitch-embed').css('height', '300px');
                                 $('#twitch-embed').html(carousel[contCarousel][0][2]);
                                 $('iframe').css('width', '100%');
                             }
@@ -244,7 +245,7 @@ function codigo() {
                                 $('#card01').css('width', '100%');
                                 $('#video').css('display', 'block');
                                 $('#video').attr('width', '100%');
-                                $('#video').attr('height', '315px');
+                                $('#video').attr('height', '300px');
                                 $('#video').attr('src', 'https://www.youtube.com/embed/'+carousel[contCarousel][0][2]);
                             }
                             if (data[contCarousel][9] === 'odysee') {
@@ -252,7 +253,7 @@ function codigo() {
                                 $('#card01').css('width', '100%');
                                 $('#video').css('display', 'block');
                                 $('#video').attr('width', '100%');
-                                $('#video').attr('height', '315px');
+                                $('#video').attr('height', '300px');
                                 $('#video').attr('src', 'https://odysee.com/$/embed/@'+carousel[contCarousel][0][2]+'?r=HXTsPBNm28GzHyfHBiSZFjZdP7fVRhXp');
                             }
                             if (data[contCarousel][9] === 'twitch') {
@@ -266,14 +267,14 @@ function codigo() {
                                     video:carousel[contCarousel][0][2]
                                     })
                                 $('iframe').css('width', '100%');
-                                $('iframe').css('height', '315px');
+                                $('iframe').css('height', '300px');
                             }
                             if (data[contCarousel][9] === 'notype') {
                                 $('#card02').css('display', 'flex');
                                 $('#card02').css('width', '100%');
                                 $('#twitch-embed').css('display', 'block');
                                 $('#twitch-embed').css('width', '100%');
-                                $('#twitch-embed').css('height', '315px');
+                                $('#twitch-embed').css('height', '300px');
                                 $('#twitch-embed').html(carousel[contCarousel][0][2]);
                                 $('iframe').css('width', '100%');
                             }
