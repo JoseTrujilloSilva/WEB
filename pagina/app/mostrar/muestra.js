@@ -7,6 +7,10 @@ function codigo() {
     var pdf = 0;
     var carousel = new Array;
     var contCarousel = 0;
+    var palancaEstrella = false;
+    var palancaComentarios = false;
+    var palancaRetarians = false;
+    var dataRecogeComment = new FormData();
 
     let nameUser = window.location.href.split('?')[1].split(',')[2].split('=')[1];
     let fotoUser = window.location.href.split('?')[1].split(',')[1].split('=')[1];
@@ -29,6 +33,13 @@ function codigo() {
     $('#explorar').attr('href', '../explorar/explorar.html?idUser='+idUser);
     $('#idUserTarian').val(idUser);
     $('#favoritos').attr('href', '../explorar/favoritos/favURL.php?idUser='+idUser);
+    $('#estrella').on('click', eventoEstrella);
+    $('#formFav').on('submit', e=> formularioFavoritos(e));
+    $('#comentarios').on('click', eventoComentarios);
+    $('#closeComment').on('click', eventoComentarios);
+    $('#formComment').on('submit',e=> eventoComentarios(e));
+    $('#retarians').on('click', eventoRetarians);
+    $('#closeRetarians').on('click', eventoRetarians);
    
     $('#url').val(window.location.href);
 
@@ -36,6 +47,47 @@ function codigo() {
     $('#nombrePerfil').html(nameUser);
     $('#nombrePerfil2').html(nameUser);
     $('#inicio').attr('href', '../accesPrinc.php?id='+idUser);
+    $('#idUserFav').val(idUser);
+    $('#idUserRetarians').val(idUser);
+
+
+
+    function eventoRetarians() {
+        
+        if (!palancaRetarians) {
+            $('#svgRetarians').css('fill', 'green');
+            palancaRetarians = true;
+        }else{
+            $('#svgRetarians').css('fill', 'white');
+            palancaRetarians = false;
+        }
+        
+    }
+
+
+    function eventoEstrella() {
+        
+        if (!palancaEstrella) {
+            $('#estrella').css('fill', 'blue');
+            palancaEstrella = true;
+        }else{
+            $('#estrella').css('fill', 'white');
+            palancaEstrella = false;
+        }
+        
+    }
+
+    function eventoComentarios() {
+        
+        if (!palancaComentarios) {
+            $('#svgComment').css('fill', 'red');
+            palancaComentarios = true;
+        }else{
+            $('#svgComment').css('fill', 'white');
+            palancaComentarios = false;
+        }
+        
+    }
 
 
     function eventoHome() {
@@ -107,10 +159,13 @@ function codigo() {
             }
             
             let idTarian = carousel[contCarousel][0][5];
+            let fecha = carousel[contCarousel][0][4];
 
             $('#fechaTarian').html(data[0][4]);
             $('#idTarianComment').val(idTarian);
             $('#idTarianDelete').val(idTarian);
+
+            recogeFavoritos(idTarian);
             
 
             if (contCarousel===data.length-1) {
@@ -138,6 +193,9 @@ function codigo() {
                 document.getElementById('lastMovil').disabled = true;
                 document.getElementById('lastMovil').style.opacity = '100%';
             }
+
+            muestraComments(idTarian);
+            favoritos(idTarian, fecha);
     
             $('#card01').css('display', 'none');
             $('#video').css('display', 'none');
@@ -356,6 +414,104 @@ function codigo() {
                 }
     
         })
+        
+   function favoritos(idTarian, fecha) {
+    $('#idTarianFav').val(idTarian);
+    $('#fechaFav').val(fecha);
+   }
     }
+
+
+    function recogeFavoritos(idTarian) {
+
+        let dataRecoge = new FormData();
+    
+        dataRecoge.append('idTarianRec', idTarian);
+        dataRecoge.append('idUserRec', idUser);
+    
+        fetch('../explorar/favoritos/recogeFavoritos.php', {
+            url: '../explorar/favoritos/recogeFavoritos.php',
+            method: 'POST',
+            body: dataRecoge
+        })
+        .then(function(response) {
+            if(response.ok) {
+                return response.json()
+            } else {
+                throw "Error en la llamada Ajax";
+            }
+          
+          })
+          .then(function(data) {
+            console.log('Esto es de favoritos');
+            console.log(data);
+            if (data.length!==0) {
+                $('#estrella').css('fill', 'blue');
+                palancaEstrella = true;
+            }else{
+                $('#estrella').css('fill', 'white');
+                palancaEstrella = false;
+            }
+              
+          })
+    }
+
+
+
+    
+function formularioFavoritos(e) {
+    e.preventDefault();
+    var data = new FormData();
+    
+    data.append('fechaFav', $('#fechaFav').val());
+    data.append('fav', $('#fav').val());
+    data.append('idUserFav', $('#idUserFav').val());
+    data.append('idTarianFav', $('#idTarianFav').val());
+    data.append('textFav', $('#textFav').val());
+    data.append('imgFav', $('#imgFav').val());
+    data.append('videoFav', $('#videoFav').val());
+    data.append('pdfFav', $('#pdfFav').val());
+    data.append('autor', $('#autor').val());
+    
+    fetch('../explorar/favoritos/favoritos.php', {
+        url: '../explorar/favoritos/favoritos.php',
+        method: 'POST',
+        body: data
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+    }
+
+
+    function muestraComments(idTarian) {
+
+        $('#muestraComentarios').html('');
+    
+        $('#idTarian').val(idTarian);
+    
+        dataRecogeComment.append('idTarian', idTarian);
+    
+        fetch('../explorar/comentarios/recogeComentario.php', {
+            url: '../explorar/comentarios/recogeComentario.php',
+            method: 'POST',
+            body: dataRecogeComment
+        })
+        .then(function(res){
+            return res.json();
+        })
+        .then(function(data){
+          
+                for (const value of data) {
+                   
+                    $('#muestraComentarios').append('<div class="row"><div class="col border-bottom"><div class="row"><div class="col"><p>'+value[2]+'</p></div></div><div class="row text-secondary"><div class="col-6">Comenta: '+value[0]+'</div><div class="col-6 text-end"><p>Fecha: '+value[3]+'</p></div></div></div></div>')
+                }
+            
+        })
+        .catch(function(error){
+        
+        })
+    
+       }
     
 }
