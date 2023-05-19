@@ -8,7 +8,7 @@ $arrayResultadoJson = array();
 
 $idTarian = $_POST['idTarian'];
 
-$resultado = bbdd()->query("SELECT usuarios.nombre, comentarios.idTarian, comentarios.txt, comentarios.fecha FROM usuarios, comentarios, tarians WHERE usuarios.idUser = comentarios.idUser AND tarians.idTarian= comentarios.idTarian AND comentarios.idTarian = $idTarian ORDER BY comentarios.fecha DESC");
+$resultado = bbdd()->query("SELECT usuarios.nombre, comentarios.idTarian, comentarios.txt, comentarios.fecha, comentarios.idComentario FROM usuarios, comentarios, tarians WHERE usuarios.idUser = comentarios.idUser AND tarians.idTarian= comentarios.idTarian AND comentarios.idTarian = $idTarian ORDER BY comentarios.fecha DESC");
 
 $row = $resultado->num_rows;
 

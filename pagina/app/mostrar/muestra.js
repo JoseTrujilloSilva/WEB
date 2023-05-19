@@ -11,6 +11,7 @@ function codigo() {
     var palancaComentarios = false;
     var palancaRetarians = false;
     var dataRecogeComment = new FormData();
+    var idComment;
 
     let nameUser = window.location.href.split('?')[1].split(',')[2].split('=')[1];
     let fotoUser = window.location.href.split('?')[1].split(',')[1].split('=')[1];
@@ -38,6 +39,7 @@ function codigo() {
     $('#comentarios').on('click', eventoComentarios);
     $('#closeComment').on('click', eventoComentarios);
     $('#formComment').on('submit',e=> eventoComentarios(e));
+    $('#idUserComment').val(idUser);
     $('#retarians').on('click', eventoRetarians);
     $('#closeRetarians').on('click', eventoRetarians);
    
@@ -250,6 +252,7 @@ function codigo() {
                         }
                         break;
                     case carousel[contCarousel][3]===1:
+                        $('#videoTipo').val(data[contCarousel][9]);
                         if (data[contCarousel][8]==='1') {
                             if (data[contCarousel][9] ==='youtube') {
                                 $('#card01').css('display', 'flex');
@@ -279,6 +282,7 @@ function codigo() {
                                     })
                                 $('iframe').css('width', '100%');
                                 $('iframe').css('height', '300px');
+                                $('iframe').attr('muted');
                             }
                             if (data[contCarousel][9] === 'notype') {
                                 $('#card02').css('display', 'flex');
@@ -501,10 +505,21 @@ function formularioFavoritos(e) {
             return res.json();
         })
         .then(function(data){
-          
+                console.log(data)
+
+                
                 for (const value of data) {
-                   
-                    $('#muestraComentarios').append('<div class="row"><div class="col border-bottom"><div class="row"><div class="col"><p>'+value[2]+'</p></div></div><div class="row text-secondary"><div class="col-6">Comenta: '+value[0]+'</div><div class="col-6 text-end"><p>Fecha: '+value[3]+'</p></div></div></div></div>')
+                    idComment = value[4];
+                    $('#muestraComentarios').append('<form id="formComentDelete" action="../explorar/comentarios/deleteComentarios.php" method="post"><div class="row"><div class="col border-bottom"><div class="row"><div class="col"><p>'+value[2]+'</p></div></div><div class="row text-secondary"><div class="col-6">Comenta: '+value[0]+'</div><div class="col-6 text-end"><p>Fecha: '+value[3]+'</p><svg id="'+idComment+'" xmlns="http://www.w3.org/2000/svg" width="25" height="25" style="padding-bottom: 10px; cursor:pointer;" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16"><path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/></svg></div></div><input type="hidden" name="idComentario" id="idComentario"><input type="hidden" name="idUserDeleteComment" id="idUserDeleteComment"></div></div></form>')
+                    
+                    $('#'+idComment).on('click', eventoBashComment);
+                    $('#idUserDeleteComment').val(idUser);
+                    $('#idComentario').val(idComment);
+                    
+                }
+
+                function eventoBashComment() {
+                    document.getElementById('formComentDelete').submit();
                 }
             
         })

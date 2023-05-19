@@ -14,9 +14,7 @@ $idUser = $_POST['idUserRetarians'];
 $textRetarians = $_POST['textRetarians'];
 $fechaTarian = date('d/m/Y');
 $numRetarian = 1;
-
-
-echo $idTarian2.'<br>';
+$videoTipo = $_POST['videoTipo'];
 
 
 $resultadoTarians = bbdd()->query("SELECT idUser, txt, img01, video, pdf FROM tarians WHERE idTarian = $idTarian2");
@@ -61,13 +59,14 @@ switch (true) {
         $sql->close();
         break;
     case $video!=null:
-        $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, video, fecha, autor, textRetarian, retarian) VALUES(?,?,?,?,?,?,?,?,?)");
+        echo 'se mete dentro';
+    $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, video, fecha, hastags, retarian, tipoVideo) VALUES(?,?,?,?,?,?,?,?,?)");
 
-        $sql->bind_param('iiisssssi', $idCom, $idUser, $idTarian, $text, $video, $fechaTarian, $autor, $textRetarians, $numRetarian);
-        
-        $sql->execute();
-        
-        $sql->close();
+    $sql->bind_param('iiissssis', $idCom, $idUser, $idTarian, $text, $video, $fechaHoy, $textHastags,$retarian, $videoTipo);
+
+    $sql->execute();
+
+    $sql->close();
         break;
     case $pdf!=null:
         $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, pdf, fecha, autor, textRetarian, retarian) VALUES(?,?,?,?,?,?,?,?,?)");

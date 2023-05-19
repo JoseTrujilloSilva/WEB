@@ -22,4 +22,5 @@ $idUserSQL = $rows[2];
 
 $arrayJson = [$name, $fotoPerfil, $idUserSQL]; 
 
+
 header('Location: ./mostrar/muestraTarians.html?id='.$arrayJson[2].',ruta='.$arrayJson[1].',name='.$arrayJson[0]);

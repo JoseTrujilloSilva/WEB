@@ -14,6 +14,8 @@ $idUser = $_POST['idUserComment'];
 $comentario = $_POST['comentarioTxt'];
 $fechaHoy = date('d/m/Y H:i:s');
 
+echo $idUser;
+
 bbddConexion();
 
 $bbdd = bbdd();
