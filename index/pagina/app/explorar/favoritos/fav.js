@@ -174,6 +174,7 @@ function codigo() {
                     if (data[contCarousel][10] ==='youtube') {
                         $('#card01').css('display', 'flex');
                         $('#card01').css('width', '100%');
+                        $('#card01').css('height', '300px');
                         $('#video').css('display', 'block');
                         $('#video').attr('width', '100%');
                         $('#video').attr('height', '300px');
@@ -182,6 +183,7 @@ function codigo() {
                     if (data[contCarousel][10] === 'odysee') {
                         $('#card01').css('display', 'flex');
                         $('#card01').css('width', '100%');
+                        $('#card01').css('height', '300px');
                         $('#video').css('display', 'block');
                         $('#video').attr('width', '100%');
                         $('#video').attr('height', '300px');
@@ -190,6 +192,7 @@ function codigo() {
                     if (data[contCarousel][10] === 'twitch') {
                         $('#card02').css('display', 'flex');
                         $('#card02').css('width', '100%');
+                        $('#card02').css('height', '300px');
                         $('#video').css('display', 'none');
                         $('#video').css('width', '0px');
                         $('#twitch-embed').css('display', 'block');
@@ -203,6 +206,7 @@ function codigo() {
                     if (data[contCarousel][10] === 'notype') {
                         $('#card02').css('display', 'flex');
                         $('#card02').css('width', '100%');
+                        $('#card02').css('height', '300px');
                         $('#twitch-embed').css('display', 'block');
                         $('#twitch-embed').css('width', '100%');
                         $('#twitch-embed').css('height', '300px');

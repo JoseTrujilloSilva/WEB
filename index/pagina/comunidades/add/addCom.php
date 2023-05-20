@@ -52,7 +52,9 @@ $sql->bind_param('issss', $id, $name, $passwordEncrypt, $formatImage, $keyssEncr
 
 $sql->execute();
 
+
 header('Location: ./resultadoAdd.html?keyss='.$keyssString);
+
 
 $sql->close();
 ?>

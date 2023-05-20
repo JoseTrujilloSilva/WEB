@@ -26,7 +26,7 @@ function codigo() {
                     let rutaImg = valor[2].split('/')[4];
 
                     if (valor[1].indexOf(this.value) !== -1) { 
-                        $('#comunidades').append('<div class="bg-light m-3 text-center" style="border-radius: 8px; width: 200px;"><div class="mt-3"><img id="fotoPerfil" class="rounded-circle" src="../add/imgCom/'+rutaImg+'" alt="" style="width: 170px; height: 150px;"></div><div class="col-12 my-4"><span>Comunidad:'+valor[1]+'</span><br><span id="nombrePerfil"></span><a class="btn btn-warning" href="./altaComs/altaComs.html?idCom='+valor[0]+'">Seleccionar</a></div></div>');
+                        $('#comunidades').append('<div class="bg-light m-3 text-center" style="border-radius: 8px; width: 200px;"><div class="mt-3"><img id="fotoPerfil" class="rounded-circle" src="../add/imgCom/'+rutaImg+'" alt="" style="width: 170px; height: 150px;"></div><div class="col-12 my-4"><span>Comunidad:</span><div width="180" style="word-wrap: break-word;"><p>'+valor[1]+'</p></div><span id="nombrePerfil"></span><a class="btn btn-warning" href="./altaComs/altaComs.html?idCom='+valor[0]+'">Seleccionar</a></div></div>');
                     }
                    
                 }

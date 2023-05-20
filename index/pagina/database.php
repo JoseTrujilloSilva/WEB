@@ -2,7 +2,7 @@
 
 
 function bbdd(){
-    $usuario = '';//Enter your username of your mysql
+    $usuario = 'root';//Enter your username of your mysql
     $constrasena = '';//Enter your username password of your mysql 
     $localhost = 'localhost';//Enter your host of your mysql
 

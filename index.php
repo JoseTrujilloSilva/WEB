@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
-$usuario = '';//Enter your username of your mysql
+$usuario = 'root';//Enter your username of your mysql
 $constrasena = '';//Enter your username password of your mysql 
 $localhost = 'localhost';//Enter your host of your mysql
 
@@ -13,10 +13,8 @@ $password = $constrasena;
 
 $bbdd = new mysqli($host, $user, $password);
 
-try {
-  $result = $bbdd->query("USE tariansBack");
-  header('Location: ./index/index.html');
-} catch (\Throwable $th) {
+  if (!$result = $bbdd->query("USE tariansBack")) {
+    
   $bbdd->query("CREATE DATABASE tariansBack");
 
   $bbdd = new mysqli($host, $user, $password, 'tariansBack');
@@ -154,10 +152,9 @@ try {
 
       $bbdd->query("ALTER TABLE `usuarios`
       ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`idCom`) REFERENCES `comunidades` (`idCom`);");
-
-  
-  header('Location: ./index/index.html');
-}
-
+      header('Location: ./index/index.html');
+  }else{
+    header('Location: ./index/index.html');
+  }
 
 ?>
