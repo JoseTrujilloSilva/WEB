@@ -50,6 +50,11 @@
             </div>
         </header>
         <main>
+            <div class="row justify-content-center py-3">
+                <div class="col-8 text-center fst-italic fw-bold text-warning">
+                  <h2>Visita a los usuarios de la comunidad y también explora sus hastags. <br> Diviertete!!</h2>
+                </div>
+              </div>
             <div class="row justify-content-center">
                 <div class="col-10 col-lg-7">
                     <div class="input-group">
@@ -58,6 +63,32 @@
                         <span class="input-group-text bg-warning p-0 border-0 m-0"><button id="close" class="btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                           </svg></button></span>
+                           <!-- Button to Open the Modal -->
+                        <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-info-circle w-100" viewBox="0 0 16 16">
+                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                              <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                            </svg>
+                          </button>
+  
+                          <!-- The Modal -->
+                          <div class="modal" id="myModal">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+  
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                  <h4 class="modal-title">¡Información!</h4>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+  
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                  Aquí podrás buscar tanto a los usuarios de esta comunidad como los hastags que suben, para ello, tan solo debes introducir "@" seguido del nombre del usuario para ver a los usuarios, o bien "#" con el nombre del hastags para ver los tarians con ese hastagst, recuerda que si el usuario te ha bloqueado o si por otro lado, tiene la opción activada de oculto, no puedes ver ningún tarian suyo.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                       </div>
                 </div>
             </div>
