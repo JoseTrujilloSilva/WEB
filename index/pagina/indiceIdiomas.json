@@ -1,0 +1,493 @@
+{
+    "es": {
+      "navbar": {
+        "home": "Inicio",
+        "about": "Nosotros",
+        "register": "Registra tu Comunidad",
+        "contact": "Contacto",
+        "language": "Idioma",
+        "session": "Sesiones de Comunidad",
+        "boton01": "Sesión Admin",
+        "boton02": "Sesión User"
+      },
+      "main": {
+        "aboutUs": {
+          "title": "Acerca de nosotros...",
+          "description": "Tarian es una red social de código abierto centrada en la libertad de expresión y privacidad de sus usuarios. Para ello, proporcionamos una clave ('keyss') que reemplaza el correo electrónico o el número de teléfono de los usuarios. Además, también trabajaremos con ActivityPub y fediverso para conectar una red federada de instancias con sus propias comunidades, al igual que lo está haciendo 'mastodon' y otras aplicaciones de fediverso. Por último, utilizaremos Docker para ofrecer una imagen base de la aplicación y permitirte implementar tu instancia donde desees."
+        },
+        "registerCommunity": {
+          "title": "Registra tu comunidad...",
+          "description": "Puedes registrar tu comunidad aquí. Lo único que necesitas proporcionar es el nombre de la comunidad y tu contraseña. Luego te proporcionaremos tu clave 'keyss' correspondiente.",
+          "warning": "¡NO OLVIDES ANOTARLA CORRECTAMENTE!",
+          "boton03": "Registrar Comunidad"
+        },
+        "chooseLanguage": {
+          "title": "Elige el idioma de la aplicación",
+          "description": "Aquí puedes elegir el idioma en el que deseas ver la aplicación.",
+          "permanente": "Selecciona esta opción si quieres que el idioma sea permanente.",
+          "option0": "Elige tu idioma"
+        }
+      },
+      "footer": {
+        "estamos": "Estamos en:",
+        "contact": "Contactanos a:",
+        "codigo": "Ver código fuente:"
+      }
+    },
+    "en": {
+      "navbar": {
+        "home": "Home",
+        "about": "About",
+        "register": "Register Your Community",
+        "contact": "Contact",
+        "language": "Language",
+        "session": "Community Sessions",
+        "boton01": "Admin Session",
+        "boton02": "User Session"
+      },
+      "main": {
+        "aboutUs": {
+          "title": "About Us...",
+          "description": "Tarian is an open-source social network that focuses on user freedom of expression and privacy. To achieve this, we provide a key ('keyss') that replaces users' email or phone number. Additionally, we will also work with ActivityPub and the fediverse to connect a federated network of instances with their own communities, similar to what 'mastodon' and other fediverse applications are doing. Finally, we will use Docker to offer a base image of the application and allow you to deploy your instance wherever you want."
+        },
+        "registerCommunity": {
+          "title": "Register Your Community...",
+          "description": "You can register your community here. All you need to provide is the community name and your password. Afterwards, we will provide you with your corresponding 'keyss' key.",
+          "warning": "DON'T FORGET TO WRITE IT DOWN PROPERLY!",
+          "boton03": "Register Community"
+        },
+        "chooseLanguage": {
+          "title": "Choose the Application Language",
+          "description": "Here you can choose the language in which you want to view the application.",
+          "permanente": "Select this option if you want the language to be permanent.",
+          "option0": "Choose your language"
+        }
+      },
+      "footer": {
+        "estamos": "We are located at:",
+         "contact": "Contact us at:",
+         "codigo": "View source code at:"
+      }
+    },
+    "fr": {
+        "navbar": {
+          "home": "Accueil",
+          "about": "À propos",
+          "register": "Enregistrer votre communauté",
+          "contact": "Contact",
+          "language": "Langue",
+          "session": "Sessions de communauté",
+          "boton01": "Session Admin",
+          "boton02": "Session Utilisateur"
+        },
+        "main": {
+          "aboutUs": {
+            "title": "À propos de nous...",
+            "description": "Tarian est un réseau social open source axé sur la liberté d'expression et la vie privée de ses utilisateurs. Pour cela, nous fournissons une clé ('keyss') qui remplace l'adresse e-mail ou le numéro de téléphone des utilisateurs. De plus, nous travaillerons également avec ActivityPub et le fediverse pour connecter un réseau fédéré d'instances avec leurs propres communautés, tout comme le font 'mastodon' et d'autres applications du fediverse. Enfin, nous utiliserons Docker pour offrir une image de base de l'application et vous permettre de déployer votre instance où vous le souhaitez."
+          },
+          "registerCommunity": {
+            "title": "Enregistrer votre communauté...",
+            "description": "Vous pouvez enregistrer votre communauté ici. Tout ce que vous devez fournir, c'est le nom de la communauté et votre mot de passe. Ensuite, nous vous fournirons votre clé 'keyss' correspondante.",
+            "warning": "N'OUBLIEZ PAS DE LA NOTER CORRECTEMENT !",
+            "boton03": "Enregistrer une communauté"
+          },
+          "chooseLanguage": {
+            "title": "Choisissez la langue de l'application",
+            "description": "Ici, vous pouvez choisir la langue dans laquelle vous souhaitez afficher l'application.",
+            "permanente": "Sélectionnez cette option si vous souhaitez que la langue soit permanente.",
+            "option0": "Choisissez votre langue"
+          }
+        },
+        "footer": {
+          "estamos": "Nous sommes présents sur :",
+          "contact": "Contactez-nous à :",
+          "codigo": "Voir le code source :",
+          "option0": "Choisissez votre langue"
+        }
+      },
+    "de": {
+        "navbar": {
+           "home": "Startseite",
+           "about": "Über uns",
+           "register": "Registriere deine Community",
+           "contact": "Kontakt",
+           "language": "Sprache",
+           "session": "Community-Sitzungen",
+           "boton01": "Admin-Sitzung",
+           "boton02": "Benutzer-Sitzung"
+        },
+        "main": {
+           "aboutUs": {
+              "title": "Über uns...",
+              "description": "Tarian ist ein Open-Source-Soziales Netzwerk, das sich auf die Meinungsfreiheit und Privatsphäre der Benutzer konzentriert. Dafür stellen wir einen Schlüssel ('keyss') zur Verfügung, der die E-Mail-Adresse oder Telefonnummer der Benutzer ersetzt. Darüber hinaus arbeiten wir auch mit ActivityPub und dem Fediverse zusammen, um ein föderiertes Netzwerk von Instanzen mit eigenen Gemeinschaften zu verbinden, ähnlich wie es 'Mastodon' und andere Fediverse-Anwendungen tun. Abschließend werden wir Docker verwenden, um ein Basis-Image der Anwendung anzubieten und es dir zu ermöglichen, deine Instanz beliebig zu implementieren."
+           },
+           "registerCommunity": {
+              "title": "Registriere deine Gemeinschaft...",
+              "description": "Du kannst hier deine Gemeinschaft registrieren. Alles, was du angeben musst, ist der Name der Gemeinschaft und dein Passwort. Anschließend stellen wir dir deinen entsprechenden 'keyss'-Schlüssel zur Verfügung.",
+              "warning": "VERGESSE NICHT, IHN RICHTIG AUFZUSCHREIBEN!",
+              "boton03": "Gemeinschaft registrieren"
+           },
+           "chooseLanguage": {
+              "title": "Wähle die App-Sprache",
+              "description": "Hier kannst du die Sprache wählen, in der du die Anwendung anzeigen möchtest.",
+              "permanente": "Wählen Sie diese Option aus, wenn Sie möchten, dass die Sprache permanent ist.",
+              "option0": "Wählen Sie Ihre Sprache"
+           }
+        },
+        "footer": {
+           "estamos": "Wir sind hier:",
+           "contact": "Kontaktiere uns unter:",
+           "codigo": "Quellcode anzeigen:"
+        }
+     },
+     "ru": {
+        "navbar": {
+          "home": "Главная",
+          "about": "О нас",
+          "register": "Зарегистрировать вашу сообщество",
+          "contact": "Контакт",
+          "language": "Язык",
+          "session": "Сессии сообщества",
+          "boton01": "Администраторская сессия",
+          "boton02": "Пользовательская сессия"
+        },
+        "main": {
+          "aboutUs": {
+            "title": "О нас...",
+            "description": "Tarian - это свободная социальная сеть с открытым исходным кодом, сфокусированная на свободе выражения и конфиденциальности пользователей. Для этого мы предоставляем ключ ('keyss'), который заменяет электронную почту или номер телефона пользователей. Кроме того, мы также будем работать с ActivityPub и федиверсом для соединения федеративной сети экземпляров со своими сообществами, подобно тому, что делает 'mastodon' и другие приложения федиверса. Наконец, мы будем использовать Docker для предоставления базового образа приложения и позволим вам развернуть свой экземпляр где угодно."
+          },
+          "registerCommunity": {
+            "title": "Зарегистрируйте ваше сообщество...",
+            "description": "Вы можете зарегистрировать ваше сообщество здесь. Вам нужно только предоставить название сообщества и ваш пароль. После этого мы предоставим вам соответствующий ключ 'keyss'.",
+            "warning": "НЕ ЗАБУДЬТЕ ЗАПИСАТЬ ЕГО ПРАВИЛЬНО!",
+            "boton03": "Зарегистрировать сообщество"
+          },
+          "chooseLanguage": {
+            "title": "Выберите язык приложения",
+            "description": "Здесь вы можете выбрать язык, на котором вы хотите видеть приложение.",
+            "permanente": "Выберите эту опцию, если вы хотите, чтобы язык был постоянным.",
+            "option0": "Выберите ваш язык"
+          }
+        },
+        "footer": {
+          "estamos": "Мы находимся:",
+          "contact": "Свяжитесь с нами:",
+          "codigo": "Просмотреть исходный код:"
+        }
+      },
+    "tr": {
+        "navbar": {
+           "home": "Ana Sayfa",
+           "about": "Hakkında",
+           "register": "Topluluğunu Kaydet",
+           "contact": "İletişim",
+           "language": "Dil",
+           "session": "Topluluk Oturumları",
+           "boton01": "Yönetici Oturumu",
+           "boton02": "Kullanıcı Oturumu"
+        },
+        "main": {
+           "aboutUs": {
+              "title": "Hakkımızda...",
+              "description": "Tarian, kullanıcıların ifade özgürlüğüne ve gizliliğine odaklanan açık kaynaklı bir sosyal ağdır. Bunun için kullanıcının e-posta veya telefon numarasının yerine geçen bir anahtar ('keyss') sağlıyoruz. Ayrıca, ActivityPub ve fediverse ile çalışarak kendi topluluklarına sahip federasyon ağıyla bağlantı kuracağız, bu, 'mastodon' ve diğer fediverse uygulamalarının yaptığı gibi. Son olarak, uygulamanın temel bir görüntüsünü sunmak ve kendi örneğinizi istediğiniz yere dağıtmanıza olanak tanımak için Docker'ı kullanacağız."
+           },
+           "registerCommunity": {
+              "title": "Topluluğunu Kaydet...",
+              "description": "Topluluğunu buradan kaydedebilirsin. Tek yapman gereken topluluk adını ve şifreni sağlamak. Ardından sana ilgili 'keyss' anahtarını sağlayacağız.",
+              "warning": "DOĞRU ŞEKİLDE YAZDIĞINDAN EMİN OLMAK İÇİN UNUTMA!",
+              "boton03": "Topluluğu Kaydet"
+           },
+           "chooseLanguage": {
+              "title": "Uygulama Dilini Seç",
+              "description": "Uygulamayı hangi dilde görmek istediğini buradan seçebilirsin.",
+               "permanente": "Dilin kalıcı olmasını istiyorsanız, bu seçeneği seçin.",
+               "option0": "Dilinizi seçin"
+           }
+        },
+        "footer": {
+           "estamos": "Bize Ulaşın:",
+           "contact": "İletişim:",
+           "codigo": "Kaynak Kodunu Görüntüle:"
+        }
+     },
+     "cat": {
+        "navbar": {
+          "home": "Inici",
+          "about": "Sobre nosaltres",
+          "register": "Registra la teva Comunitat",
+          "contact": "Contacte",
+          "language": "Idioma",
+          "session": "Sessions de Comunitat",
+          "boton01": "Sessió Admin",
+          "boton02": "Sessió Usuari"
+        },
+        "main": {
+          "aboutUs": {
+            "title": "Sobre nosaltres...",
+            "description": "Tarian és una xarxa social de codi obert centrada en la llibertat d'expressió i privadesa dels seus usuaris. Per aconseguir-ho, proporcionem una clau ('keyss') que reemplaça el correu electrònic o el número de telèfon dels usuaris. A més, també treballarem amb ActivityPub i fediverso per connectar una xarxa federada d'instàncies amb les seves pròpies comunitats, de manera similar a com ho està fent 'mastodon' i altres aplicacions de fediverso. Finalment, utilitzarem Docker per oferir una imatge base de l'aplicació i permetre implementar la teva instància on vulguis."
+          },
+          "registerCommunity": {
+            "title": "Registra la teva comunitat...",
+            "description": "Pots registrar la teva comunitat aquí. L'únic que has de proporcionar és el nom de la comunitat i la teva contrasenya. Després et proporcionarem la clau 'keyss' corresponent.",
+            "warning": "NO OBLIDIS ANOTAR-LA CORRECTAMENT!",
+            "boton03": "Registrar Comunitat"
+          },
+          "chooseLanguage": {
+            "title": "Selecciona l'idioma de l'aplicació",
+            "description": "Aquí pots seleccionar l'idioma en què vols veure l'aplicació.",
+            "permanente": "Seleccioneu aquesta opció si voleu que l'idioma sigui permanent.",
+            "option0": "Tria la teva llengua"
+          }
+        },
+        "footer": {
+          "estamos": "Estem a:",
+          "contact": "Contacta'ns a:",
+          "codigo": "Veure codi font:"
+        }
+      },
+      "eu": {
+        "navbar": {
+          "home": "Hasiera",
+          "about": "Guri buruz",
+          "register": "Erregistratu Zure Komunitatea",
+          "contact": "Kontaktua",
+          "language": "Hizkuntza",
+          "session": "Komunitate Saioak",
+          "boton01": "Admin Saioa",
+          "boton02": "Erabiltzaile Saioa"
+        },
+        "main": {
+          "aboutUs": {
+            "title": "Guri buruz...",
+            "description": "Tarian erabiltzaileen adierazpen askatasuna eta pribatutasuna errespetatzen dituen itxaropenkode ireki bat da. Horretarako, erabiltzaileekin posta elektroniko edo telefono zenbakia ordezkatzen duen 'keyss' gako bat eskaintzen dugu. Gainera, ActivityPub eta fediversekin lan egingo dugu, hainbat komunitate beren instantzia federatuekin konektatzeko, 'mastodon' eta fediverse aplikazioak egiten ari diren bezala. Azkenik, Docker erabili eta aplikazioaren oinarri irudi bat eskainiko dugu, eta zure instantzia nahi duzun toki batera ezartzeko aukera emango dizugu."
+          },
+          "registerCommunity": {
+            "title": "Erregistratu zure komunitatea...",
+            "description": "Hemen zure komunitatea erregistratu dezakezu. Eskatu behar duzun soilik komunitatearen izena eta zure pasahitza ematea da. Ondoren, zure 'keyss' gakoa emango dizugu.",
+            "warning": "EZ AHAZTU ONDOAN IDATZI!",
+            "boton03": "Erregistratu Komunitatea"
+          },
+          "chooseLanguage": {
+            "title": "Aukeratu aplikazioaren hizkuntza",
+            "description": "Hemen aplikazioa ikusi nahi duzun hizkuntza aukeratu dezakezu.",
+            "permanente": "Hautatu aukera hau hizkuntza iraunkorra izatea nahi baduzu.",
+            "option0": "Hautatu zure hizkuntza"
+          }
+        },
+        "footer": {
+          "estamos": "Gaudenez:",
+          "contact": "Kontaktatu gurekin:",
+          "codigo": "Kode iturburua ikusi:"
+        }
+     },
+     "gl": {
+        "navbar": {
+          "home": "Inicio",
+          "about": "Nós",
+          "register": "Rexistra a túa Comunidade",
+          "contact": "Contacto",
+          "language": "Idioma",
+          "session": "Sesións de Comunidade",
+          "boton01": "Sesión Admin",
+          "boton02": "Sesión Usuario"
+        },
+        "main": {
+          "aboutUs": {
+            "title": "Sobre nós...",
+            "description": "Tarian é unha rede social de código aberto centrada na liberdade de expresión e privacidade dos seus usuarios. Para isto, fornecemos unha clave ('keyss') que substitúe o correo electrónico ou o número de teléfono dos usuarios. Ademais, tamén traballaremos con ActivityPub e fediverso para conectar unha rede federada de instancias coas súas propias comunidades, ao igual que está facendo 'mastodon' e outras aplicacións de fediverso. Por último, utilizaremos Docker para ofrecer unha imaxe base da aplicación e permitirche implementar a túa instancia onde desexes."
+          },
+          "registerCommunity": {
+            "title": "Rexistra a túa comunidade...",
+            "description": "Podes rexistrar a túa comunidade aquí. O único que necesitas proporcionar é o nome da comunidade e o teu contrasinal. A continuación, proporcionarémosche a túa clave 'keyss' correspondente.",
+            "warning": "NON ESQUEZAS ANOTALA CORRECTAMENTE!",
+            "boton03": "Rexistrar Comunidade"
+          },
+          "chooseLanguage": {
+            "title": "Escolle o idioma da aplicación",
+            "description": "Aquí podes escoller o idioma no que desexas ver a aplicación.",
+            "permanente": "Seleccione esta opción se desexa que a lingua sexa permanente.",
+            "option0": "Escolle a túa lingua"
+          }
+        },
+        "footer": {
+          "estamos": "Estamos en:",
+          "contact": "Contacta con nós en:",
+          "codigo": "Ver código fonte:"
+        }
+      },
+      "it": {
+        "navbar": {
+           "home": "Home",
+           "about": "Informazioni",
+           "register": "Registra la tua Comunità",
+           "contact": "Contatto",
+           "language": "Lingua",
+           "session": "Sessioni di Comunità",
+           "boton01": "Sessione Admin",
+           "boton02": "Sessione Utente"
+        },
+        "main": {
+           "aboutUs": {
+              "title": "Chi siamo...",
+              "description": "Tarian è un social network open-source che si concentra sulla libertà di espressione e sulla privacy degli utenti. Per raggiungere questo obiettivo, forniamo una chiave ('keyss') che sostituisce l'email o il numero di telefono degli utenti. Inoltre, lavoreremo anche con ActivityPub e il fediverso per connettere una rete federata di istanze con le proprie comunità, simile a quanto sta facendo 'mastodon' e altre applicazioni del fediverso. Infine, utilizzeremo Docker per offrire un'immagine di base dell'applicazione e consentirti di distribuire la tua istanza ovunque desideri."
+           },
+           "registerCommunity": {
+              "title": "Registra la tua comunità...",
+              "description": "Puoi registrare la tua comunità qui. Tutto ciò di cui hai bisogno è fornire il nome della comunità e la tua password. Successivamente, ti forniremo la tua chiave 'keyss' corrispondente.",
+              "warning": "NON DIMENTICARE DI APPUNTARLA CORRETTAMENTE!",
+              "boton03": "Registra Comunità"
+           },
+           "chooseLanguage": {
+              "title": "Scegli la lingua dell'applicazione",
+              "description": "Qui puoi scegliere la lingua in cui desideri visualizzare l'applicazione.",
+              "permanente": "Seleziona questa opzione se desideri che la lingua sia permanente.",
+              "option0": "Scegli la tua lingua"
+           }
+        },
+        "footer": {
+           "estamos": "Siamo qui:",
+           "contact": "Contattaci su:",
+           "codigo": "Visualizza il codice sorgente:"
+        }
+     },
+     "pt": {
+        "navbar": {
+           "home": "Início",
+           "about": "Sobre nós",
+           "register": "Registrar sua Comunidade",
+           "contact": "Contato",
+           "language": "Idioma",
+           "session": "Sessões de Comunidade",
+           "boton01": "Sessão Admin",
+           "boton02": "Sessão Usuário"
+        },
+        "main": {
+           "aboutUs": {
+              "title": "Sobre nós...",
+              "description": "Tarian é uma rede social de código aberto focada na liberdade de expressão e privacidade de seus usuários. Para isso, fornecemos uma chave ('keyss') que substitui o e-mail ou número de telefone dos usuários. Além disso, também trabalharemos com ActivityPub e fediverso para conectar uma rede federada de instâncias com suas próprias comunidades, assim como 'mastodon' e outros aplicativos fediverso estão fazendo. Por fim, utilizaremos o Docker para oferecer uma imagem base do aplicativo e permitir que você implante sua instância onde desejar."
+           },
+           "registerCommunity": {
+              "title": "Registrar sua comunidade...",
+              "description": "Você pode registrar sua comunidade aqui. Tudo que você precisa fornecer é o nome da comunidade e sua senha. Em seguida, forneceremos a chave 'keyss' correspondente.",
+              "warning": "NÃO SE ESQUEÇA DE ANOTÁ-LA CORRETAMENTE!",
+              "boton03": "Registrar Comunidade"
+           },
+           "chooseLanguage": {
+              "title": "Escolha o idioma do aplicativo",
+              "description": "Aqui você pode escolher o idioma em que deseja visualizar o aplicativo.",
+              "permanente": "Selecione esta opção se desejar que o idioma seja permanente.",
+              "option0": "Escolha o seu idioma"
+           }
+        },
+        "footer": {
+           "estamos": "Estamos em:",
+           "contact": "Entre em contato conosco em:",
+           "codigo": "Ver código-fonte:"
+        }
+     },
+     "ar": {
+        "navbar": {
+          "home": "الصفحة الرئيسية",
+          "about": "معلومات عنا",
+          "register": "سجل مجتمعك",
+          "contact": "اتصل بنا",
+          "language": "اللغة",
+          "session": "جلسات المجتمع",
+          "boton01": "جلسة المشرف",
+          "boton02": "جلسة المستخدم"
+        },
+        "main": {
+          "aboutUs": {
+            "title": "حولنا...",
+            "description": "تاريان هو شبكة اجتماعية مفتوحة المصدر تركز على حرية التعبير والخصوصية للمستخدمين. لتحقيق ذلك، نقدم مفتاحًا ('keyss') يحل محل عنوان البريد الإلكتروني أو رقم الهاتف للمستخدمين. بالإضافة إلى ذلك، سنعمل أيضًا مع ActivityPub والفيديفيرسو لربط شبكة متحدة الاتصالات من النسخ الفرعية بمجتمعاتها الخاصة، تمامًا كما يفعل 'mastodon' وتطبيقات الفيديفيرسو الأخرى. وأخيرًا، سنستخدم Docker لتوفير صورة قاعدة للتطبيق والسماح لك بنشر نسختك في أي مكان ترغب فيه."
+          },
+          "registerCommunity": {
+            "title": "سجل مجتمعك...",
+            "description": "يمكنك تسجيل مجتمعك هنا. كل ما تحتاجه هو تقديم اسم المجتمع وكلمة المرور الخاصة بك. بعد ذلك، سنقدم لك مفتاح 'keyss' الخاص بك.",
+            "warning": "لا تنسى كتابتها بشكل صحيح!",
+            "boton03": "تسجيل المجتمع"
+          },
+          "chooseLanguage": {
+            "title": "اختر لغة التطبيق",
+            "description": "هنا يمكنك اختيار اللغة التي ترغب في رؤية التطبيق بها.",
+            "permanente": "اختر هذا الخيار إذا كنت ترغب في جعل اللغة دائمة.",
+            "option0": "اختر لغتك"
+          }
+        },
+        "footer": {
+          "estamos": "نحن هنا:",
+          "contact": "اتصل بنا على:",
+          "codigo": "رمز المصدر:"
+        }
+      },
+      "zh": {
+        "navbar": {
+          "home": "首页",
+          "about": "关于我们",
+          "register": "注册您的社区",
+          "contact": "联系方式",
+          "language": "语言",
+          "session": "社区会话",
+          "boton01": "管理员会话",
+          "boton02": "用户会话"
+        },
+        "main": {
+          "aboutUs": {
+            "title": "关于我们...",
+            "description": "Tarian是一个关注用户言论自由和隐私的开源社交网络。为此，我们提供了一个替代用户电子邮件或手机号码的密钥（'keyss'）。此外，我们还将与ActivityPub和fediverse合作，将各自拥有的社区连接到联邦网络的实例，类似于'mastodon'和其他fediverse应用程序的做法。最后，我们将使用Docker提供应用程序的基本映像，并允许您在任何地方部署您的实例。"
+          },
+          "registerCommunity": {
+            "title": "注册您的社区...",
+            "description": "您可以在此注册您的社区。您只需提供社区名称和密码即可。之后，我们将提供相应的'keyss'密钥。",
+            "warning": "请确保正确记录它！",
+            "boton03": "注册社区"
+          },
+          "chooseLanguage": {
+            "title": "选择应用语言",
+            "description": "您可以选择您想要查看应用程序的语言。",
+            "permanente": "如果您希望语言保持不变，请选择此选项。",
+            "option0": "选择您的语言"
+          }
+        },
+        "footer": {
+          "estamos": "我们位于：",
+          "contact": "联系方式：",
+          "codigo": "查看源代码："
+        }
+      },
+      "hi": {
+        "navbar": {
+          "home": "होम",
+          "about": "हमारे बारे में",
+          "register": "अपनी समुदाय पंजीकृत करें",
+          "contact": "संपर्क करें",
+          "language": "भाषा",
+          "session": "समुदाय सत्र",
+          "boton01": "व्यवस्थापक सत्र",
+          "boton02": "उपयोगकर्ता सत्र"
+        },
+        "main": {
+          "aboutUs": {
+            "title": "हमारे बारे में...",
+            "description": "तारियन एक ओपन-सोर्स सामाजिक नेटवर्क है जो उपयोगकर्ता की व्यक्ति स्वतंत्रता और गोपनीयता पर केंद्रित है। इसे प्राप्त करने के लिए, हम उपयोगकर्ताओं के ईमेल या फ़ोन नंबर की जगह एक कुंजी ('keyss') प्रदान करते हैं। इसके अलावा, हम एक्टिविटीपब और फेडीवर्स के साथ काम करेंगे ताकि इंस्टेंसेज़ के अपने स्वयं के समुदायों के साथ एक संघटित नेटवर्क को जोड़ सकें, 'मैस्टोडॉन' और अन्य फेडीवर्स एप्लिकेशन्स की तरह। अंत में, हम डॉकर का उपयोग करेंगे एक आवेदन के आधारभूत छवि प्रदान करने के लिए और आपको अपनी इंस्टेंस को जहां चाहें डिप्लॉय करने की अनुमति देने के लिए।"
+          },
+          "registerCommunity": {
+            "title": "अपनी समुदाय पंजीकृत करें...",
+            "description": "आप अपनी समुदाय यहाँ पंजीकृत कर सकते हैं। आपको केवल समुदाय का नाम और पासवर्ड प्रदान करना होगा। फिर हम आपको उसका संबंधित कुंजी 'keyss' प्रदान करेंगे।",
+            "warning": "सही ढंग से इसे नोट करें!",
+            "boton03": "समुदाय पंजीकरण"
+          },
+          "chooseLanguage": {
+            "title": "एप्लिकेशन की भाषा चुनें",
+            "description": "यहाँ आप एप्लिकेशन में देखने की भाषा का चयन कर सकते हैं।",
+            "permanente": "यदि आप भाषा को स्थायी रूप से रखना चाहते हैं तो इस विकल्प का चयन करें।",
+            "option0": "अपनी भाषा चुनें"
+          }
+        },
+        "footer": {
+          "estamos": "हम यहाँ हैं:",
+          "contact": "हमसे संपर्क करें:",
+          "codigo": "स्रोत कोड देखें:"
+        }
+      }
+  }

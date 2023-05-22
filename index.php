@@ -13,8 +13,9 @@ $password = $constrasena;
 
 $bbdd = new mysqli($host, $user, $password);
 
-  if (!$result = $bbdd->query("USE tariansBack")) {
-    
+try {
+  $result = $bbdd->query("USE tariansBack");
+} catch (\Throwable $th) {
   $bbdd->query("CREATE DATABASE tariansBack");
 
   $bbdd = new mysqli($host, $user, $password, 'tariansBack');
@@ -153,8 +154,9 @@ $bbdd = new mysqli($host, $user, $password);
       $bbdd->query("ALTER TABLE `usuarios`
       ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`idCom`) REFERENCES `comunidades` (`idCom`);");
       header('Location: ./index/index.html');
-  }else{
+}
+
+  if ($result = $bbdd->query("USE tariansBack")) {
     header('Location: ./index/index.html');
   }
-
 ?>

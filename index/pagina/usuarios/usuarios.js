@@ -1,6 +1,7 @@
 $(window).on('load', codigo);
 
 function codigo() {
+
     $('#atras').on('click', eventoAtras);
     $('#home').on('click', eventoHome);
     $('#btnLog').on('click', eventoLogin);
@@ -16,7 +17,7 @@ function codigo() {
     }
 
     function eventoLogin() {
-        window.location.href = './login/loginUser.html?id='+window.location.href.split('?')[1];
+        window.location.href = './login/loginFast.php?id='+window.location.href.split('?')[1];
     }
 
     function eventoReg() {

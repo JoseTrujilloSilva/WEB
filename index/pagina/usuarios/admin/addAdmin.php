@@ -65,7 +65,7 @@ $sql2->bind_param('iissss', $idCom, $id, $name, $passwordEncrypt, $formatImage, 
 $sql2->execute();
 
 
-header('Location: ./resultadoAdd.html?keyss='.$keyssString);
+header('Location: ./resultadoAdd.html?keyss='.$keyssString.',idCom='.$idCom);
 
 $sql2->close();
 ?>
