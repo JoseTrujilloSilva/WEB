@@ -8,7 +8,7 @@
         "language": "Idioma",
         "session": "Sesiones de Comunidad",
         "boton01": "Sesión Admin",
-        "boton02": "Sesión User"
+        "boton02": "Comunidades"
       },
       "main": {
         "aboutUs": {
@@ -43,7 +43,7 @@
         "language": "Language",
         "session": "Community Sessions",
         "boton01": "Admin Session",
-        "boton02": "User Session"
+        "boton02": "Communities"
       },
       "main": {
         "aboutUs": {
@@ -78,7 +78,7 @@
           "language": "Langue",
           "session": "Sessions de communauté",
           "boton01": "Session Admin",
-          "boton02": "Session Utilisateur"
+          "boton02": "Communautés"
         },
         "main": {
           "aboutUs": {
@@ -114,7 +114,7 @@
            "language": "Sprache",
            "session": "Community-Sitzungen",
            "boton01": "Admin-Sitzung",
-           "boton02": "Benutzer-Sitzung"
+           "boton02": "Gemeinschaften"
         },
         "main": {
            "aboutUs": {
@@ -149,7 +149,7 @@
           "language": "Язык",
           "session": "Сессии сообщества",
           "boton01": "Администраторская сессия",
-          "boton02": "Пользовательская сессия"
+          "boton02": "Сообщества"
         },
         "main": {
           "aboutUs": {
@@ -324,7 +324,7 @@
            "language": "Lingua",
            "session": "Sessioni di Comunità",
            "boton01": "Sessione Admin",
-           "boton02": "Sessione Utente"
+           "boton02": "Comunità"
         },
         "main": {
            "aboutUs": {
@@ -394,7 +394,7 @@
           "language": "اللغة",
           "session": "جلسات المجتمع",
           "boton01": "جلسة المشرف",
-          "boton02": "جلسة المستخدم"
+          "boton02": "المجتمعات"
         },
         "main": {
           "aboutUs": {
@@ -429,7 +429,7 @@
           "language": "语言",
           "session": "社区会话",
           "boton01": "管理员会话",
-          "boton02": "用户会话"
+          "boton02": "社群"
         },
         "main": {
           "aboutUs": {
