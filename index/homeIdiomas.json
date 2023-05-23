@@ -1,0 +1,60 @@
+{
+    "es": {
+    
+    "Home": "HOME",
+    "boton01": "Entrar"
+    
+    },
+    "en": {
+        "Home": "HOME",
+        "boton01": "Enter"
+     },
+     "fr": {
+        "Home": "ACCUEIL",
+        "boton01": "Entrer"
+     },
+     "zh": {
+        "Home": "主页",
+        "boton01": "进入"
+     },
+     "ru": {
+        "Home": "ДОМОЙ",
+        "boton01": "Войти"
+     },
+     "it": {
+        "Home": "CASA",
+        "boton01": "Entra"
+     },
+     "de": {
+        "Home": "STARTSEITE",
+        "boton01": "Eingeben"
+     },
+     "tr": {
+        "Home": "ANA SAYFA",
+        "boton01": "Giriş Yap"
+     },
+     "cat": {
+        "Home": "INICI",
+        "boton01": "Entrar"
+     },
+     "eu": {
+        "Home": "HASIERA",
+        "boton01": "Sartu"
+     },
+     "gl": {
+        "Home": "INICIO",
+        "boton01": "Entrar"
+     },
+     "pt": {
+        "Home": "INÍCIO",
+        "boton01": "Entrar"
+     },
+     "ar": {
+        "Home": "الصفحة الرئيسية",
+        "boton01": "الدخول"
+     },
+     "hi": {
+        "Home": "होम",
+        "boton01": "प्रवेश करें"
+     }
+    }
