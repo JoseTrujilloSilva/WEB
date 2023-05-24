@@ -342,6 +342,28 @@ function codigo() {
         
     }
 
-    
+    fetch('./confIdiomaAdmin.json')
+    .then(function(res) {
+        return res.json();
+    })
+    .then(function(data) {
+        console.log(data)
+        var idioma = localStorage.getItem('localLanguajes');
+        if (idioma !== 'null') {
+            //START PAGE
+            $('#txtHome').html(data[idioma].home);
+            $('#atras').html(data[idioma].back);
+            //PERFIL
+            $('#perfil23').html(data[idioma].profile);
+            $('#textAdministrador').html(data[idioma].interiorProfile.admin);
+
+            //END PERFIL
+            $('#configuracion').html(data[idioma].config);
+            $('#usuarios').html(data[idioma].users);
+            $('#cuenta').html(data[idioma].account);
+            $('#cerrarSession').html(data[idioma].logout);
+            //END PAGE
+        }
+    })
 
 }

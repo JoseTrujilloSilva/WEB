@@ -1,0 +1,230 @@
+{
+    "es": {
+        "home": "INICIO",
+        "back": "Atrás",
+        "profile": "PERFIL",
+        "interiorProfile": {
+          "admin": "Administrador", "interiorAdmin": {
+            "users": "USUARIOS",
+            "interiorUser": {
+              "deleteButton": "Eliminar"
+            }
+          },
+          "tarians": "TARIANS",
+          "interiorTarians": {
+            "deleteButton": "Eliminar"
+          },
+          "comments": "COMENTARIOS",
+          "interiorComment": {
+            "deleteButton": "Eliminar"
+          },
+          "community": "COMUNIDAD",
+          "interiorCommunity": {
+            "keyss": {
+              "info": "*Cambiar las claves de la comunidad",
+              "keyss": "Claves del Administrador:",
+              "password": "Contraseña:",
+              "button": "Enviar"
+            },
+            "password": {
+              "info": "*Cambiar la contraseña de la comunidad",
+              "keyss": "Claves del Administrador:",
+              "adminPassword": "Contraseña del Administrador:",
+              "newPassword": "Nueva Contraseña:",
+              "repeatPassword": "Repetir Nueva Contraseña:",
+              "button": "Enviar"
+            },
+            "img": {
+              "info": "*Cambiar la imagen de la comunidad",
+              "keyss": "Claves del Administrador:",
+              "password": "Contraseña:",
+              "img": "Nueva Imagen de la Comunidad:",
+              "button": "Enviar"
+            },
+            "name": {
+              "info": "*Cambiar el nombre de la comunidad",
+              "keyss": "Claves del Administrador:",
+              "password": "Contraseña:",
+              "name": "Nuevo Nombre de la Comunidad:",
+              "button": "Enviar"
+            },
+            "deleteCom": {
+              "info": "*Aquí puedes eliminar la comunidad. Asegúrate de anotar todos los datos correspondientes y tener el consentimiento de todos los miembros antes de hacerlo.",
+              "communityKeyss": "Claves de la Comunidad:",
+              "communityPassword": "Contraseña de la Comunidad:",
+              "userKeyss": "Claves del Usuario:",
+              "userPassword": "Contraseña del Usuario:",
+              "button": "Eliminar"
+            }
+          }
+        },
+        "editName": {
+          "name": "Nuevo Nombre de Usuario:",
+          "password": "Contraseña de Usuario:",
+          "button": "Enviar"
+        },
+        "img": {
+          "img": "Nueva Imagen de Usuario:",
+          "password": "Contraseña de Usuario:",
+          "button": "Enviar"
+        },
+        "deleteProfile": {
+          "keyss": "Claves del Usuario:",
+          "password": "Contraseña:",
+          "button": "Eliminar"
+        },
+        "config": "Configuración",
+        "interiorConfig": {
+          "language": "Elige tu idioma",
+          "interior": {
+            "language": "Elige tu idioma",
+            "button": "Enviar"
+          },
+          "tarians": {
+            "button": "Eliminar Tarianos"
+          },
+          "comments": {
+            "button": "Eliminar Comentarios"
+          }
+        },
+        "users": "USUARIOS",
+        "interiorUser": {
+          "block": "Bloquear/Desbloquear Usuarios",
+          "interior": {
+            "button": "Bloquear/Desbloquear"
+          }
+        },
+        "account": "CUENTA",
+        "interiorAccount": {
+          "password": "Contraseña de la Cuenta",
+          "interiorPassword": {
+            "info": "*Aquí puedes cambiar la contraseña de tu cuenta. Anota tus claves de usuario antes de cambiar la contraseña.",
+            "userKeyss": "Claves del Usuario:",
+            "newPassword": "Nueva Contraseña:",
+            "repeatPassword": "Repetir Nueva Contraseña:",
+            "button": "Enviar"
+          },
+          "keyss": "Claves de la Cuenta",
+          "interiorKeyss": {
+            "info": "*Aquí puedes cambiar tus claves. Si no las recuerdas, simplemente ingresa tu contraseña de usuario y te daremos unas nuevas claves.",
+            "password": "Contraseña de Usuario:",
+            "button": "Enviar"
+          }
+        },
+        "logout": "Cerrar Sesión"
+      },
+    "en": {
+        "home": "HOME",
+        "back": "Back",
+        "profile": "PROFILE",
+        "interiorProfile": {
+          "admin": "Administrator", "interiorAdmin": {
+            "users": "USERS",
+            "interiorUser": {
+              "deleteButton": "Delete"
+            }
+          },
+          "tarians": "TARIANS",
+          "interiorTarians": {
+            "deleteButton": "Delete"
+          },
+          "comments": "COMMENTS",
+          "interiorComment": {
+            "deleteButton": "Delete"
+          },
+          "community": "COMMUNITY",
+          "interiorCommunity": {
+            "keyss": {
+              "info": "*Change the community's keyss",
+              "keyss": "Administrator Keyss:",
+              "password": "Password:",
+              "button": "Send"
+            },
+            "password": {
+              "info": "*Change the community's password",
+              "keyss": "Administrator Keyss:",
+              "adminPassword": "Administrator Password:",
+              "newPassword": "New Password:",
+              "repeatPassword": "Repeat New Password:",
+              "button": "Send"
+            },
+            "img": {
+              "info": "*Change the community's image",
+              "keyss": "Administrator Keyss:",
+              "password": "Password:",
+              "img": "New Community Image:",
+              "button": "Send"
+            },
+            "name": {
+              "info": "*Change the community's name",
+              "keyss": "Administrator Keyss:",
+              "password": "Password:",
+              "name": "New Community Name:",
+              "button": "Send"
+            },
+            "deleteCom": {
+              "info": "*Here you can delete the community. Make sure to note down all the corresponding data and have the consent of all members before doing so.",
+              "communityKeyss": "Community Keyss:",
+              "communityPassword": "Community Password:",
+              "userKeyss": "User Keyss:",
+              "userPassword": "User Password:",
+              "button": "Delete"
+            }
+          }
+        },
+        "editName": {
+          "name": "New User Name:",
+          "password": "User Password:",
+          "button": "Send"
+        },
+        "img": {
+          "img": "New User Image:",
+          "password": "User Password:",
+          "button": "Send"
+        },
+        "deleteProfile": {
+          "keyss": "User Keyss:",
+          "password": "Password:",
+          "button": "Delete"
+        },
+        "config": "Settings",
+        "interiorConfig": {
+          "language": "Choose your language",
+          "interior": {
+            "language": "Choose your language",
+            "button": "Send"
+          },
+          "tarians": {
+            "button": "Delete Tarians"
+          },
+          "comments": {
+            "button": "Delete Comments"
+          }
+        },
+        "users": "USERS",
+        "interiorUser": {
+          "block": "Block/Unblock Users",
+          "interior": {
+            "button": "Block/Unblock"
+          }
+        },
+        "account": "ACCOUNT",
+        "interiorAccount": {
+          "password": "Account Password",
+          "interiorPassword": {
+            "info": "*Here you can change your account password. Note down your user keyss before changing the password.",
+            "userKeyss": "User Keyss:",
+            "newPassword": "New Password:",
+            "repeatPassword": "Repeat New Password:",
+            "button": "Send"
+          },
+          "keyss": "Account Keyss",
+          "interiorKeyss": {
+            "info": "*Here you can change your keyss. If you don't remember it, just enter your user password and we'll give you a new keyss.",
+            "password": "User Password:",
+            "button": "Send"
+          }
+        },
+        "logout": "Logout"
+      }
+  }
