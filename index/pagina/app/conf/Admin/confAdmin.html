@@ -13,10 +13,15 @@
   <script src="./confAdmin.js"></script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
   </script>
+  <style>
+    nav{
+      overflow-x: hidden;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container-fluid w-100">
     <header>
       <div class="row py-3">
         <div class="col text-center">
@@ -83,7 +88,7 @@
               <path
                 d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
             </svg>
-            <span id="usuarios" class="fw-bold fs-4 fst-italic mx-2" style="color: #ffc107;">USUARIOS</span>
+            <span id="usuariostext" class="fw-bold fs-4 fst-italic mx-2" style="color: #ffc107;">USUARIOS</span>
           </div>
           <div id="menuCuenta" class="col d-flex justify-content-center align-items-center divMenu">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#ffc107" class="bi bi-lock-fill"
@@ -91,7 +96,7 @@
               <path
                 d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
             </svg>
-            <span id="cuenta" class="fw-bold fs-4 fst-italic" style="color: #ffc107;">CUENTA</span>
+            <span id="cuentatext" class="fw-bold fs-4 fst-italic" style="color: #ffc107;">CUENTA</span>
           </div>
           <div id="menuSesion" class="col d-flex justify-content-center align-items-center divMenu">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#ffc107"
@@ -129,10 +134,13 @@
               <div class="collapse navbar-collapse" id="mynavbarAdmin">
                 <ul class="navbar-nav me-auto px-4 pt-3">
                   <li class="nav-item py-4 border-bottom border-dark">
-                    <h2 class="fw-bold fst-italic">.USUARIOS</h2>
+                    <h2 id="textUsuariosAdmin" class="fw-bold fst-italic">.USUARIOS</h2>
                     <div class="row">
                       <div class="col bg-light p-3 m-4">
-                        <form id="adminUsers" action="./AdminBack/Usuarios/deleteUsers.php" method="post"></form>
+                        <form action="./AdminBack/Usuarios/deleteUsers.php" method="post">
+                          <div id="adminUsers" class="row p-4 align-items-center"></div>
+                          <div clas="row"><div class="col px-3"><button class="btn btn-danger my-3 w-100 botonDelete" type="submit">Eliminar</button><div></div>
+                        </form>
                       </div>
                     </div>
                   </li>
@@ -140,32 +148,35 @@
                     <h2 class="fw-bold fst-italic">.TARIANS</h2>
                     <div class="row">
                       <div class="col bg-light m-4">
-                        <form id="adminTarians" action="./AdminBack/Tarians/deleteTarians.php" method="GET">
-
+                        <form action="./AdminBack/Tarians/deleteTarians.php" method="GET">
+                          <div id="adminTarians" class="row p-4 align-items-center"></div>
+                          <div clas="row"><div class="col px-3"><button class="btn btn-danger my-3 w-100 botonDelete" type="submit">Eliminar</button><div></div>
                         </form>
                       </div>
                     </div>
                   </li>
                   <li class="nav-item py-4 border-bottom border-dark">
-                    <h2 class="fw-bold fst-italic">.COMENTARIOS</h2>
+                    <h2 id="textComentariosAdmin" class="fw-bold fst-italic">.COMENTARIOS</h2>
                     <div class="row">
                       <div class="col bg-light py-4 m-4">
-                        <form id="adminComments" action="./AdminBack/Comments/deleteComment.php" post="GET">
+                        <form action="./AdminBack/Comments/deleteComment.php" post="GET">
+                          <div id="adminComments" class="row p-4 align-items-center"></div>
+                          <div clas="row"><div class="col px-3"><button class="btn btn-danger my-3 w-100 botonDelete" type="submit">Eliminar</button><div></div>
                         </form>
                       </div>
                     </div>
                   </li>
                   <li class="nav-item py-4">
-                    <h2 class="fw-bold fst-italic">.COMUNIDAD</h2>
+                    <h2 id="textComunidadAdmin" class="fw-bold fst-italic">.COMUNIDAD</h2>
                     <div class="row">
                       <div class="col bg-light py-4 m-4">
                         <div class="row px-3 justify-content-between">
                           <div style="width: 300px;">
-                            <p style="color: red;">*Cambia la keyss de la comunidad</p>
+                            <p id="textInfo01" style="color: red;">*Cambia la keyss de la comunidad</p>
                             <form action="./AdminBack/Comunidad/cambiaKeyss.php" method="post">
                               <input type="hidden" class="idUser" id="idUserKeyssCom" name="idUser">
                               <div class="mt-2">
-                                <label class="fs-5" for="keyssAdminCambKeyss">Keyss de Administrador:</label>
+                                <label class="fs-5 keyssAdmin" for="keyssAdminCambKeyss">Keyss de Administrador:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -184,7 +195,7 @@
                                 </div>
                               </div>
                               <div class="mt-2">
-                                <label class="fs-5" for="passwordAdminCambKeyss">Contraseña:</label>
+                                <label class="fs-5 passwordAdmin" for="passwordAdminCambKeyss">Contraseña:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -205,42 +216,18 @@
                                 </div>
                               </div>
                               <div class="mt-4">
-                                <button class="btn btn-warning" type="submit">Enviar</button>
-                                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                  data-bs-target="#myModal">
-                                  Información
-                                </button>
-                                <!-- The Modal -->
-                                <div class="modal" id="myModal">
-                                  <div class="modal-dialog">
-                                    <div class="modal-content">
-
-                                      <!-- Modal Header -->
-                                      <div class="modal-header">
-                                        <h4 class="modal-title">Información*</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                      </div>
-
-                                      <!-- Modal body -->
-                                      <div class="modal-body">
-                                        En este apartado debes introducir la clave de tu usuario y el keyss de tu
-                                        usuario correspondiente para poder entrar, La contraseña debe llevar una
-                                        mayúscula, una minúscula y un dígito y ser de 8 carácteres como mínimo.
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                <button class="btn btn-warning w-100 send" type="submit">Enviar</button>
                               </div>
                             </form>
                           </div>
 
 
-                          <div style="width: 300px;">
-                            <p style="color: red;">*Cambia la contraseña de la comunidad</p>
+                          <div class="pt-4 pt-lg-0" style="width: 300px;">
+                            <p id="textInfo02"  style="color: red;">*Cambia la contraseña de la comunidad</p>
                             <form id="formComPassword" action="./AdminBack/Comunidad/cambiaPassword.php" method="post">
                               <input type="hidden" class="idUser" id="idUserContCom" name="idUser">
                               <div class="mt-2">
-                                <label class="fs-5" for="keyssAdminCambCom">Keyss de Administrador:</label>
+                                <label class="fs-5 keyssAdmin" for="keyssAdminCambCom">Keyss de Administrador:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -259,7 +246,7 @@
                                 </div>
                               </div>
                               <div class="mt-2">
-                                <label class="fs-5" for="password">Contraseña de Administrador:</label>
+                                <label class="fs-5 passwordAdmin" for="password">Contraseña:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -280,7 +267,7 @@
                                 </div>
                               </div>
                               <div class="mt-2">
-                                <label class="fs-5" for="passwordComCambCom">Contraseña nueva:</label>
+                                <label class="fs-5 passwordNewCom" for="passwordComCambCom">Contraseña nueva:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -302,7 +289,7 @@
                                 </div>
                               </div>
                               <div class="mt-2">
-                                <label class="fs-5" for="passwordComRepCambCom">Repite la contraseña nueva:</label>
+                                <label class="fs-5 passwordRepeat" for="passwordComRepCambCom">Repite la contraseña nueva:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -324,42 +311,18 @@
                                 </div>
                               </div>
                               <div class="mt-4">
-                                <button class="btn btn-warning" type="submit">Enviar</button>
-                                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                  data-bs-target="#myModal">
-                                  Información
-                                </button>
-                                <!-- The Modal -->
-                                <div class="modal" id="myModal">
-                                  <div class="modal-dialog">
-                                    <div class="modal-content">
-
-                                      <!-- Modal Header -->
-                                      <div class="modal-header">
-                                        <h4 class="modal-title">Información*</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                      </div>
-
-                                      <!-- Modal body -->
-                                      <div class="modal-body">
-                                        En este apartado debes introducir la clave de tu usuario y el keyss de tu
-                                        usuario correspondiente para poder entrar, La contraseña debe llevar una
-                                        mayúscula, una minúscula y un dígito y ser de 8 carácteres como mínimo.
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                <button class="btn btn-warning w-100 send" type="submit">Enviar</button>
                               </div>
                             </form>
                           </div>
 
 
-                          <div style="width: 300px;">
-                            <p style="color: red;">*Cambia la imagen de la comunidad</p>
+                          <div class="pt-4 pt-lg-0" style="width: 300px;">
+                            <p id="textInfo03" style="color: red;">*Cambia la imagen de la comunidad</p>
                             <form action="./AdminBack/Comunidad/cambiaImagen.php" method="post" enctype="multipart/form-data">
                               <input type="hidden" class="idUser" id="idUserImgCom" name="idUser">
                               <div class="mt-2">
-                                <label class="fs-5" for="keyssAdminCambImg">Keyss de Administrador:</label>
+                                <label class="fs-5 keyssAdmin" for="keyssAdminCambImg">Keyss de Administrador:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -378,7 +341,7 @@
                                 </div>
                               </div>
                               <div class="mt-2">
-                                <label class="fs-5" for="password">Contraseña:</label>
+                                <label class="fs-5 passwordAdmin" for="password">Contraseña:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -400,48 +363,24 @@
                               </div>
                               <div class="row">
                                 <div class="mb-3 mt-3">
-                                  <label for="nameUser" class="form-label">Nueva imagen de comunidad:</label>
+                                  <label id="nuevaImagen" for="nameUser" class="form-label">Nueva imagen de comunidad:</label>
                                   <input type="file" class="form-control" id="addImage" name="addImage">
                                 </div>
                               </div>
                               <div class="mt-4">
-                                <button class="btn btn-warning" type="submit">Enviar</button>
-                                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                  data-bs-target="#myModal">
-                                  Información
-                                </button>
-                                <!-- The Modal -->
-                                <div class="modal" id="myModal">
-                                  <div class="modal-dialog">
-                                    <div class="modal-content">
-
-                                      <!-- Modal Header -->
-                                      <div class="modal-header">
-                                        <h4 class="modal-title">Información*</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                      </div>
-
-                                      <!-- Modal body -->
-                                      <div class="modal-body">
-                                        En este apartado debes introducir la clave de tu usuario y el keyss de tu
-                                        usuario correspondiente para poder entrar, La contraseña debe llevar una
-                                        mayúscula, una minúscula y un dígito y ser de 8 carácteres como mínimo.
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                <button class="btn btn-warning w-100 send" type="submit">Enviar</button>
                               </div>
                             </form>
                           </div>
 
 
-                          <div style="width: 300px;">
-                            <p style="color: red;">*Cambia el nombre de la comunidad, asegúrate de que esta comunidad no
+                          <div class="pt-4 pt-lg-0" style="width: 300px;">
+                            <p id="textInfo04" style="color: red;">*Cambia el nombre de la comunidad, asegúrate de que esta comunidad no
                               existe en esta instancia...</p>
                             <form action="./AdminBack/Comunidad/cambiaNombre.php" method="post" enctype="multipart/form-data">
                               <input type="hidden" class="idUser" id="idUserNameCom" name="idUser">
                               <div class="mt-2">
-                                <label class="fs-5" for="keyssAdminCambName">Keyss de Administrador:</label>
+                                <label class="fs-5 keyssAdmin" for="keyssAdminCambName">Keyss de Administrador:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -460,7 +399,7 @@
                                 </div>
                               </div>
                               <div class="mt-2">
-                                <label class="fs-5" for="password">Contraseña:</label>
+                                <label class="fs-5 passwordAdmin" for="password">Contraseña:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -483,7 +422,7 @@
                               <div class="row">
                                 <div class="mb-3 mt-3">
                                   <div class="mt-2">
-                                    <label class="fs-5" for="password">Nuevo nombre de la comunidad:</label>
+                                    <label id="newNameCom" class="fs-5" for="password">Nuevo nombre de la comunidad:</label>
                                   </div>
                                   <div class="d-flex justify-content-center">
                                     <div class="input-group">
@@ -496,31 +435,7 @@
                                 </div>
                               </div>
                               <div class="mt-4">
-                                <button class="btn btn-warning" type="submit">Enviar</button>
-                                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                  data-bs-target="#myModal">
-                                  Información
-                                </button>
-                                <!-- The Modal -->
-                                <div class="modal" id="myModal">
-                                  <div class="modal-dialog">
-                                    <div class="modal-content">
-
-                                      <!-- Modal Header -->
-                                      <div class="modal-header">
-                                        <h4 class="modal-title">Información*</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                      </div>
-
-                                      <!-- Modal body -->
-                                      <div class="modal-body">
-                                        En este apartado debes introducir la clave de tu usuario y el keyss de tu
-                                        usuario correspondiente para poder entrar, La contraseña debe llevar una
-                                        mayúscula, una minúscula y un dígito y ser de 8 carácteres como mínimo.
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                <button class="btn btn-warning w-100 send" type="submit">Enviar</button>
                               </div>
                             </form>
                           </div>
@@ -529,11 +444,11 @@
 
                         <div class="row">
                           <div class="col bg-light rounded p-5">
-                            <p style="color: red;">*Aquí puedes eleminar la comunidad. Asegúrate de anotar bien todos los datos correspondientes y de tener el consentimiento de todos los miembros antes de hacerlo.</p>
+                            <p id="textInfo05" style="color: red;">*Aquí puedes eleminar la comunidad. Asegúrate de anotar bien todos los datos correspondientes y de tener el consentimiento de todos los miembros antes de hacerlo.</p>
                             <form action="./AdminBack/Comunidad/deleteCom.php" method="post">
                               <input type="hidden" class="idUser" id="idUserImgCom" name="idUser">
                               <div class="mt-2">
-                                <label class="fs-5" for="password">Keyss de Comunidad:</label>
+                                <label id="keyssComAdmin" class="fs-5" for="password">Keyss de Comunidad:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -552,7 +467,7 @@
                                 </div>
                               </div>
                               <div class="mt-2">
-                                <label class="fs-5" for="password">Contraseña de Comunidad:</label>
+                                <label id="passwordComAdmin" class="fs-5" for="password">Contraseña de Comunidad:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -573,7 +488,7 @@
                                 </div>
                               </div>
                               <div class="mt-2">
-                                <label class="fs-5" for="password">Keyss de Usuario:</label>
+                                <label class="fs-5 keyssAdminComUser" for="password">Keyss de Usuario:</label>
                                 <div class="d-flex justify-content-center">
                                   <div class="input-group">
                                     <span id="ojo" class="input-group-text ojoPassword" id="basic-addon1">
@@ -594,7 +509,7 @@
                                 </div>
                               </div>
                               <div class="mt-2">
-                                <label class="fs-5" for="password">Contraseña de Usuario:</label>
+                                <label class="fs-5 passwordAdminComUser" for="password">Contraseña de Usuario:</label>
                                 <div class="d-flex justify-content-center">
                                   <div class="input-group">
                                     <span id="ojo" class="input-group-text ojoPassword" id="basic-addon1">
@@ -615,7 +530,7 @@
                                 </div>
                               </div>
                               <div class="mt-4">
-                                <button class="btn btn-danger w-100" type="submit">Eliminar</button>
+                                <button class="btn btn-danger w-100 botonDelete" type="submit">Eliminar</button>
                               </div>
                             </form>
                           </div>
@@ -644,7 +559,7 @@
                   <path
                     d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z" />
                   </svg>
-                <span class="fs-3 fw-bold fst-italic mx-2 mb-2" style="color: black;">Editar nombre de perfil</span>
+                <span id="editNamePerfil" class="fs-3 fw-bold fst-italic mx-2 mb-2" style="color: black;">Editar nombre de perfil</span>
               </button>
               <div class="collapse navbar-collapse" id="mynavbar2">
                 <ul class="navbar-nav me-auto px-5 pt-3">
@@ -654,17 +569,17 @@
                         <form action="../PerfilBack/NamePBack/cambiaName.php" method="post">
                           <input type="hidden" class="idUser" name="idUser">
                           <div class="mb-3 mt-3">
-                            <label for="nameUserCambiaName" class="form-label">Nuevo nombre de usuario:</label>
+                            <label for="nameUserCambiaName" class="form-label nameUserText">Nuevo nombre de usuario:</label>
                             <input type="text" class="form-control" id="nameUserCambiaName"
                               placeholder="Enter your new name user" name="nameUserCambiaName">
                           </div>
                           <div class="mb-3">
-                            <label for="passwordUserCambiaName" class="form-label">Contraseña de usuario:</label>
+                            <label for="passwordUserCambiaName" class="form-label passwordUserText">Contraseña de usuario:</label>
                             <input type="password" class="form-control" id="passwordUserCambiaName" placeholder="Enter password" name="passwordUserCambiaName">
                           </div>
                           <div class="row">
                             <div class="col mt-3">
-                              <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                              <button type="submit" class="btn btn-primary w-100 send">Enviar</button>
                             </div>
                           </div>
                         </form>
@@ -700,16 +615,16 @@
                         <form action="../PerfilBack/ImgPerfil/cambiaImg.php" method="POST" enctype="multipart/form-data">
                           <input type="hidden" class="idUser" name="idUser">
                           <div class="mb-3 mt-3">
-                            <label for="imgCambiaImg" class="form-label">Nueva imagen de usuario:</label>
+                            <label id="cambiaImgtext" for="imgCambiaImg" class="form-label">Nueva imagen de usuario:</label>
                             <input type="file" class="form-control" id="addImage" name="addImage">
                           </div>
                           <div class="mb-3">
-                            <label for="passwordCambiaImg" class="form-label">Contraseña de usuario:</label>
+                            <label for="passwordCambiaImg" class="form-label passwordUserText">Contraseña de usuario:</label>
                             <input type="password" class="form-control" id="passwordCambiaImg" placeholder="Enter password" name="passwordCambiaImg">
                           </div>
                           <div class="row">
                             <div class="col mt-3">
-                              <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                              <button type="submit" class="btn btn-primary w-100 send">Enviar</button>
                             </div>
                           </div>
                         </form>
@@ -734,7 +649,7 @@
                   <path
                     d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z" />
                   </svg>
-                <span class="fs-3 fw-bold fst-italic mx-2 mb-2" style="color: black;">Eliminar perfil</span>
+                <span id="deletePerfilText" class="fs-3 fw-bold fst-italic mx-2 mb-2" style="color: black;">Eliminar perfil</span>
               </button>
               <div class="collapse navbar-collapse" id="mynvarDelete">
                 <ul class="navbar-nav me-auto px-5 pt-3">
@@ -744,7 +659,7 @@
                         <form action="../PerfilBack/DeletePerfil/deleteUser.php" method="post">
                           <input type="hidden" class="idUser" name="idUser">
                           <div class="mt-2">
-                            <label class="fs-5" for="keyssUserDelete">Keyss de Usuario:</label>
+                            <label class="fs-5 keyssAdminComUser" for="keyssUserDelete">Keyss de Usuario:</label>
                           </div>
                           <div class="d-flex justify-content-center">
                             <div class="input-group">
@@ -763,7 +678,7 @@
                             </div>
                           </div>
                           <div class="mt-2">
-                            <label class="fs-5" for="passwordUserDelete">Contraseña:</label>
+                            <label class="fs-5 passwordAdminComUser" for="passwordUserDelete">Contraseña:</label>
                           </div>
                           <div class="d-flex justify-content-center">
                             <div class="input-group">
@@ -784,7 +699,7 @@
                             </div>
                           </div>
                           <div class="mt-4">
-                            <button class="btn btn-danger w-100" type="submit">Eliminar</button>
+                            <button class="btn btn-danger w-100 botonDelete" type="submit">Eliminar</button>
                           </div>
                         </form>
                       </div>
@@ -822,31 +737,29 @@
                   <path
                     d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z" />
                 </svg>
-                <span class="fs-3 fw-bold fst-italic mx-2 mb-2" style="color: black;">Elige tu idioma</span>
+                <span id="chooseLanguage" class="fs-3 fw-bold fst-italic mx-2 mb-2" style="color: black;">Elige tu idioma</span>
               </button>
               <div class="collapse navbar-collapse" id="mynavbar">
-                <div class="row py-5">
-                  <div class="col d-flex justify-content-center">
-                    <form action="../ConfigPerfil/Idioma/idioma.php">
-                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="eligeIdioma" id="eligeIdioma">
-                        <option selected>Elige tu idioma</option>
-                        <option value="1">Deutsch</option>
-                        <option value="2">English</option>
-                        <option value="3">Türkçe</option>
-                        <option value="4">català</option>
-                        <option value="5">español</option>
-                        <option value="6">français</option>
-                        <option value="7">italiano</option>
-                        <option value="8">português</option>
-                        <option value="9">русский</option>
-                        <option value="10">العربية</option>
-                        <option value="11">हिन्दी</option>
-                        <option value="12">文言</option>
+                <div class="row py-5 justify-content-center">
+                  <div class="col-9 col-lg-7">
+                      <select class="form-select form-select-lg mb-3 w-100" aria-label=".form-select-lg example" name="eligeIdioma" id="eligeIdioma">
+                        <option id="option0" selected>Elige tu idioma</option>
+                        <option value="de">Deutsch</option>
+                        <option value="en">English</option>
+                        <option value="tr">Türkçe</option>
+                        <option value="ca">Català</option>
+                        <option value="eu">Euskara</option>
+                        <option value="gl">Galego</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="it">Italiano</option>
+                        <option value="pt">Português</option>
+                        <option value="ru">русский</option>
+                        <option value="ar">العربية</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="zh">文言</option>
                       </select>
-                      <div class="mt-4">
-                        <button class="btn btn-primary w-100" type="submit">Enviar</button>
-                      </div>
-                    </form>
+                      <input type="checkbox" name="permanente" id="permanente"> <span class="fw-bold text-primary" id="perm">Selecciona esta opción si quieres que el idioma sea permanente.</span>
                   </div>
                 </div>
               </div>
@@ -878,8 +791,9 @@
               <div class="collapse navbar-collapse" id="myDeleteTarians">
                 <div class="row justify-content-center">
                   <div class="col my-4 py-5 col-9 bg-light">
-                        <form id="deleteUserTariansForm" action="../ConfigPerfil/tarians/deleteTarians.php" method="get">
-
+                        <form action="../ConfigPerfil/tarians/deleteTarians.php" method="get">
+                          <div id="deleteUserTariansForm" class="row p-4 align-items-center"></div>
+                          <div clas="row"><div class="col px-3"><button class="btn btn-danger my-3 w-100 botonDelete" type="submit">Eliminar</button><div></div>
                         </form>
                   </div>
                 </div>
@@ -900,15 +814,16 @@
                 <svg id="svgComment" xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="black" class="bi bi-chat-fill mx-3" viewBox="0 0 16 16">
                   <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
                 </svg>
-                <span class="fs-3 fw-bold fst-italic mb-2" style="color: black;">Comentarios</span>
+                <span class="fs-3 fw-bold fst-italic mb-2 comments" style="color: black;">Comentarios</span>
               </button>
               <div class="collapse navbar-collapse" id="myComments">
                 <div class="row justify-content-center">
                   <div class="col my-4 py-5 col-9 bg-light">
                     <div class="row">
                       <div class="col d-flex justify-content-center">
-                        <form id="deleteUserCommentsForm" action="../ConfigPerfil/comentarios/deleteComment.php" method="get">
-
+                        <form action="../ConfigPerfil/comentarios/deleteComment.php" method="get">
+                          <div id="deleteUserCommentsForm" class="row p-4 align-items-center"></div>
+                          <div clas="row"><div class="col"><button class="btn btn-danger my-3 w-100 botonDelete" type="submit">Eliminar</button><div></div>
                         </form>
                       </div>
                     </div>
@@ -938,12 +853,15 @@
               <path
                 d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
             </svg>
-                <span class="fs-3 fw-bold fst-italic mx-2 mb-2" style="color: black;">Bloquear/Desbloquear usuarios</span>
+                <span class="fs-3 fw-bold fst-italic mx-2 mb-2 bloqDesbloq" style="color: black;">Bloquear/Desbloquear</span>
               </button>
               <div class="collapse navbar-collapse" id="mynvarBloq">
                   <div class="col-12 d-flex justify-content-center py-3">
-                    <form class="col-11 bg-light p-5" id="formDesbUsuarios" action="../UsuariosBack/bloq.php" method="post">
+                    <form class="col-11 bg-light p-5" action="../UsuariosBack/bloq.php" method="post">
+                      <div id="formDesbUsuarios" class="row p-4 align-items-center">
 
+                      </div>
+                      <button class="btn btn-danger my-3 w-100 bloqDesbloq" type="submit">Bloquear/Desbloquear</button>
                     </form>
                   </div>
               </div>
@@ -969,19 +887,19 @@
               <path
                 d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
             </svg>
-                <span class="fs-3 fw-bold fst-italic mx-2 mb-2" style="color: black;">Contraseña de la cuenta</span>
+                <span class="fs-3 fw-bold fst-italic mx-2 mb-2 passwordAccount" style="color: black;">Contraseña de la cuenta</span>
               </button>
               <div class="collapse navbar-collapse" id="mynvarPCuenta">
                 <div class="row justify-content-center py-4">
                   <div class="col-10 bg-light p-4">
-                    <p style="color: red;">*Aquí podras cambiar la contraseña de tu cuenta, anote antes tu keyss de usuario para poder cambiar la contraseña.</p>
+                    <p id="infopasswordAccount" style="color: red;">*Aquí podras cambiar la contraseña de tu cuenta, anote antes tu keyss de usuario para poder cambiar la contraseña.</p>
 
                     <div class="row">
                       <div class="col">
                         <form id="formCuentaPasword" action="../CuentaBack/Password/passwordCuenta.php" method="post">
                           <input type="hidden" class="idUser" name="idUser">
                           <div class="mt-2">
-                            <label class="fs-5" for="keyssCuenta">Keyss de Usuario:</label>
+                            <label class="fs-5 keyssAdminComUser" for="keyssCuenta">Keyss de Usuario:</label>
                           </div>
                           <div class="d-flex justify-content-center">
                             <div class="input-group">
@@ -1000,7 +918,7 @@
                             </div>
                           </div>
                           <div class="mt-2">
-                            <label class="fs-5" for="passwordNewCuenta">Contraseña nueva:</label>
+                            <label class="fs-5 passwordNewCom" for="passwordNewCuenta">Contraseña nueva:</label>
                           </div>
                           <div class="d-flex justify-content-center">
                             <div class="input-group">
@@ -1022,7 +940,7 @@
                             </div>
                           </div>
                           <div class="mt-2">
-                            <label class="fs-5" for="passwordRepCuenta">Repite la contraseña nueva:</label>
+                            <label class="fs-5 passwordRepeat" for="passwordRepCuenta">Repite la contraseña nueva:</label>
                           </div>
                           <div class="d-flex justify-content-center">
                             <div class="input-group">
@@ -1044,7 +962,7 @@
                             </div>
                           </div>
                           <div class="mt-4">
-                            <button class="btn btn-primary w-100" type="submit">Enviar</button>
+                            <button class="btn btn-primary w-100 send" type="submit">Enviar</button>
                           </div>
                         </form>
                       </div>
@@ -1063,7 +981,7 @@
                 <button class="col-12 d-flex justify-content-center align-items-end navbar-toggler btn btn-warning py-5"
                   type="button" data-bs-toggle="collapse" data-bs-target="#mynvarKCuenta">
                   <svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17v80c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V448h40c13.3 0 24-10.7 24-24V384h40c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3zM376 96a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"/></svg>
-                  <span class="fs-3 fw-bold fst-italic mx-2 mb-2" style="color: black;">Keyss de la cuenta</span>
+                  <span id="keyssAccount" class="fs-3 fw-bold fst-italic mx-2 mb-2" style="color: black;">Keyss de la cuenta</span>
                 </button>
                 <div class="collapse navbar-collapse" id="mynvarKCuenta">
                   <div class="row justify-content-center py-4">
@@ -1073,16 +991,16 @@
                         <li class="nav-item py-4">
                           <div class="row">
                             <div class="col bg-light rounded">
-                              <p style="color: red;">*Aquí podras cambiar tu keyss, si no la recuerdas, solo debes anotar la contraseña de tu usuario y a continuación te daremos una nueva keyss.</p>
+                              <p id="keyssAccountInfo" style="color: red;">*Aquí podras cambiar tu keyss, si no la recuerdas, solo debes anotar la contraseña de tu usuario y a continuación te daremos una nueva keyss.</p>
                               <form action="../CuentaBack/Keyss/keyssCuenta.php" method="post">
                                 <input type="hidden" class="idUser" name="idUser">
                                 <div class="mb-3">
-                                  <label for="passwordCuenta" class="form-label">Contraseña de usuario:</label>
+                                  <label for="passwordCuenta" class="form-label passwordAdminComUser">Contraseña de usuario:</label>
                                   <input type="password" class="form-control" id="passwordCuenta" placeholder="Enter password" name="passwordCuenta">
                                 </div>
                                 <div class="row">
                                   <div class="col mt-3">
-                                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                                    <button type="submit" class="btn btn-primary w-100 send">Enviar</button>
                                   </div>
                                 </div>
                               </form>
