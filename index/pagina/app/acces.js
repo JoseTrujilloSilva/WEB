@@ -69,6 +69,7 @@ function codigo() {
                 $('#imgs01').attr('src', '');
                 $('#video').attr('src', '');
                 $('#text').val('Descripción: ');
+                alert('El archivo se ha subido correctamente.')
         }
 
     }

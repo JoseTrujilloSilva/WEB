@@ -34,8 +34,20 @@ if ($array_idCommentsDelete != null) {
                 echo $value;
                 foreach ($array_idCommentsDelete as $value2) {
                     if($value === $value2){
+                        $result2 = $bbdd->query("SELECT idTarian FROM tarians WHERE idUser = $idUser");
+                        $arrayPaco = $result2->fetch_array(MYSQLI_NUM);
+                        
+                        foreach($arrayPaco as $valuePaco){
+                            $result3 = $bbdd->query("DELETE FROM comentarios WHERE idTarian = $valuePaco");
+                        }
+
+                        foreach($arrayPaco as $valuePaco){
+                            $result3 = $bbdd->query("DELETE FROM favoritos WHERE idTarian = $valuePaco");
+                        }
                         $bbdd->query("DELETE FROM tarians WHERE idTarian = $value2");
+                        /*
                        header('Location: ./tariansResult.html?id='.$idUser);
+                       */
                     }
             }
             }
