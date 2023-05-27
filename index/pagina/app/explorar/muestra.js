@@ -211,7 +211,11 @@ function codigo() {
 
             muestraComments(idTarian);
             favoritos(idTarian, fecha);
-    
+            
+            $('#contenidoMedia').css('display', 'none');
+            $('#retarianMedia').css('display', 'none');
+            $('#contenedorPrinc').css('display','none');
+            $('#contenedorPrinc').css('background', 'none');
     
             switch (true) {
                 case contCarousel>0&&contCarousel<carousel.length-1:
@@ -230,23 +234,25 @@ function codigo() {
             $('#card01').css('display', 'none');
             $('#video').css('display', 'none');
             $('#card02').css('display', 'none');
+            $('#nameUserCont').html('');
+            $('#retarianContenido').html('');
             $('#twitch-embed').css('display', 'none');
             $('iframe').css('display', 'none');
                 switch (true) {
                     case carousel[contCarousel][2]===1:
                         if (data[contCarousel][8]==='1') {
                             $('#svgRetarians2').css('display', 'block');
-                        $('#contenido').css('display', 'block');
-                        $('#contenido').html(carousel[contCarousel][0][0]);
-                        $('#contenido').css('color', 'red');
-                        $('#nameUserCont').html('Retarians de: '+nameUser);
+                            $('#nameUserCont').css('display', 'none');
+                            $('#descripcion').css('display', 'none');
+                            $('#contenidoMedia').css('display', 'block');
+                            $('#contenidoMedia').html(carousel[contCarousel][0][0]);
+                            $('#retarianMedia').css('display', 'block');
+                            $('#retarianMedia').html('Retarians de '+nameUser+': '+data[contCarousel][7]);
                         $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#imgFav').val(data[contCarousel][1]);
-                        $('#retarianContenido').html(data[contCarousel][7]);
                         $('#nombrePerfil2').html(data[contCarousel][6]);
                         console.log('Es una imagen prueba');
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
-                        $('#descripcion').html('');
                         $('#contenedorPrinc').css('background-image', 'url('+'../mostrar/'+carousel[contCarousel][0][1]+')');
                         $('#contenedorPrinc').css('background-size', 'contain');
                         $('#contenedorPrinc').css('background-repeat', 'no-repeat');
@@ -271,6 +277,8 @@ function codigo() {
                     case carousel[contCarousel][3]===1:
                         if (data[contCarousel][8]==='1') {
                             $('#videoTipo').val(data[contCarousel][9]);
+                            $('#nameUserCont').css('display', 'none');
+                            $('#descripcion').css('display', 'none');
                             if (data[contCarousel][9] ==='youtube') {
                                 $('#card01').css('display', 'flex');
                                 $('#card01').css('width', '100%');
@@ -310,13 +318,14 @@ function codigo() {
                                 $('iframe').css('width', '100%');
                             }
                             $('#svgRetarians2').css('display', 'block');
-                        $('#nameUserCont').html('Retarians de: '+nameUser);
-                        $('#retarianContenido').html(data[contCarousel][7]);
+                        $('#contenidoMedia').css('display', 'block');
+                        $('#contenidoMedia').html(carousel[contCarousel][0][0]);
+                        $('#retarianMedia').css('display', 'block');
+                        $('#retarianMedia').html('Retarians de '+nameUser+': '+data[contCarousel][7]);
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
+                        $('#contenedorPrinc').css('display', 'none');
                         $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#videoFav').val(carousel[contCarousel][0][2]);
-                        $('#descripcion').html(carousel[contCarousel][0][0]);
-                        $('#descripcion').css('color', 'red');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }else{
                             $('#videoTipo').val(data[contCarousel][9]);
@@ -359,6 +368,7 @@ function codigo() {
                                 $('iframe').css('width', '100%');
                             }
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
+                        $('#contenedorPrinc').css('display', 'none');
                         $('#contenedorPrinc').css('background', 'none');
                         $('#pdf').css('display', 'none');
                         console.log('Es un video');
