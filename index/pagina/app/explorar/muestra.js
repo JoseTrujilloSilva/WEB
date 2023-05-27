@@ -270,6 +270,7 @@ function codigo() {
                         break;
                     case carousel[contCarousel][3]===1:
                         if (data[contCarousel][8]==='1') {
+                            $('#videoTipo').val(data[contCarousel][9]);
                             if (data[contCarousel][9] ==='youtube') {
                                 $('#card01').css('display', 'flex');
                                 $('#card01').css('width', '100%');
@@ -318,6 +319,7 @@ function codigo() {
                         $('#descripcion').css('color', 'red');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }else{
+                            $('#videoTipo').val(data[contCarousel][9]);
                             if (data[contCarousel][9] ==='youtube') {
                                 $('#card01').css('display', 'flex');
                                 $('#card01').css('width', '100%');

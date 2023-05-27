@@ -206,6 +206,8 @@ function codigo() {
             $('iframe').css('display', 'none');
             $('#contenidoMedia').css('display', 'none');
             $('#retarianMedia').css('display', 'none');
+            $('#contenedorPrinc').css('display','none');
+          
             switch (true) {
                 case contCarousel>0&&contCarousel<carousel.length-1:
                     $('#last').css('visibility', 'visible');
@@ -254,6 +256,10 @@ function codigo() {
                         break;
                     case carousel[contCarousel][3]===1:
                         $('#videoTipo').val(data[contCarousel][9]);
+                        $('#nombrePerfil2').html(data[contCarousel][6]);
+                        $('#nameUserCont').css('display', 'none');
+                        $('#retarianContenido').css('display', 'none'); 
+                        $('#contenedorPrinc').css('background', 'none');
                         if (data[contCarousel][8]==='1') {
                             if (data[contCarousel][9] ==='youtube') {
                                 $('#card01').css('display', 'flex');
@@ -261,7 +267,7 @@ function codigo() {
                                 $('#card01').css('height', '300px');
                                 $('#video').css('display', 'block');
                                 $('#video').attr('width', '100%');
-                                $('#video').attr('height', '300px');
+                                $('#video').attr('height', '400px');
                                 $('#video').attr('src', 'https://www.youtube.com/embed/'+carousel[contCarousel][0][2]);
                             }
                             if (data[contCarousel][9] === 'odysee') {
@@ -307,7 +313,6 @@ function codigo() {
                         $('#contenidoMedia').html(carousel[contCarousel][0][0]);
                         $('#retarianMedia').css('display', 'block');
                         $('#retarianMedia').html('Retarians de '+nameUser+': '+data[contCarousel][7]);
-                        $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#descripcion').css('color', 'red');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }else{
@@ -358,7 +363,6 @@ function codigo() {
                         $('#contenedorPrinc').css('background', 'none');
                         $('#pdf').css('display', 'none');
                         console.log('Es un video');
-                        $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }
                     

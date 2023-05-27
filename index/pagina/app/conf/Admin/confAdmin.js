@@ -168,7 +168,7 @@ function codigo() {
         let contCHeck = 0;
 
         for (const value of data) {
-            document.getElementById('formDesbUsuarios').innerHTML += '<div class="col-auto"><input type="hidden" name="idUser" id="idUser" value="'+idUser+'"><input type="checkbox" value="'+value[2]+'" name="bloq[]" id="bloq'+contCHeck+++'"></div><div class="col-3 col-sm-auto my-3 my-sm-0"><img class="rounded-circle" width="50" height="50" src="../../../'+value[1]+'" alt=""></div><div class="col-5 col-sm-7"><span>'+value[0]+'</span></div><div class="col-12 col-sm-auto text-center text-sm-end mx-0 mx-lg-5 my-2 my-sm-0"><span>Bloqueado: </span><span id="span'+value[2]+'"></span></div>';
+            document.getElementById('formDesbUsuarios').innerHTML += '<div class="row p-4 align-items-center"><div class="col-auto"><input type="hidden" name="idUser" id="idUser" value="'+idUser+'"><input type="checkbox" value="'+value[2]+'" name="bloq[]" id="bloq'+contCHeck+++'"></div><div class="col-3 col-sm-auto my-3 my-sm-0"><img class="rounded-circle" width="50" height="50" src="../../../'+value[1]+'" alt=""></div><div class="col-5 col-sm-7"><span>'+value[0]+'</span></div><div class="col-12 col-sm-auto text-center text-sm-end mx-0 mx-lg-5 my-2 my-sm-0"><span>Bloqueado: </span><span id="span'+value[2]+'"></span></div></div>';
 
 
             document.getElementById('span'+value[2]+'').innerHTML = 'No';
@@ -239,7 +239,7 @@ function codigo() {
 
         for (const value of data) {
 
-            document.getElementById('adminComments').innerHTML += '<div class="col-auto"><input type="hidden" name="idUserComments" id="idUserComments" value="'+idUser+'"></div><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[3]+'" name="comments[]" id="comentarioDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[2]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[1]+'</span></div>';
+            document.getElementById('adminComments').innerHTML += '<div class="row" style="padding: 20px 0px"><input type="hidden" name="idUserComments" id="idUserComments" value="'+idUser+'"><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[3]+'" name="comments[]" id="comentarioDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[2]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[1]+'</span></div></div>';
         }
     })
 
@@ -258,7 +258,7 @@ function codigo() {
 
 
         for (const value of data) {
-            document.getElementById('adminTarians').innerHTML += '<div class="col-auto"><input type="hidden" name="idUserTarians" id="idUserTarians" value="'+idUser+'"></div><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[6]+'" name="tarians[]" id="tariansDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[5]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[4]+'</span></div>';
+            document.getElementById('adminTarians').innerHTML += '<div class="row" style="padding: 20px 0px"><input type="hidden" name="idUserTarians" id="idUserTarians" value="'+idUser+'"><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[6]+'" name="tarians[]" id="tariansDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[5]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[4]+'</span></div><div>';
         }
     })
 
@@ -279,7 +279,7 @@ function codigo() {
         console.log(data);
 
         for (const value of data) {
-            document.getElementById('deleteUserTariansForm').innerHTML += '<div class="col-auto"><input type="hidden" name="idUserTariansUser" id="idUserTarians" value="'+idUser+'"></div><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[6]+'" name="tariansUser[]" id="tariansDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[5]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[4]+'</span></div>';
+            document.getElementById('deleteUserTariansForm').innerHTML += '<div class="row" style="padding: 20px 0px"><input type="hidden" name="idUserTariansUser" id="idUserTarians" value="'+idUser+'"><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[6]+'" name="tariansUser[]" id="tariansDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[5]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[4]+'</span></div></div>';
         }
     })
 
@@ -298,7 +298,7 @@ function codigo() {
         console.log(data);
 
         for (const value of data) {
-            document.getElementById('deleteUserCommentsForm').innerHTML += '<div class="col-auto"><input type="hidden" name="idUserComments" id="idUserComments" value="'+idUser+'"></div><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[3]+'" name="comments[]" id="comentarioDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[2]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[1]+'</span></div>';
+            document.getElementById('deleteUserCommentsForm').innerHTML += '<div class="row" style="padding: 20px 0px"><input type="hidden" name="idUserComments" id="idUserComments" value="'+idUser+'"><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[3]+'" name="comments[]" id="comentarioDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[2]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[1]+'</span></div></div>';
         }
     })
 
