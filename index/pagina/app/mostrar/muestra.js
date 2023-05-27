@@ -204,6 +204,8 @@ function codigo() {
             $('#card02').css('display', 'none');
             $('#twitch-embed').css('display', 'none');
             $('iframe').css('display', 'none');
+            $('#contenidoMedia').css('display', 'none');
+            $('#retarianMedia').css('display', 'none');
             switch (true) {
                 case contCarousel>0&&contCarousel<carousel.length-1:
                     $('#last').css('visibility', 'visible');
@@ -227,11 +229,10 @@ function codigo() {
                             $('#contenedorPrinc').css('background-size', 'contain');
                             $('#contenedorPrinc').css('background-repeat', 'no-repeat');
                             $('#contenedorPrinc').css('background-position', 'center');
-                        $('#contenido').css('display', 'block');
-                        $('#contenido').html(carousel[contCarousel][0][0]);
-                        $('#contenido').css('color', 'red');
-                        $('#nameUserCont').html('Retarians de: '+nameUser);
-                        $('#retarianContenido').html(data[contCarousel][7]);
+                        $('#contenidoMedia').css('display', 'block');
+                        $('#contenidoMedia').html(carousel[contCarousel][0][0]);
+                        $('#retarianMedia').css('display', 'block');
+                        $('#retarianMedia').html('Retarians de '+nameUser+': '+data[contCarousel][7]);
                         $('#nombrePerfil2').html(data[contCarousel][6]);
                         console.log('Es una imagen prueba');
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
@@ -302,6 +303,10 @@ function codigo() {
                         $('#retarianContenido').html(data[contCarousel][7]);
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#contenedorPrinc').css('display', 'none');
+                        $('#contenidoMedia').css('display', 'block');
+                        $('#contenidoMedia').html(carousel[contCarousel][0][0]);
+                        $('#retarianMedia').css('display', 'block');
+                        $('#retarianMedia').html('Retarians de '+nameUser+': '+data[contCarousel][7]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#descripcion').css('color', 'red');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);

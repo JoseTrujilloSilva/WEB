@@ -114,7 +114,8 @@ function codigo() {
     
 
         function llamaCarousel() {
-
+        $('#autorFav').val();
+        $('#idTarianFav').val('');
         $('#textFav').val('');
         $('#muestraComentarios').html('');
         $('#imgFav').val('');
@@ -192,7 +193,7 @@ function codigo() {
         favoritos(idTarian, fecha);
         $('#nombrePerfil').html(data[contCarousel][0]);
         $('#nombrePerfil2').html(data[contCarousel][0]);
-        $('#autor').val(data[contCarousel][0]);
+        $('#autorFav').val(data[contCarousel][0]);
         $('#fotoPerfil').attr('src', '../../'+data[contCarousel][1]);
         
 
@@ -377,7 +378,7 @@ function codigo() {
         data.append('imgFav', $('#imgFav').val());
         data.append('videoFav', $('#videoFav').val());
         data.append('pdfFav', $('#pdfFav').val());
-        data.append('autor', $('#autor').val());
+        data.append('autorFav', $('#autorFav').val());
     
         fetch('../explorar/favoritos/favoritos.php', {
             url: '../explorar/favoritos/favoritos.php',

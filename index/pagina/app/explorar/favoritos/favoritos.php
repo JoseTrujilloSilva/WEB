@@ -8,14 +8,13 @@ ini_set('error_reporting', E_ALL);
 
 $cont = 0;
 $fechaTarian = $_POST['fechaFav'];
-$fav = $_POST['fav'];
 $idTarian = $_POST['idTarianFav'];
 $idUser = $_POST['idUserFav'];
 $text = $_POST['textFav'];
 $img = $_POST['imgFav'];
 $video = $_POST['videoFav'];
 $pdf = $_POST['pdfFav'];
-$autor = $_POST['autor'];
+$autor = $_POST['autorFav'];
 $idFav = random_int(200, 999999);
 
 bbddConexion();

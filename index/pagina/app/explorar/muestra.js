@@ -39,7 +39,8 @@ function codigo() {
     $('#closeComment').on('click', eventoComentarios);
     $('#retarians').on('click', eventoRetarians);
     $('#closeRetarians').on('click', eventoRetarians);
-
+    $('#nombrePerfil2').html(nameUser);
+    $('#autorFav').val(nameUser);
     $('#formComment').on('submit',e=> eventoComentarios(e));
    
     $('#idUserComment').val(idUser2);
@@ -130,7 +131,13 @@ function codigo() {
 
 
     function llamaCarousel() {
-
+        $('#fechaFav').val('');
+        $('#idTarianFav').val('');
+        $('#textFav').val('');
+        $('#imgFav').val('');
+        $('#videoFav').val('');
+        $('#pdfFav').val('');
+        $('#autor').val('');
         $('#contenedorPrinc').css('height', '');
         $('#nameUserCont').html('');
         $('#retarianContenido').html('');
@@ -416,9 +423,10 @@ function codigo() {
                         $('#contenedorPrinc').css('padding', '0');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                     }else{
-                        $('#nombrePerfil2').html(nameUser);
+                       
                         $('#contenido').css('color', 'black');
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
+                        $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#contenido').html(carousel[contCarousel][0][0])
                         $('#contenido').css('display', 'block');
                         $('#descripcion').html('');
@@ -476,14 +484,13 @@ e.preventDefault();
 var data = new FormData();
 
 data.append('fechaFav', $('#fechaFav').val());
-data.append('fav', $('#fav').val());
 data.append('idUserFav', $('#idUserFav').val());
 data.append('idTarianFav', $('#idTarianFav').val());
 data.append('textFav', $('#textFav').val());
 data.append('imgFav', $('#imgFav').val());
 data.append('videoFav', $('#videoFav').val());
 data.append('pdfFav', $('#pdfFav').val());
-data.append('autor', $('#autor').val());
+data.append('autorFav', $('#autorFav').val());
 
 fetch('../explorar/favoritos/favoritos.php', {
     url: '../explorar/favoritos/favoritos.php',
