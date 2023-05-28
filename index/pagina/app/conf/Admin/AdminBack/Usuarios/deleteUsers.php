@@ -54,9 +54,7 @@ if ($array_idUserDelete != null) {
                             }
                         }
                         $bbdd->query("DELETE FROM usuarios WHERE idUser = $value2");
-                        /*
                         header('Location: ./UsuariosResult.html?id='.$idUser);
-                        */
                     }
             }
             }

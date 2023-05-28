@@ -1,3 +1,11 @@
+<style>
+    body{
+        background-color: #333333;
+    }
+    *{
+        color: white;
+    }
+</style>
 <?php
 
 require_once '../../../database.php';
@@ -21,7 +29,7 @@ $arrayDevuelve = $resultadoDevuelve->fetch_array(MYSQLI_NUM);
 
 if ($array_idUserBloq == null) {
     $bbdd->query("DELETE FROM bloqueados WHERE idUser = $idUser");
-    echo 'Desbloqueados todos con éxito';
+    header('Location: ./desbloqResult.html?id='.$idUser);
 }else{
     if ($arrayDevuelve == null) {
 
@@ -35,8 +43,8 @@ if ($array_idUserBloq == null) {
     
     
                 mysqli_stmt_execute($sql);
-    
-                echo 'Bloqueado con éxito';
+                    
+                header('Location: ./bloqResult.html?id='.$idUser);
                 }
         }
     }else{
@@ -47,7 +55,7 @@ if ($array_idUserBloq == null) {
                 }else{
                     if($value === $value2){
                         $bbdd->query("DELETE FROM bloqueados WHERE idUserBloq = $value2");
-                        echo 'Desbloqueado con éxito';
+                        header('Location: ./desbloqResult.html?id='.$idUser);
                     }else{
                         $sql = $bbdd->prepare("INSERT INTO bloqueados VALUES(?,?,?)");
             
@@ -56,7 +64,7 @@ if ($array_idUserBloq == null) {
             
                         mysqli_stmt_execute($sql);
             
-                        echo 'Bloqueado con éxito';
+                        header('Location: ./bloqResult.html?id='.$idUser);
                     }
                 }
             }

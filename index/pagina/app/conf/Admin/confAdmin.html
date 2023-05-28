@@ -448,7 +448,7 @@
                             <form action="./AdminBack/Comunidad/deleteCom.php" method="post">
                               <input type="hidden" class="idUser" id="idUserImgCom" name="idUser">
                               <div class="mt-2">
-                                <label id="keyssComAdmin" class="fs-5" for="password">Keyss de Comunidad:</label>
+                                <label id="keyssComAdmin" class="fs-5" for="keyssComDeleteCom">Keyss de Comunidad:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -461,13 +461,13 @@
                                         d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                                     </svg>
                                   </span>
-                                  <input id="keyssCom" name="keyssCom" type="password" class="form-control bg-transparent borderInc"
+                                  <input id="keyssComDeleteCom" name="keyssComDeleteCom" type="password" class="form-control bg-transparent borderInc"
                                     placeholder="keyss" aria-label="Input group example" aria-describedby="basic-addon1"
                                     required>
                                 </div>
                               </div>
                               <div class="mt-2">
-                                <label id="passwordComAdmin" class="fs-5" for="password">Contraseña de Comunidad:</label>
+                                <label id="passwordComAdmin" class="fs-5" for="passwordComDeleteCom">Contraseña de Comunidad:</label>
                               </div>
                               <div class="d-flex justify-content-center">
                                 <div class="input-group">
@@ -480,7 +480,7 @@
                                         d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                                     </svg>
                                   </span>
-                                  <input id="passwordCom" name="passwordCom" type="password"
+                                  <input id="passwordCom" name="passwordComDeleteCom" type="password"
                                     class="form-control bg-transparent borderInc" placeholder="password"
                                     aria-label="Input group example" aria-describedby="basic-addon1"
                                     pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}" required data-bs-toggle="tooltip"
@@ -488,7 +488,7 @@
                                 </div>
                               </div>
                               <div class="mt-2">
-                                <label class="fs-5 keyssAdminComUser" for="password">Keyss de Usuario:</label>
+                                <label class="fs-5 keyssAdminComUser" for="keyssUserDelete">Keyss de Usuario:</label>
                                 <div class="d-flex justify-content-center">
                                   <div class="input-group">
                                     <span id="ojo" class="input-group-text ojoPassword" id="basic-addon1">
@@ -500,11 +500,11 @@
                                           d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                                       </svg>
                                     </span>
-                                    <input id="deltePasswordUser" name="deletePasswordUser" type="password"
+                                    <input id="keyssUserDeleteCom" name="keyssUserDeleteCom" type="password"
                                       class="form-control bg-transparent borderInc" placeholder="keyssUser"
                                       aria-label="Input group example" aria-describedby="basic-addon1"
-                                      pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}" required data-bs-toggle="tooltip"
-                                      title="La contraseña debe llevar una mayúscula, una minúscula y un dígito y ser de 8 carácteres como mínimo">
+                                      required data-bs-toggle="tooltip"
+                                      >
                                   </div>
                                 </div>
                               </div>
@@ -521,7 +521,7 @@
                                           d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                                       </svg>
                                     </span>
-                                    <input id="deltePasswordUser" name="deletePasswordUser" type="password"
+                                    <input id="deltePasswordUser" name="passwordUserDeleteCom" type="password"
                                       class="form-control bg-transparent borderInc" placeholder="password"
                                       aria-label="Input group example" aria-describedby="basic-addon1"
                                       pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}" required data-bs-toggle="tooltip"

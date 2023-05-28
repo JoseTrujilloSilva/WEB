@@ -1,3 +1,11 @@
+<style>
+    body{
+        background-color: #333333;
+    }
+    *{
+        color: white;
+    }
+</style>
 <?php
 
 
@@ -34,19 +42,17 @@ for ($i=0; $i < $row3; $i++) {
     $keyssSQLCom = strval($rows3[1]);
 }
 
-
-
 // Verificar la contraseña
-if (password_verify($passwordAdmin, $passwordSQL) && crypt($keyssAdmin, '7766GGGttwfef#@') == $keyssSQL && password_verify($passwordCom, $passwordSQLCom) && crypt($keyssCom, '27776361HHg@###ir..') == $keyssSQLCom) {
+if (password_verify($password, $passwordSQL) && crypt($keyss, '7766GGGttwfef#@') == $keyssSQL && password_verify($passwordCom, $passwordSQLCom) && crypt($keyssCom, '27776361HHg@###ir..') == $keyssSQLCom) {
     bbdd()->query("DELETE FROM favoritos WHERE idCom = $idCom");
     bbdd()->query("DELETE FROM comentarios WHERE idCom = $idCom");
     bbdd()->query("DELETE FROM tarians WHERE idCom = $idCom");
     bbdd()->query("DELETE FROM bloqueados WHERE idCom = $idCom");
-    bbdd()->query("DELETE FROM usuarios WHERE idCom = $idCom");
     bbdd()->query("DELETE FROM admins WHERE idCom = $idCom");
+    bbdd()->query("DELETE FROM usuarios WHERE idCom = $idCom");
     bbdd()->query("DELETE FROM comunidades WHERE idCom = $idCom");
 
-    header('Location: ../../../../../../../../index.html');
+    header('Location: ../../../../../../index.html');
 
 } else {
     echo 'La contraseña es incorrecta';

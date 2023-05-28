@@ -1,3 +1,11 @@
+<style>
+    body{
+        background-color: #333333;
+    }
+    *{
+        color: white;
+    }
+</style>
 <?php
 
 require_once '../../../../../database.php';
@@ -45,9 +53,8 @@ if ($array_idCommentsDelete != null) {
                             $result3 = $bbdd->query("DELETE FROM favoritos WHERE idTarian = $valuePaco");
                         }
                         $bbdd->query("DELETE FROM tarians WHERE idTarian = $value2");
-                        /*
+                        
                        header('Location: ./tariansResult.html?id='.$idUser);
-                       */
                     }
             }
             }

@@ -187,7 +187,7 @@ function codigo() {
                 for (const value of document.getElementsByName('bloq[]')) {
                     for (const value2 of data) {
                         if (value2 == value.value) {
-                            document.getElementById('bloq1').checked = true;
+                            document.getElementById(value.id).checked = true;
                             document.getElementById('span'+value.value+'').innerHTML = 'Si';
                         }else{
                             document.getElementById('span'+value.value+'').innerHTML = 'No';
@@ -276,7 +276,6 @@ function codigo() {
     })
     .then(function(data){
         let contCHeck = 0;
-        console.log(data);
 
         for (const value of data) {
             document.getElementById('deleteUserTariansForm').innerHTML += '<div class="row" style="padding: 20px 0px"><input type="hidden" name="idUserTariansUser" id="idUserTarians" value="'+idUser+'"><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[6]+'" name="tariansUser[]" id="tariansDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[5]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[4]+'</span></div></div>';
@@ -295,7 +294,6 @@ function codigo() {
     })
     .then(function(data){
         let contCHeck = 0;
-        console.log(data);
 
         for (const value of data) {
             document.getElementById('deleteUserCommentsForm').innerHTML += '<div class="row" style="padding: 20px 0px"><input type="hidden" name="idUserComments" id="idUserComments" value="'+idUser+'"><div class="col-12 col-sm-7"><div class="row"><div class="col-10 col-sm-auto my-3 my-sm-0"><input type="checkbox" value="'+value[3]+'" name="comments[]" id="comentarioDelete'+contCHeck+++'"><span style="padding-left: 10px;">'+value[2]+'</span></div><div class="col-10 col-sm-7"><span>'+value[0]+'</span></div></div></div><div class="col-12 col-sm-4"><span>Fecha: </span><span>'+value[1]+'</span></div></div>';
@@ -336,7 +334,6 @@ function codigo() {
         return res.json();
     })
     .then(function(data) {
-        console.log(data)
         var idioma = localStorage.getItem('localLanguajes');
         if (idioma===undefined || idioma === 'null') {
             idioma = sessionStorage.getItem('sesionLanguajes');

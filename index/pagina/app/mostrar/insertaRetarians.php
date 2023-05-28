@@ -1,3 +1,11 @@
+<style>
+    body{
+        background-color: #333333;
+    }
+    *{
+        color: white;
+    }
+</style>
 <?php
 
 
@@ -60,7 +68,7 @@ switch (true) {
             echo 'se mete dentro';
             $sql = $bbdd->prepare("INSERT INTO tarians (idCom, idUser, idTarian, txt, video, fecha, autor, textRetarian, retarian, tipoVideo) VALUES(?,?,?,?,?,?,?,?,?,?)");
         
-            $sql->bind_param('iiisssssis', $idCom, $idUser, $idTarian, $text, $video, $fechaHoy, $autor, $textRetarians, $numRetarian, $videoTipo);
+            $sql->bind_param('iiisssssis', $idCom, $idUser, $idTarian, $text, $video, $fechaTarian, $autor, $textRetarians, $numRetarian, $videoTipo);
         
             $sql->execute();
         

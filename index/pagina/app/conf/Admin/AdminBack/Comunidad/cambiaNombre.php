@@ -1,3 +1,11 @@
+<style>
+    body{
+        background-color: #333333;
+    }
+    *{
+        color: white;
+    }
+</style>
 <?php
 
 require_once '../../../../../database.php';
