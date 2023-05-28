@@ -133,8 +133,6 @@ function codigo() {
             })
         .then(function(data){
 
-            console.log(contCarousel);
-
             if (data[contCarousel] === 0) {
                 $('#textBloqueado').css('display', 'block');
                 $('#textBloqueado').html('No puedes ver el contenido, porque este usuario te ha bloqueado');

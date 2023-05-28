@@ -361,6 +361,8 @@ function codigo() {
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#contenedorPrinc').css('display', 'none');
                         $('#contenedorPrinc').css('background', 'none');
+                        $('#descripcion').html(carousel[contCarousel][0][0]);
+                        $('#nombrePerfil2').html(nameUser);
                         $('#pdf').css('display', 'none');
                         console.log('Es un video');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
@@ -393,6 +395,7 @@ function codigo() {
                         $('#pdf').html(carousel[contCarousel][0][3]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#contenedorPrinc').css('background', 'white');
+                        $('#nombrePerfil2').html(nameUser);
                         $('#contenedorPrinc').css('padding', '0');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                             console.log('Es un pdf');
