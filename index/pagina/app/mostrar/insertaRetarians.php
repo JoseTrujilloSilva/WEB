@@ -25,6 +25,7 @@ $numRetarian = 1;
 $videoTipo = $_POST['videoTipo'];
 
 var_dump($videoTipo);
+var_dump($idTarian2);
 
 $resultadoTarians = bbdd()->query("SELECT idUser, txt, img01, video, pdf FROM tarians WHERE idTarian = $idTarian2");
 

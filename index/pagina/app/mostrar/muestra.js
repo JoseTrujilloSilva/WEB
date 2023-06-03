@@ -166,7 +166,7 @@ function codigo() {
             $('#fechaTarian').html(data[0][4]);
             $('#idTarianComment').val(idTarian);
             $('#idTarianDelete').val(idTarian);
-
+            $('#idTarianRetarians').val(idTarian);
             recogeFavoritos(idTarian);
             
 
@@ -239,6 +239,8 @@ function codigo() {
                         console.log('Es una imagen prueba');
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#descripcion').html('');
+                        ('#imgFav').val(carousel[contCarousel][0][1]);
+                        ('#textFav').val(carousel[contCarousel][0][0]);
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                         }else{
                         $('#nameUserCont').html('');
@@ -247,7 +249,9 @@ function codigo() {
                         $('#contenedorPrinc').css('display', 'block');
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
+                        $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#contenedorPrinc').css('background-image', 'url('+'../mostrar/'+carousel[contCarousel][0][1]+')');
+                        ('#imgFav').val(carousel[contCarousel][0][1]);
                         $('#contenedorPrinc').css('background-size', 'contain');
                         $('#contenedorPrinc').css('background-repeat', 'no-repeat');
                         $('#contenedorPrinc').css('background-position', 'center');
@@ -310,8 +314,10 @@ function codigo() {
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#contenedorPrinc').css('display', 'none');
                         $('#contenidoMedia').css('display', 'block');
+                        $('#videoFav').val(carousel[contCarousel][0][2]);
                         $('#contenidoMedia').html(carousel[contCarousel][0][0]);
                         $('#retarianMedia').css('display', 'block');
+                        $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#retarianMedia').html('Retarians de '+nameUser+': '+data[contCarousel][7]);
                         $('#descripcion').css('color', 'red');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
@@ -360,8 +366,10 @@ function codigo() {
                             }
                         $('#fechaTarian').html(carousel[contCarousel][0][4]);
                         $('#contenedorPrinc').css('display', 'none');
+                        $('#videoFav').val(carousel[contCarousel][0][2]);
                         $('#contenedorPrinc').css('background', 'none');
                         $('#descripcion').html(carousel[contCarousel][0][0]);
+                        $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#nombrePerfil2').html(nameUser);
                         $('#pdf').css('display', 'none');
                         console.log('Es un video');
@@ -386,6 +394,7 @@ function codigo() {
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#contenedorPrinc').css('background', 'white');
                         $('#contenedorPrinc').css('padding', '0');
+                        $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                             console.log('Es un pdf');
                     }else{
@@ -395,6 +404,7 @@ function codigo() {
                         $('#pdf').html(carousel[contCarousel][0][3]);
                         $('#descripcion').html(carousel[contCarousel][0][0]);
                         $('#contenedorPrinc').css('background', 'white');
+                        $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#nombrePerfil2').html(nameUser);
                         $('#contenedorPrinc').css('padding', '0');
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
@@ -419,6 +429,7 @@ function codigo() {
                         $('#descripcion').html('');
                         $('#contenedorPrinc').css('background', 'white');
                         $('#contenedorPrinc').css('padding', '0');
+                        $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                     }else{
                         $('#nombrePerfil2').html(nameUser);
@@ -429,6 +440,7 @@ function codigo() {
                         $('#descripcion').html('');
                         $('#contenedorPrinc').css('background', 'white');
                         $('#contenedorPrinc').css('padding', '0');
+                        $('#textFav').val(carousel[contCarousel][0][0]);
                         $('#idTarianComment').val(carousel[contCarousel][0][5]);
                     }
                     

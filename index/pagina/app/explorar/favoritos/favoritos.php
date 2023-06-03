@@ -21,6 +21,12 @@ bbddConexion();
 
 $bbdd = bbdd();
 
+
+$resultadoTipoVideo = $bbdd->query("SELECT tipoVideo FROM tarians WHERE idTarian = $idTarian");
+
+$videoTipo = $resultadoTipoVideo->fetch_array(MYSQLI_NUM)[0];
+
+
 $resultado = $bbdd->query("SELECT idTarian FROM favoritos");
 
 

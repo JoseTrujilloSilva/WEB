@@ -145,6 +145,7 @@ function codigo() {
                 $('#next').css('visibility', 'visible');
             }
 
+            console.log(carousel[contCarousel]);
             $('#card01').css('display', 'none');
             $('#video').css('display', 'none');
             $('#card02').css('display', 'none');

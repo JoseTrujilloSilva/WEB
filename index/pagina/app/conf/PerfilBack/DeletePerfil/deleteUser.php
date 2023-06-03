@@ -49,7 +49,7 @@ if (password_verify($password, $passwordSQL)) {
 
                 bbdd()->query("DELETE FROM usuarios WHERE idUser = $idUser");
             
-        header('Location: ../../../../../../indice.html');
+        header('Location: ../../../../indice.html');
     }else{
         echo 'No son las misma keyss';
     }
@@ -57,6 +57,5 @@ if (password_verify($password, $passwordSQL)) {
 } else {
     echo 'La contraseña es incorrecta';
 }
-
 
 ?>
